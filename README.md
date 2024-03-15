@@ -1,7 +1,9 @@
-# Dymension 🚀
+# 🚀 Dymension
 
 Dymension is a interactive website developed as the final project of my web development class.
 
-## Collaborators
+## ✌️ Contributing
 
-[<img src="https://github.com/{{ contributor }}.png" width="60px;"/><br /><sub><ahref="https://github.com/{{ contributor }}">{{ contributor }}</a></sub>](https://github.com/{{ contributor }}/{{ repository }}
+<a href="https://github.com/jorge-lopz/dymension/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=jorge-lopz/dymension" />
+</a>
