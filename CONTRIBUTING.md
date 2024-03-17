@@ -24,6 +24,7 @@
 
 - **Facilita las PRs**: Realiza siempre el menor número de cambios posible antes de hacer una PR. Siempre se puede hacer varias PRs si encuentran varios problemas distintos.
 - **Revisa los issues**: Comprueba siempre que nadie más se ha asignado la issue y que ésta sigue abierta.
+- **Utiliza las etiquetas**: Asigna 1+ etiquetas (labels) a tus Issues o PRs para facilitar la organización.
 - **Sigue las convenciones de código del proyecto**: Mantén el formateo (tabulaciones, espacios...) del código. Cualquier mínimo cambio aparece como un posible conflicto en la PR.
 - **Cometa tu codigo**: Asegúrate de comentar el código, al menos para organizarlo por secciones.
 - **Actualiza / Sincroniza tu fork con frecuencia**: Mantén siempre tu fork actualizado para evitar conflictos.
