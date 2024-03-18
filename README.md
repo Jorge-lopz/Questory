@@ -1,6 +1,6 @@
 # Dymension 🚀 
 
-**Dymension is a interactive website developed as the final project of my web development class.**
+**Dymension is a interactive website developed as the final project for my web development class.**
 
 ### Contributors
 
