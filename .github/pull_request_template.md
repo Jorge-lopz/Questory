@@ -14,7 +14,7 @@
 
 **« Si los cambios afectan la apariencia visual a la página, incluir capturas del ANTES y el DESPUÉS »**
 
-## Comprobación de cambios ☑️
+## Comprobaciones previas ☑️
 
 - [ ] He revisado que no haya otra PR (Pull Request) abierta con un problema similar u otra persona haya seleccionado la tarea.
 - [ ] He comprobado que los cambios realizados son claros y que son los mínimos posibles. [«BUENAS PRÁCTICAS»](https://github.com/Jorge-lopz/Dymension/blob/main/CONTRIBUTING.md#buenas-pr%C3%A1cticas-).
