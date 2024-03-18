@@ -17,7 +17,8 @@
 ## Comprobación de cambios ☑️
 
 - [ ] He revisado que no haya otra PR (Pull Request) abierta con un problema similar u otra persona haya seleccionado la tarea.
-- [ ] He comprobado que los cambios realizados son claros y que son los mínimos posibles. [ «BUENAS PRÁCTICAS»](https://github.com/Jorge-lopz/Dymension/blob/main/CONTRIBUTING.md#buenas-pr%C3%A1cticas-).
+- [ ] He comprobado que los cambios realizados son claros y que son los mínimos posibles. [«BUENAS PRÁCTICAS»](https://github.com/Jorge-lopz/Dymension/blob/main/CONTRIBUTING.md#buenas-pr%C3%A1cticas-).
 - [ ] He revisado localmente los cambios para asegurarme de que no haya errores ni problemas.
 - [ ] He probado estos cambios en múltiples resoluciones de pantalla (Emulador del menú de inspeccionar del navegador).
+- [ ] He asignado las etiquetas (labels) correspondientes a la PR.
 - [ ] He añadido los comentarios y documentación necesaria, si corresponde.
