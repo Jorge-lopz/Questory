@@ -1,18 +1,18 @@
 ## Descripción 🗒️
 
-<!-- Describe brevemente los CAMBIOS realizados -->
+**« Describe brevemente los CAMBIOS realizados »**
 
 ## Problema solucionado / Feature implementada ⚡
 
-<!-- Describe el PROBLEMA solucionado / FEATURE implementada. -->
+**« Describe el PROBLEMA solucionado / FEATURE implementada. »**
 
 ## Enlace / número de la issue correspondiente 🔗
 
-<!-- LINK / NÚMERO -->
+**« LINK / NÚMERO »**
 
 ## Capturas de pantalla (si corresponde) 📸
 
-<!-- Si los cambios afectan la apariencia visual a la página, incluir capturas del ANTES y el DESPUÉS -->
+**« Si los cambios afectan la apariencia visual a la página, incluir capturas del ANTES y el DESPUÉS »**
 
 ## Comprobación de cambios ☑️
 
