@@ -7,5 +7,3 @@
 <a href="https://github.com/jorge-lopz/Dymension/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=jorge-lopz/Dymension" />
 </a>
-
-hey
