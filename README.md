@@ -4,6 +4,6 @@
 
 ### Contributors
 
-<a href="https://github.com/jorge-lopz/dymension/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=jorge-lopz/dymension" width=110px/>
+<a href="https://github.com/jorge-lopz/Dymension/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=jorge-lopz/Dymension" />
 </a>
