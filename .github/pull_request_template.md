@@ -1,24 +1,24 @@
-## Descripción 🗒️
+## Description 🗒️
 
-**« Describe brevemente los CAMBIOS realizados »**
+**« Briefly describe the CHANGES made »**
 
-## Problema solucionado / Feature implementada ⚡
+## Fixed problem / Implemented feature ⚡
 
-**« Describe el PROBLEMA solucionado / FEATURE implementada. »**
+**« Describe the fixed problem / implemented feature »**
 
-## Enlace / número de la issue correspondiente 🔗
+## Link / Corresponding issue number 🔗
 
-**« LINK / NÚMERO »**
+**« LINK / NUMBER »**
 
-## Capturas de pantalla (si corresponde) 📸
+## Screenshots (if needed) 📸
 
-**« Si los cambios afectan la apariencia visual a la página, incluir capturas del ANTES y el DESPUÉS »**
+**« If any changes affect the visual apprearence of the web, make sure to add before and after screenshots. »**
 
-## Comprobaciones previas ☑️
+## Previous checks ☑️
 
-- [ ] He revisado que no haya otra PR (Pull Request) abierta con un problema similar u otra persona haya seleccionado la tarea.
-- [ ] He comprobado que los cambios realizados son claros y que son los mínimos posibles. [«BUENAS PRÁCTICAS»](https://github.com/Jorge-lopz/Questory/blob/main/CONTRIBUTING.md#buenas-pr%C3%A1cticas-).
-- [ ] He revisado localmente los cambios para asegurarme de que no haya errores ni problemas.
-- [ ] He probado estos cambios en múltiples resoluciones de pantalla (Emulador del menú de inspeccionar del navegador).
-- [ ] He asignado las etiquetas (labels) correspondientes a la PR.
-- [ ] He añadido los comentarios y documentación necesaria, si corresponde.
+- [ ] I've made sure there's no other PR (Pull Request) open with a similar problem or that any other person had assigned themselves the task.
+- [ ] I've checked changes implemented are clear and affect the least number of lines as possible. [«BEST PRACTICES»](https://github.com/Jorge-lopz/Questory/blob/main/CONTRIBUTING.md#best-practices-).
+- [ ] I've made sure the changes made don't cause any other problems.
+- [ ] I've checked the web still works as expected on any screen resolution.
+- [ ] I've assigned the necessary labels to this PR.
+- [ ] I've added necessary comments and documentation in the code.
