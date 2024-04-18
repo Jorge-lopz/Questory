@@ -6,7 +6,7 @@
 
 **« Add screenshots or useful links fot eh issue (Inspiration, schemas, drawings...) »**
 
-## Previus checks ☑️
+## Previous checks ☑️
 
 - [ ] I'm using the latest version (Fork is up-to-date).
 - [ ] I made sure there's no other issue covering the same problem/feature as this one.
