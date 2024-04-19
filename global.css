@@ -1,0 +1,10 @@
+
+/* USED FOR GENERAL VARIABLES (Colors, fonts, sizes, timings...) AND CUSTOM STYLE CLASSES (Tailwind-like) */
+
+body{
+    margin: 0 !important;
+}
+
+:root{
+
+}
