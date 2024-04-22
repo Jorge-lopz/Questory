@@ -9,13 +9,10 @@
             margin-top: 12vh;
             width: 50%;
 
-            
-
             .character-description{
                 padding-top: 8%;
                 width:fit-content;
             }
-
 
             input {
                 font-size: 4.5rem;
@@ -61,8 +58,6 @@
 
             }
 
-                    
-
         }
         .character-image{
             img {
@@ -83,13 +78,12 @@
 
             .objective-description{
                 padding-top: 8%;
-                width:fit-content;
+                width: fit-content;
             }
                     
-
         }
         .objective-image{
-            width:auto;
+            width: auto;
             img{
                 height: 100%;
             }
