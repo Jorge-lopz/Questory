@@ -32,12 +32,12 @@
     </header>
 
     <main>
-        
+
         <!-- HERO -->
 
 
         <!-- INTRODUCTION -->
-        <!-- falta hacerla responsive -->
+        <!-- TODO Needs resposove adjustments -->
         <div class="intro-container">
             <!-- MAIN TITLE -->
             <h2 class="intro-title">PREPARE FOR YOUR <br>NEXT ADVENTURE</h2>
@@ -49,15 +49,16 @@
                 <div class="character-text">
                     <p class="character-title gradient-text">This is
                     </p>
-                    <input onclick="showMessage();" on type="text" size="7" placeholder="<YOU>" id="input">
+                    <input onclick="showMessage();" type="text" size="7" autocomplete="disable" placeholder="<YOU>"
+                        id="name-input">
 
                     <p class="character-description content-text">After waking up stranded in an unknown world, you
                         adventure through history and culture as you search for a way back home.
                     </p>
 
-                    <div class="message" id="message-alert">
-                        <p class="section-title alert">INFORMATION</p>
-                        <p class="content-text alert-text">The name will be used in the game, too. </p>
+                    <div class="popup-message" id="popup-message">
+                        <p class="section-title popup">INFORMATION</p>
+                        <p class="content-text popup-text">The chosen name will also be used in-game. </p>
                     </div>
                 </div>
 
@@ -71,23 +72,24 @@
             <!-- OBJECTIVE CONTAINER -->
             <div class="objective-container">
 
-                <!-- OBJV IMAGE -->
+                <!-- OBJECTIVE IMAGE -->
                 <div class="objective-image">
                     <img src="assets/images/Home.png" alt="">
                 </div>
 
-                <!-- OBJV TEXT-->
+                <!-- OBJECTIVE TEXT-->
                 <div class="objective-text">
                     <p class="objective-title gradient-text">Your Objective
                     </p>
 
-                    <p class="objective-description content-text">Uncover hidden secrets and solve puzzles as you explore every island.
+                    <p class="objective-description content-text">Uncover hidden secrets and solve puzzles as you
+                        explore every island.
                     </p>
 
-                    
+
                 </div>
 
-                
+
 
             </div>
         </div>

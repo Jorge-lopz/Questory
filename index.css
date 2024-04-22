@@ -10,12 +10,13 @@
             width: 50%;
 
             .character-description{
-                padding-top: 8%;
-                width:fit-content;
+                padding-top: 5%;
+                width: fit-content;
             }
 
             input {
-                font-size: 4.5rem;
+                margin-top: 10px;
+                font-size: 4rem;
                 width: 100%;
                 font-weight: bold;
                 background: none;
@@ -25,17 +26,21 @@
                 background-clip: none;
                 -webkit-background-clip: none;
                 -webkit-text-fill-color: black;
+
+                &::placeholder{
+                    transition: opacity ease-out .15s;
+                }
+
+                &:focus{
+                    outline: none;
+                }
+
+                &:focus::placeholder{
+                    opacity: 0;
+                }
             }
 
-            input:focus{
-               outline: none;
-            }
-
-            input:focus::placeholder{
-                opacity: 0;
-            }
-
-            .message {
+            .popup-message {
                 background: rgb(148,112,173);
                 background: linear-gradient(180deg, rgb(224 202 238) 0%, rgb(236 157 225) 54%, rgb(255 104 205 / 89%) 100%);
                 padding: 5px;
@@ -50,7 +55,7 @@
                 border: solid 3px #94428e;
                 opacity: 0;
 
-                .alert-text{
+                .popup-text{
                     text-wrap: balance;
                     margin: 0 auto;
                     font-size: 1.3rem;
@@ -69,8 +74,15 @@
     .objective-container{
         height: 70vh;
         display: flex;
+        margin-top: -4rem;
         gap: 6vw;
         padding: 0 15vw;
+
+        .objective-image{
+            img{
+                height: 100%;
+            }
+        }
 
         .objective-text{
             margin-top: 12vh;
@@ -82,12 +94,5 @@
             }
                     
         }
-        .objective-image{
-            width: auto;
-            img{
-                height: 100%;
-            }
-        }
     }
-
 }
