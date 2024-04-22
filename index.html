@@ -7,6 +7,7 @@
     <link rel="icon" href="assets/icons/logo/favicon.svg">
     <link rel="stylesheet" href="global.css">
     <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
     <title>Questory</title>
 </head>
 
@@ -42,12 +43,19 @@
             <h2 class="intro-title">PREPARE FOR YOUR <br>NEXT ADVENTURE</h2>
             <div class="character-container">
                 <div class="character-text">
-                    <p class="character-title gradient-text">This is <br>
-                        <input type="text" size="7" placeholder="You">
+                    <p class="character-title gradient-text">Here it is
                     </p>
+
+                    <input onclick="mostrarMensaje();" on type="text" size="7" placeholder="<Your name>" id="input">
+
                     <p class="character-description content-text">After waking up stranded in an unknown world, you
                         adventure through history and culture as you search for a way back home.
                     </p>
+
+                    <div class="message" id="message-alert">
+                        <p class="section-title alert">ATTENTION</p>
+                        <p class="content-text alert-text">This action may have consequences on the real game. </p>
+                    </div>
                 </div>
 
                 <div class="character-image">
@@ -57,16 +65,22 @@
             </div>
 
             <div class="objective-container">
+
                 <div class="objective-image">
-                    <img src="assets/images/.png" alt="character">
+                    <img src="assets/images/Home.png" alt="">
                 </div>
 
                 <div class="objective-text">
-                    <h1 class="objective-title"></h1>
-                    <p class="objective-description"></p>
+                    <p class="objective-title gradient-text">Your Objective
+                    </p>
+
+                    <p class="objective-description content-text">Uncover hidden secrets aCamionetand solve puzzles to explore every island.
+                    </p>
+
+                    
                 </div>
 
-
+                
 
             </div>
         </div>
