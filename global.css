@@ -43,6 +43,43 @@ main {
     margin-top: 7rem;
 }
 
+/* HEADER */
+
+header {
+  position: fixed;    
+  width: 99%;
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+  display: flex;
+  align-items: center;
+  background-color: #EEEEEE;
+  top: 0;
+}
+
+.home-header {
+  margin-inline: auto 1rem;
+  font-family: 'Monomaniac One';
+  align-items: center;
+  display: flex;
+  gap: 30px;
+  
+  .header-items {
+      text-decoration: none;
+      color: black;
+      font-size: 1.4rem;
+      letter-spacing: 0.05em;
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  img {
+      margin-top: 7px;
+  }
+  .header-items:hover {
+    transform: scale3d(1.1, 1.1, 1); /* Grow when hovering */
+}
+}
+
+/* COMMON STYLES */
+
 .section-title{
   margin: 0;
   font-family: 'Paytone One';
@@ -52,19 +89,17 @@ main {
   font-size: 2.5rem;
   line-height: 5rem;
   letter-spacing: 0.05em;
-
   color: #CE6B4F;
-
-
 }
 
 .gradient-text {
     margin: 0;
+    margin-bottom: -1%;
     text-align: center;
     font-family: 'Paytone one';
     font-size: 5.5rem;
-    line-height: 110%;
     letter-spacing: 0.06em;
+    line-height: 122%;
     background: linear-gradient(93.69deg, #35ADE1 1.5%, #4FA1D4 21.54%, #C579AC 50.38%, #DE4E9A 95.85%, #FF2F93 99.27%);
     background-clip: text;
     -webkit-background-clip: text;
@@ -73,7 +108,7 @@ main {
 
 .content-text{
   margin: 0;
-  font-family: Lexend;
+  font-family: 'Lexend';
   font-size: 1.5rem;
   font-weight: 500;
   text-align: center;
@@ -87,8 +122,6 @@ main {
     text-align: center;
     color: black;
 }
-
-
 
 /* TODO */
 /*BORRAR ESTO XD 
@@ -108,36 +141,3 @@ main {
       background-position: 100% 50%; /* Posición final del degradado 
   
 } */
-
-/* HEADER */
-
-header {
-    position: fixed;    
-    width: 99%;
-    padding-inline: 1rem;
-    padding-block: 0.5rem;
-    display: flex;
-    align-items: center;
-    background-color: #EEEEEE;
-    top: 0;
-}
-
-.home-header {
-    margin-inline: auto 1rem;
-    font-family: "Monomaniac One";
-    align-items: center;
-    display: flex;
-    gap: 30px;
-    .header-items {
-        text-decoration: none;
-        color: black;
-        font-size: 1.4rem;
-        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Cubic-bezier para mayor suavidad */
-    }
-    img {
-        margin-top: 7px;
-    }
-    .header-items:hover {
-      transform: scale3d(1.1, 1.1, 1); /* Agrandar al hacer hover */
-  }
-}
