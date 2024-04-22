@@ -1,0 +1,45 @@
+
+
+.progress {
+    text-align: center;
+	justify-content: center;
+}
+
+.progess-boxes {
+    margin-inline: auto;
+    display: flex;
+	justify-self: center;
+	flex-wrap: wrap;
+	padding-inline: 6%;
+	text-align: center;
+	justify-content: center;
+	align-content: center;
+}
+
+.box {
+	height: 13rem;
+	width: 13rem;
+	margin: 2% 2% 2% 2%;
+	background-color: grey;
+	align-content: center;
+}
+
+.box {
+    
+    img{
+        margin-top: 5px;
+	    height: 130px;	
+    }
+}
+
+.total-progress{
+	
+}
+
+.progress-bar {
+	
+}
+
+.final-trophy {
+	
+}

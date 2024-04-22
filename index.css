@@ -1,0 +1,38 @@
+.intro-container{
+    .character-container{
+        height: min-content;
+        display: flex;
+        gap: 6vw;
+        padding: 0 15vw;
+
+        .character-text{
+            margin-top: 12vh;
+            width: 60%;
+            text-wrap: balance;
+            .character-description{
+                padding-top: 8%;
+            }
+            input {
+                font-size: 4.5rem;
+                font-weight: bold;
+                background: none;
+                border: none;
+                text-align: center;
+                color: black;
+                background-clip: none;
+                -webkit-background-clip: none;
+                -webkit-text-fill-color: black;
+            }
+        }
+        .character-image{
+            img {
+                height: 98%;
+            }
+        }
+    }
+
+    .object-container{
+
+    }
+
+}

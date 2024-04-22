@@ -5,6 +5,121 @@ body{
     margin: 0 !important;
 }
 
-:root{
+/* FONTS */
 
+@font-face { 
+    font-family: "Monomaniac One";
+    font-style: normal;
+    src: 
+      url("assets/fonts/Monomaniac_One/MonomaniacOne-Regular.ttf") format("truetype");
+    font-style: normal;
+  }
+@font-face { 
+    font-family: "Lexend";
+    font-style: normal;
+    src: 
+      url("assets/fonts/Lexend/Lexend-VariableFont_wght.ttf") format("truetype");
+    font-style: normal;
+  }
+@font-face { 
+    font-family: "Paytone One";
+    font-style: normal;
+    src: 
+      url("assets/fonts/Paytone_One/PaytoneOne-Regular.ttf") format("truetype");
+    font-style: normal;
+  }
+@font-face { 
+    font-family: "Nanum Pen";
+    font-style: normal;
+    src: 
+      url("assets/fonts/Nanum_Pen_Script/NanumPenScript-Regular.ttf") format("truetype");
+    font-style: normal;
+  }
+
+/* GENERAL STYLES */
+
+main {
+    margin: 0;
+    margin-top: 7rem;
+}
+
+.gradient-text {
+    margin: 0;
+    text-align: center;
+    font-family: 'Paytone one';
+    font-size: 5.5rem;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    background: linear-gradient(93.69deg, #35ADE1 1.5%, #4FA1D4 21.54%, #C579AC 50.38%, #DE4E9A 95.85%, #FF2F93 99.27%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.content-text{
+  margin: 0;
+  font-family: Lexend;
+  font-size: 1.8rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.section-title{
+    font-family: 'Monomaniac One';
+    text-transform: uppercase;
+    font-size: 60px;
+    text-align: center;
+    color: black;
+}
+
+/* TODO */
+/*BORRAR ESTO XD 
+.section-title{
+  background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff); /* Definir el degradado 
+  background-size: 200% 200%; /* Tamaño del degradado 
+  -webkit-background-clip: text; /* Aplicar degradado al texto 
+  -webkit-text-fill-color: transparent; /* Hacer el texto transparente 
+  animation: cambioColor 6s infinite; /* Animación de cambio de color cada 6 segundos 
+}
+
+@keyframes cambioColor {
+  0% {
+      background-position: 0% 50%; /* Posición inicial del degradado 
+  }
+  100% {
+      background-position: 100% 50%; /* Posición final del degradado 
+  
+} */
+
+/* HEADER */
+
+header {
+    position: fixed;    
+    width: 99%;
+    padding-inline: 1rem;
+    padding-block: 0.5rem;
+    display: flex;
+    align-items: center;
+    background-color: #EEEEEE;
+    top: 0;
+}
+
+.home-header {
+    margin-inline: auto 1rem;
+    font-family: "Monomaniac One";
+    align-items: center;
+    display: flex;
+    gap: 30px;
+    .header-items {
+        text-decoration: none;
+        color: black;
+        font-size: 1.4rem;
+        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Cubic-bezier para mayor suavidad */
+    }
+    img {
+        margin-top: 7px;
+    }
+    .header-items:hover {
+      transform: scale3d(1.1, 1.1, 1); /* Agrandar al hacer hover */
+  }
 }
