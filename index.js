@@ -1,9 +1,9 @@
 
-// NAME MESSAGE ALERT
+// NAME CHANGE INFORMATION POPUP
 function showMessage() {
   var message = document.getElementById("message-alert");
 
-  // Establecer la opacidad inicial
+  // Sets initiaal opacity
   message.style.opacity = 1;
 
   setTimeout(function() {
@@ -11,15 +11,15 @@ function showMessage() {
   }, 5000); 
 }
 
-// NAME LENGTH TESER
+// NAME LENGTH CHECK
 // Everytime you type while chosing your name 
-// it checks that it is no longer than 12 letters
+// it checks that it is not longer than 12 letters
 var input = document.getElementById('input');
 input.addEventListener('input', function(event) {
-  var cantidadCaracteres = input.value.length;
+  var characterCount = input.value.length;
 
-  if(cantidadCaracteres > 12){
-    window.alert('Máximo número de caracteres alcanzado');
+  if(characterCount > 12){
+    window.alert('Name length limit reached');
     input.value = input.value.substring(0,input.value.length - 1);
   }
 });
