@@ -7,6 +7,7 @@
     <link rel="icon" href="assets/icons/logo/favicon.svg">
     <link rel="stylesheet" href="global.css">
     <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
     <title>Questory</title>
 </head>
 
@@ -31,42 +32,62 @@
     </header>
 
     <main>
-
-        <h1 class="section-title">Gay el que lo lea</h1>
-
+        
         <!-- HERO -->
 
 
         <!-- INTRODUCTION -->
+        <!-- falta hacerla responsive -->
         <div class="intro-container">
+            <!-- MAIN TITLE -->
             <h2 class="intro-title">PREPARE FOR YOUR <br>NEXT ADVENTURE</h2>
+
+            <!-- CHARACTER CONTAINER-->
             <div class="character-container">
+
+                <!-- CHAR TEXT -->
                 <div class="character-text">
-                    <p class="character-title gradient-text">This is <br>
-                        <input type="text" size="7" placeholder="You">
+                    <p class="character-title gradient-text">This is
                     </p>
+                    <input onclick="showMessage();" on type="text" size="7" placeholder="<YOU>" id="input">
+
                     <p class="character-description content-text">After waking up stranded in an unknown world, you
                         adventure through history and culture as you search for a way back home.
                     </p>
+
+                    <div class="message" id="message-alert">
+                        <p class="section-title alert">INFORMATION</p>
+                        <p class="content-text alert-text">The name will be used in the game, too. </p>
+                    </div>
                 </div>
 
+                <!-- CHAR IMAGE -->
                 <div class="character-image">
                     <img src="assets/images/Character.png" alt="Main character">
                 </div>
 
             </div>
 
+            <!-- OBJECTIVE CONTAINER -->
             <div class="objective-container">
+
+                <!-- OBJV IMAGE -->
                 <div class="objective-image">
-                    <img src="assets/images/.png" alt="character">
+                    <img src="assets/images/Home.png" alt="">
                 </div>
 
+                <!-- OBJV TEXT-->
                 <div class="objective-text">
-                    <h1 class="objective-title"></h1>
-                    <p class="objective-description"></p>
+                    <p class="objective-title gradient-text">Your Objective
+                    </p>
+
+                    <p class="objective-description content-text">Uncover hidden secrets and solve puzzles as you explore every island.
+                    </p>
+
+                    
                 </div>
 
-
+                
 
             </div>
         </div>

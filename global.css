@@ -43,6 +43,21 @@ main {
     margin-top: 7rem;
 }
 
+.section-title{
+  margin: 0;
+  font-family: 'Paytone One';
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  font-size: 2.5rem;
+  line-height: 5rem;
+  letter-spacing: 0.05em;
+
+  color: #CE6B4F;
+
+
+}
+
 .gradient-text {
     margin: 0;
     text-align: center;
@@ -59,18 +74,21 @@ main {
 .content-text{
   margin: 0;
   font-family: Lexend;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 500;
   text-align: center;
 }
 
-.section-title{
+.page-title{
+    margin: 0;
     font-family: 'Monomaniac One';
     text-transform: uppercase;
     font-size: 60px;
     text-align: center;
     color: black;
 }
+
+
 
 /* TODO */
 /*BORRAR ESTO XD 
