@@ -7,7 +7,9 @@
     <link rel="icon" href="assets/icons/logo/favicon.svg">
     <link rel="stylesheet" href="global.css">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="/node_modules/izitoast/dist/css/iziToast.min.css">
     <script src="index.js" defer></script>
+    <script src="/node_modules/izitoast/dist/js/iziToast.min.js" defer type="text/javascript"></script>
     <title>Questory</title>
 </head>
 
@@ -50,7 +52,7 @@
                 <div class="character-text">
                     <p class="character-title gradient-text">This is
                     </p>
-                    <input onclick="showMessage();" type="text" size="7" autocomplete="disable" placeholder="<YOU>"
+                    <input onfocus="showMessage();" type="text" size="7" autocomplete="disable" placeholder="<YOU>"
                         id="name-input">
 
                     <p class="character-description content-text">After waking up stranded in an unknown world, you
