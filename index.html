@@ -25,13 +25,18 @@
             <a class="header-items" href="progress.html">Progress</a>
             <a class="header-items" href="contact.html">Contact</a>
             <a href="contact.html">
-                <img class="header-items" src="assets/icons/Language.png" width="35px" alt="Language">
+                <img class="header-items" id="language-icon" src="assets/icons/Language.png" width="35px"
+                    alt="Language">
             </a>
-            <a href="contact.html">
-                <img class="header-items" src="assets/icons/Map.png" width="65px" alt="Map">
+            <a href="#">
+                <img class="header-items" id="map-icon" src="assets/icons/Map.png" width="65px" alt="Map">
             </a>
         </div>
+        <!-- <div id="mobile-menu-btn">
+            <img src="assets/icons/menu-icon.png" width="30px" alt="Menu">
+        </div> -->
     </header>
+
 
     <main>
 
@@ -53,16 +58,11 @@
                     <p class="character-title gradient-text">This is
                     </p>
                     <input onfocus="showMessage();" type="text" size="7" autocomplete="disable" placeholder="<YOU>"
-                        id="name-input">
+                        id="name-input" maxlength="12">
 
                     <p class="character-description content-text">After waking up stranded in an unknown world, you
                         adventure through history and culture as you search for a way back home.
                     </p>
-
-                    <div class="popup-message" id="popup-message">
-                        <p class="section-title popup">INFORMATION</p>
-                        <p class="content-text popup-text">The chosen name will also be used in-game. </p>
-                    </div>
                 </div>
 
                 <!-- CHAR IMAGE -->
@@ -77,7 +77,7 @@
 
                 <!-- OBJECTIVE IMAGE -->
                 <div class="objective-image">
-                    <img src="assets/images/Home.png" alt="">
+                    <img src="assets/images/Home.png" alt="Objective">
                 </div>
 
                 <!-- OBJECTIVE TEXT-->
@@ -91,9 +91,6 @@
 
 
                 </div>
-
-
-
             </div>
         </div>
 

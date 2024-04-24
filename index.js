@@ -1,27 +1,48 @@
 
 // NAME CHANGE INFORMATION POPUP
+
 function showMessage() {
-  iziToast.info({
-    message: 'The chosen name will also be used in-game',
-    position: 'bottomLeft',
-    backgroundColor: '#a7e1ff',
-    displayMode: 2
-  });
+  ;
+  if (document.getElementById('name-input').value == "") {
+    iziToast.info({
+      message: 'The chosen name will also be used in-game',
+      position: 'bottomLeft',
+      backgroundColor: '#a7e1ff',
+      displayMode: 2
+    });
+  }
 }
 
-// NAME LENGTH CHECK
-// Everytime you type while chosing your name it checks that it is not longer than 12 letters
-var input = document.getElementById('name-input');
-input.addEventListener('input', function (event) {
-  var characterCount = input.value.length;
 
-  if (characterCount > 12) {
-    iziToast.error({
-      message: 'Name length limit reached.',
-      position: 'topRight',
-      backgroundColor: '#fcb4b8',
-      displayMode: 1
+//HEADER
+
+const mapIcon = document.getElementById('map-icon');
+
+const maxPulseDistance = mapIcon.width * 2.2;
+
+document.addEventListener('mousemove', handleMouseMove);
+
+function handleMouseMove(event) {
+
+  const rect = mapIcon.getBoundingClientRect();
+  const mouseX = event.clientX - rect.left;
+  const mouseY = event.clientY - rect.top;
+
+  const distanceToCenter = Math.sqrt((mouseX - (rect.width / 2)) ** 2 + (mouseY - (rect.height / 2)) ** 2);
+
+  if (distanceToCenter < maxPulseDistance) {
+    mapIcon.style.animationIterationCount = 'infinite';
+    if (!mapIcon.classList.contains('map-icon-animation')) {
+      mapIcon.classList.add('map-icon-animation');
+    }
+  } else {
+    mapIcon.style.animationIterationCount = '1';
+    mapIcon.addEventListener('animationend', function handler() {
+      mapIcon.classList.remove('map-icon-animation');
+
+      // Remove the event listener to clean up
+      mapIcon.removeEventListener('animationend', handler);
     });
-    input.value = input.value.substring(0, input.value.length - 1);
   }
-});
+}
+

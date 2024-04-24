@@ -1,6 +1,10 @@
 
 /* USED FOR GENERAL VARIABLES (Colors, fonts, sizes, timings...) AND CUSTOM STYLE CLASSES (Tailwind-like) */
 
+html {
+  width: 100vw;
+}
+
 body{
     margin: 0 !important;
 }
@@ -46,18 +50,19 @@ main {
 /* HEADER */
 
 header {
-  position: fixed;    
-  width: 99%;
+  position: fixed;
+  width: 100vw;
   padding-inline: 1rem;
   padding-block: 0.5rem;
   display: flex;
-  align-items: center;
   background-color: #EEEEEE;
   top: 0;
+  left: 0;
+  z-index: 100;
 }
 
 .home-header {
-  margin-inline: auto 1rem;
+  margin-inline: auto 2rem;
   font-family: 'Monomaniac One';
   align-items: center;
   display: flex;
@@ -71,12 +76,12 @@ header {
       transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
   img {
-      margin-top: 7px;
+    margin-top: 7px;
+    transform: scale(1);
   }
   .header-items:hover {
     transform: scale3d(1.1, 1.1, 1); /* Grow when hovering */
-}
-}
+  }}
 
 /* COMMON STYLES */
 

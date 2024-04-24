@@ -1,13 +1,15 @@
 .intro-container{
+    width: 100vw;
     .character-container{
         height: min-content;
+        width: fit-content;
         display: flex;
         gap: 6vw;
-        padding: 0 15vw;
+        margin: 0 auto;
 
         .character-text{
             margin-top: 12vh;
-            width: 50%;
+            width: 40vw;
 
             .character-description{
                 padding-top: 5%;
@@ -66,33 +68,35 @@
         }
         .character-image{
             img {
-                height: 88%;
+                width: 88%;
             }
         }
     }
 
     .objective-container{
-        height: 70vh;
+        height: min-content;
+        width: fit-content;
         display: flex;
-        margin-top: -4rem;
         gap: 6vw;
-        padding: 0 15vw;
+        margin: 0 auto;
 
         .objective-image{
-            img{
-                height: 100%;
+            img {
+                width: 88%;
             }
         }
 
         .objective-text{
             margin-top: 12vh;
-            width: 50%;
+            width: 40vw;
 
             .objective-description{
-                padding-top: 8%;
+                padding-top: 5%;
                 width: fit-content;
             }
-                    
+
+        
         }
+        
     }
 }

@@ -22,14 +22,7 @@
 	margin: 2% 2% 2% 2%;
 	background-color: grey;
 	align-content: center;
-}
-
-.box {
-    
-    img{
-        margin-top: 5px;
-	    height: 130px;	
-    }
+	border-radius: 25px;
 }
 
 .total-progress{
@@ -43,3 +36,23 @@
 .final-trophy {
 	
 }
+
+@keyframes heartBeat {
+	from, to {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.15);
+	}
+}
+
+.lock {
+	margin-top: 5px;
+	height: 140px;	
+}
+
+.lock:hover {
+	animation: heartBeat 2s infinite ; 
+}
+
+
