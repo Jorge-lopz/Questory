@@ -20,16 +20,15 @@
             <a href="index.html"><img src="assets/icons/logo/Icon.png" width="65px" alt="logo"></a>
         </div>
 
-        <div class="home-header">
-            <a class="header-items" href="#">Islands</a>
-            <a class="header-items" href="progress.html">Progress</a>
-            <a class="header-items" href="contact.html">Contact</a>
-            <a href="contact.html">
-                <img class="header-items" id="language-icon" src="assets/icons/Language.png" width="35px"
-                    alt="Language">
+        <div class="header-content">
+            <a class="header-item" href="#">Islands</a>
+            <a class="header-item" href="progress.html">Progress</a>
+            <a class="header-item" href="contact.html">Contact</a>
+            <a href="#"> <!-- TODO Should call the language switching function -->
+                <img class="header-item" id="language-icon" src="assets/icons/Language.png" width="35px" alt="Language">
             </a>
             <a href="#">
-                <img class="header-items" id="map-icon" src="assets/icons/Map.png" width="65px" alt="Map">
+                <img class="header-item" id="map-icon" src="assets/icons/Map.png" width="65px" alt="Map">
             </a>
         </div>
         <!-- <div id="mobile-menu-btn">
@@ -37,9 +36,8 @@
         </div> -->
     </header>
 
-
+    <!-- ACTUAL PAGE CONTENT -->
     <main>
-
 
         <!-- HERO -->
 
@@ -57,8 +55,8 @@
                 <div class="character-text">
                     <p class="character-title gradient-text">This is
                     </p>
-                    <input onfocus="showMessage();" type="text" size="7" autocomplete="disable" placeholder="<YOU>"
-                        id="name-input" maxlength="12">
+                    <input onfocus="showMessage();" type="text" size="7" aria-autocomplete="none" autocomplete="off"
+                        placeholder="<YOU>" id="name-input" maxlength="12">
 
                     <p class="character-description content-text">After waking up stranded in an unknown world, you
                         adventure through history and culture as you search for a way back home.

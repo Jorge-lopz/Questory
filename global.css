@@ -2,11 +2,19 @@
 /* USED FOR GENERAL VARIABLES (Colors, fonts, sizes, timings...) AND CUSTOM STYLE CLASSES (Tailwind-like) */
 
 html {
+  display: block;
   width: 100vw;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
-body{
+body {
     margin: 0 !important;
+}
+
+/* DEBUGGING */
+.debug {
+  border: red 3px solid;
 }
 
 /* FONTS */
@@ -14,35 +22,36 @@ body{
 @font-face { 
     font-family: "Monomaniac One";
     font-style: normal;
+    font-display: fallback;
     src: 
       url("assets/fonts/Monomaniac_One/MonomaniacOne-Regular.ttf") format("truetype");
-    font-style: normal;
   }
 @font-face { 
     font-family: "Lexend";
     font-style: normal;
+    font-display: fallback;
     src: 
       url("assets/fonts/Lexend/Lexend-VariableFont_wght.ttf") format("truetype");
-    font-style: normal;
   }
 @font-face { 
     font-family: "Paytone One";
     font-style: normal;
+    font-display: fallback;
     src: 
       url("assets/fonts/Paytone_One/PaytoneOne-Regular.ttf") format("truetype");
-    font-style: normal;
   }
 @font-face { 
     font-family: "Nanum Pen";
     font-style: normal;
+    font-display: fallback;
     src: 
       url("assets/fonts/Nanum_Pen_Script/NanumPenScript-Regular.ttf") format("truetype");
-    font-style: normal;
   }
 
 /* GENERAL STYLES */
 
 main {
+    overflow-x: hidden;
     margin: 0;
     margin-top: 7rem;
 }
@@ -56,38 +65,53 @@ header {
   padding-block: 0.5rem;
   display: flex;
   background-color: #EEEEEE;
-  top: 0;
-  left: 0;
+  inset: 0;
+  height: min-content;
   z-index: 100;
 }
 
-.home-header {
-  margin-inline: auto 2rem;
-  font-family: 'Monomaniac One';
+.header-content {
+  container-type: inline-size;
+  font-family: 'Monomaniac One', 'Arial', sans-serif;
+  overflow-x: hidden;
   align-items: center;
   display: flex;
-  gap: 30px;
+  gap: 2rem;
+  width: 100%;
+  margin-right: 2.5rem;
+  justify-content: right;
   
-  .header-items {
+  .header-item {
       text-decoration: none;
       color: black;
       font-size: 1.4rem;
       letter-spacing: 0.05em;
-      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
   img {
+    transform-origin: 60%;
     margin-top: 7px;
+  }
+}
+
+/* Class for  map icon animation */
+.map-icon-animation {
+  animation: pulse 1.2s infinite forwards;
+}
+
+@keyframes pulse {
+  to, from {
     transform: scale(1);
   }
-  .header-items:hover {
-    transform: scale3d(1.1, 1.1, 1); /* Grow when hovering */
-  }}
+  50% {
+    transform: scale(1.1);
+  }
+}
 
 /* COMMON STYLES */
 
-.section-title{
+.section-title {
   margin: 0;
-  font-family: 'Paytone One';
+  font-family: 'Paytone One', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 400;
   text-align: center;
@@ -101,7 +125,7 @@ header {
     margin: 0;
     margin-bottom: -1%;
     text-align: center;
-    font-family: 'Paytone one';
+    font-family: 'Paytone One', 'Arial', sans-serif;
     font-size: 5.5rem;
     letter-spacing: 0.06em;
     line-height: 122%;
@@ -111,21 +135,29 @@ header {
     -webkit-text-fill-color: transparent;
 }
 
-.content-text{
+.content-text {
   margin: 0;
-  font-family: 'Lexend';
+  font-family: 'Lexend', 'Arial', sans-serif;
   font-size: 1.5rem;
   font-weight: 500;
   text-align: center;
 }
 
-.page-title{
+.page-title {
     margin: 0;
-    font-family: 'Monomaniac One';
+    font-family: 'Monomaniac One', 'Arial', sans-serif;
     text-transform: uppercase;
     font-size: 60px;
     text-align: center;
     color: black;
+}
+
+/* CONTAINER QUERIES */
+
+@container (wisth <= 900px) { /* Hide header content inside the hamburguer menu */
+  .header-content {
+    color: red;
+  }
 }
 
 /* TODO */

@@ -1,17 +1,17 @@
-.intro-container{
+.intro-container {
     width: 100vw;
-    .character-container{
+    .character-container {
         height: min-content;
         width: fit-content;
         display: flex;
         gap: 6vw;
         margin: 0 auto;
 
-        .character-text{
+        .character-text {
             margin-top: 12vh;
             width: 40vw;
 
-            .character-description{
+            .character-description {
                 padding-top: 5%;
                 width: fit-content;
             }
@@ -29,15 +29,15 @@
                 -webkit-background-clip: none;
                 -webkit-text-fill-color: black;
 
-                &::placeholder{
+                &::placeholder {
                     transition: opacity ease-out .15s;
                 }
 
-                &:focus{
+                &:focus {
                     outline: none;
                 }
 
-                &:focus::placeholder{
+                &:focus::placeholder {
                     opacity: 0;
                 }
             }
@@ -66,31 +66,31 @@
             }
 
         }
-        .character-image{
+        .character-image {
             img {
                 width: 88%;
             }
         }
     }
 
-    .objective-container{
+    .objective-container {
         height: min-content;
         width: fit-content;
         display: flex;
         gap: 6vw;
         margin: 0 auto;
 
-        .objective-image{
+        .objective-image {
             img {
                 width: 88%;
             }
         }
 
-        .objective-text{
+        .objective-text {
             margin-top: 12vh;
             width: 40vw;
 
-            .objective-description{
+            .objective-description {
                 padding-top: 5%;
                 width: fit-content;
             }
