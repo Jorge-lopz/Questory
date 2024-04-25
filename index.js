@@ -2,7 +2,6 @@
 // NAME CHANGE INFORMATION POPUP
 
 function showMessage() {
-  ;
   if (document.getElementById('name-input').value == "") {
     iziToast.info({
       message: 'The chosen name will also be used in-game',
@@ -45,4 +44,8 @@ function handleMouseMove(event) {
     });
   }
 }
+
+//MENU
+
+
 

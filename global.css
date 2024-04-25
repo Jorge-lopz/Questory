@@ -1,6 +1,10 @@
 
 /* USED FOR GENERAL VARIABLES (Colors, fonts, sizes, timings...) AND CUSTOM STYLE CLASSES (Tailwind-like) */
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   display: block;
   width: 100vw;
@@ -56,7 +60,16 @@ main {
     margin-top: 7rem;
 }
 
-/* HEADER */
+/*LOGO*/
+
+.logo {
+  position: fixed;
+  top: 0.5rem;
+  left: 1.5rem;
+}
+
+
+/*HEADER*/
 
 header {
   position: fixed;
@@ -64,32 +77,61 @@ header {
   padding-inline: 1rem;
   padding-block: 0.5rem;
   display: flex;
-  background-color: #EEEEEE;
   inset: 0;
   height: min-content;
   z-index: 100;
 }
 
+
 .header-content {
-  container-type: inline-size;
-  font-family: 'Monomaniac One', 'Arial', sans-serif;
+  font-family: 'Monomaniac One', 'Lexend', 'Arial', sans-serif;
   overflow-x: hidden;
   align-items: center;
   display: flex;
   gap: 2rem;
   width: 100%;
-  margin-right: 2.5rem;
+  margin-right: 1rem;
   justify-content: right;
-  
-  .header-item {
-      text-decoration: none;
-      color: black;
-      font-size: 1.4rem;
-      letter-spacing: 0.05em;
+}
+
+.header-item {
+  text-decoration: none;
+  color: black;
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+  img{
+
   }
+}
+
+img {
+  transform-origin: 60%;
+  margin-top: 7px;
+}
+/*BURGUER MENU*/
+
+
+
+
+/* FOOTER */
+
+footer {
+  position: fixed;
+  bottom: 1.2rem;
+  right: 2rem;
   img {
-    transform-origin: 60%;
-    margin-top: 7px;
+    filter: drop-shadow(0.15rem 0.15rem 0.1rem #00000020);
+    position: relative;
+
+  }
+  &::before {
+    content: "MAP";
+    position: absolute;
+    font-family: 'Lexend', 'Arial', sans-serif;
+    font-size: 1.1rem;
+    top: 0;
+    left: 50%;
+    transform: translate(-52%, -100%);
   }
 }
 
@@ -111,7 +153,7 @@ header {
 
 .section-title {
   margin: 0;
-  font-family: 'Paytone One', 'Arial', sans-serif;
+  font-family: 'Paytone One', 'Lexend', 'Lexend', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 400;
   text-align: center;
@@ -125,8 +167,8 @@ header {
     margin: 0;
     margin-bottom: -1%;
     text-align: center;
-    font-family: 'Paytone One', 'Arial', sans-serif;
-    font-size: 5.5rem;
+    font-family: 'Paytone One', 'Lexend', 'Lexend', 'Arial', sans-serif;
+    font-size: clamp(2.8rem, 7vw, 4rem) !important;
     letter-spacing: 0.06em;
     line-height: 122%;
     background: linear-gradient(93.69deg, #35ADE1 1.5%, #4FA1D4 21.54%, #C579AC 50.38%, #DE4E9A 95.85%, #FF2F93 99.27%);
@@ -137,19 +179,23 @@ header {
 
 .content-text {
   margin: 0;
-  font-family: 'Lexend', 'Arial', sans-serif;
-  font-size: 1.5rem;
+  font-family: 'Lexend', 'Lexend', 'Arial', sans-serif;
+  font-size: clamp(1.2rem, 1.4rem, 1.5rem);
   font-weight: 500;
   text-align: center;
 }
 
 .page-title {
     margin: 0;
-    font-family: 'Monomaniac One', 'Arial', sans-serif;
+    font-family: 'Monomaniac One', 'Lexend', 'Arial', sans-serif;
     text-transform: uppercase;
     font-size: 60px;
     text-align: center;
     color: black;
+}
+
+.user-select-none{
+  user-select: none;
 }
 
 /* CONTAINER QUERIES */

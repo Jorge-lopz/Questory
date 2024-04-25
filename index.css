@@ -1,24 +1,36 @@
 .intro-container {
     width: 100vw;
+
+    .intro-title {
+        font-family: 'Paytone One', 'Lexend', 'Arial', sans-serif;
+        font-size: clamp(3.4rem, 8vw, 5.5rem) !important;
+        text-align: center;
+        letter-spacing: 0.4rem;
+        font-weight: 100;
+        line-height: 110%;
+    }
+
     .character-container {
         height: min-content;
-        width: fit-content;
+        width: 100%;
         display: flex;
-        gap: 6vw;
-        margin: 0 auto;
+        justify-content: center;
+        padding-inline: max(2vw, 5rem) max(5vw, 5rem);
+        gap: 6rem;
 
         .character-text {
-            margin-top: 12vh;
-            width: 40vw;
+            margin-block: auto;
+            width: 50%;
 
             .character-description {
                 padding-top: 5%;
                 width: fit-content;
+                text-wrap: balance;
             }
 
             input {
                 margin-top: 10px;
-                font-size: 4rem;
+                font-size: clamp(2.8rem, 8vw, 3.5rem) !important;
                 width: 100%;
                 font-weight: bold;
                 background: none;
@@ -42,61 +54,86 @@
                 }
             }
 
-            .popup-message {
-                background: rgb(148,112,173);
-                background: linear-gradient(180deg, rgb(224 202 238) 0%, rgb(236 157 225) 54%, rgb(255 104 205 / 89%) 100%);
-                padding: 5px;
-                position: fixed;
-                bottom: 7%;
-                right: 3%;
-                height: 25%;
-                width: 26%;
-                transition: opacity 0.6s ease-in-out;
-                z-index: 1;
-                border-radius: 40px;
-                border: solid 3px #94428e;
-                opacity: 0;
-
-                .popup-text{
-                    text-wrap: balance;
-                    margin: 0 auto;
-                    font-size: 1.3rem;
-                }
-
+            .character-image-small {
+                margin-block: 2rem;
+                display: none;
+                justify-content: center;
+                img {width: max(40%, 13rem);}
             }
-
         }
+
         .character-image {
+            display: flex;
+            align-items: center;
             img {
-                width: 88%;
-            }
+                width: max(15rem, 16vw);
+                }
         }
     }
 
     .objective-container {
         height: min-content;
-        width: fit-content;
+        width: 100vw;
         display: flex;
-        gap: 6vw;
-        margin: 0 auto;
+        justify-content: center;
+        padding-inline: max(15vw, 5rem) max(2vw, 5rem);
+        margin-top: 10vh;
+        gap: 6rem;
 
         .objective-image {
             img {
-                width: 88%;
-            }
+                width: max(20rem, 25vw);
+                }
         }
 
         .objective-text {
-            margin-top: 12vh;
-            width: 40vw;
+            margin-block: auto;
+            width: 50%;
 
             .objective-description {
                 padding-top: 5%;
                 width: fit-content;
+                text-wrap: balance;
             }
 
-        
+            .objective-image-small {
+                margin-block: 2rem;
+                display: none;
+                justify-content: center;
+                img {width: min(60%, 23rem);}
+            }
         }
-        
+
     }
+}
+
+
+@media (width < 900px) {
+
+    .character-container, .objective-container {
+        padding-inline: 2rem !important;
+
+        .character-image, .objective-image {
+            display: none !important;
+        }
+        .character-image-small, .objective-image-small {
+            display: flex !important;
+        }
+        .character-text, .objective-text {
+            width: 100% !important;     
+        }
+        .character-description, .objective-description {
+            padding-inline: 1.5rem;
+            text-wrap: balance;
+            text-align: left;
+        }
+    }
+}
+
+@media (width > 400px) and (width < 900px) {
+    .character-container, .objective-container {
+        .character-description, .objective-description{
+            text-align: center;
+        }
+    } 
 }

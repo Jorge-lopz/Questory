@@ -14,27 +14,33 @@
 </head>
 
 <body>
-    <!-- HEADER -->
+    <div class="logo">
+        <a href="index.html" class="user-select-none">
+            <img src="assets/icons/logo/header_icon.png" draggable="false" width="55px" alt="logo"></a>
+    </div>
     <header>
-        <div>
-            <a href="index.html"><img src="assets/icons/logo/Icon.png" width="65px" alt="logo"></a>
-        </div>
+
 
         <div class="header-content">
-            <a class="header-item" href="#">Islands</a>
+            <!--<a class="header-item" href="#">Islands</a>
             <a class="header-item" href="progress.html">Progress</a>
             <a class="header-item" href="contact.html">Contact</a>
-            <a href="#"> <!-- TODO Should call the language switching function -->
-                <img class="header-item" id="language-icon" src="assets/icons/Language.png" width="35px" alt="Language">
-            </a>
-            <a href="#">
-                <img class="header-item" id="map-icon" src="assets/icons/Map.png" width="65px" alt="Map">
+            <a href="#">  TODO Should call the language switching function 
+            -->
+
+
             </a>
         </div>
-        <!-- <div id="mobile-menu-btn">
-            <img src="assets/icons/menu-icon.png" width="30px" alt="Menu">
-        </div> -->
     </header>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <a href="#">
+            <img class="user-select-none" draggable="false" id="map-icon" src="assets/icons/Map.png" width="65px"
+                alt="Map">
+        </a>
+    </footer>
 
     <!-- ACTUAL PAGE CONTENT -->
     <main>
@@ -46,42 +52,46 @@
         <!-- TODO Needs resposive adjustments -->
         <div class="intro-container">
             <!-- MAIN TITLE -->
-            <h2 class="intro-title">PREPARE FOR YOUR <br>NEXT ADVENTURE</h2>
+            <h2 class="intro-title">PREPARE&nbsp; FOR&nbsp; YOUR <br>NEXT&nbsp; ADVENTURE</h2>
 
             <!-- CHARACTER CONTAINER-->
             <div class="character-container">
 
                 <!-- CHAR TEXT -->
                 <div class="character-text">
-                    <p class="character-title gradient-text">This is
-                    </p>
+                    <p class="gradient-text">This is</p>
                     <input onfocus="showMessage();" type="text" size="7" aria-autocomplete="none" autocomplete="off"
                         placeholder="<YOU>" id="name-input" maxlength="12">
-
+                    <div class="character-image-small user-select-none">
+                        <img src="assets/images/Character.png" alt="Main character">
+                    </div>
                     <p class="character-description content-text">After waking up stranded in an unknown world, you
                         adventure through history and culture as you search for a way back home.
                     </p>
                 </div>
 
                 <!-- CHAR IMAGE -->
-                <div class="character-image">
+                <div class="character-image user-select-none">
                     <img src="assets/images/Character.png" alt="Main character">
                 </div>
-
             </div>
 
             <!-- OBJECTIVE CONTAINER -->
             <div class="objective-container">
 
                 <!-- OBJECTIVE IMAGE -->
-                <div class="objective-image">
+                <div class="objective-image user-select-none">
                     <img src="assets/images/Home.png" alt="Objective">
                 </div>
 
                 <!-- OBJECTIVE TEXT-->
                 <div class="objective-text">
-                    <p class="objective-title gradient-text">Your Objective
+                    <p class="objective-title gradient-text">Your <br>Objective
                     </p>
+
+                    <div class="objective-image-small user-select-none">
+                        <img src="assets/images/Home.png" alt="Objective">
+                    </div>
 
                     <p class="objective-description content-text">Uncover hidden secrets and solve puzzles as you
                         explore every island.
@@ -91,6 +101,23 @@
                 </div>
             </div>
         </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
 
     </main>
 
