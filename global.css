@@ -68,7 +68,6 @@ main {
   left: 1.5rem;
 }
 
-
 /*HEADER*/
 
 header {
@@ -80,38 +79,28 @@ header {
   inset: 0;
   height: min-content;
   z-index: 100;
-}
 
-
-.header-content {
-  font-family: 'Monomaniac One', 'Lexend', 'Arial', sans-serif;
-  overflow-x: hidden;
-  align-items: center;
-  display: flex;
-  gap: 2rem;
-  width: 100%;
-  margin-right: 1rem;
-  justify-content: right;
-}
-
-.header-item {
-  text-decoration: none;
-  color: black;
-  font-size: 1.4rem;
-  letter-spacing: 0.05em;
-  img{
-
+  .header-content {
+    font-family: 'Monomaniac One', 'Lexend', 'Arial', sans-serif;
+    overflow-x: hidden;
+    align-items: center;
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+    margin-right: 1rem;
+    justify-content: right;
+  }
+  
+  .header-item {
+    text-decoration: none;
+    color: black;
+    font-size: 1.4rem;
+    letter-spacing: 0.05em;
+    img{
+  
+    }
   }
 }
-
-img {
-  transform-origin: 60%;
-  margin-top: 7px;
-}
-/*BURGUER MENU*/
-
-
-
 
 /* FOOTER */
 
@@ -122,16 +111,20 @@ footer {
   img {
     filter: drop-shadow(0.15rem 0.15rem 0.1rem #00000020);
     position: relative;
-
   }
   &::before {
     content: "MAP";
     position: absolute;
     font-family: 'Lexend', 'Arial', sans-serif;
     font-size: 1.1rem;
-    top: 0;
+    top: 60%;
     left: 50%;
-    transform: translate(-52%, -100%);
+    transform: translate(-53%, -80%);
+    transition: 0.5s 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  &:hover::before {
+    transition-delay: 0s;
+    top: 0%;
   }
 }
 
@@ -153,7 +146,7 @@ footer {
 
 .section-title {
   margin: 0;
-  font-family: 'Paytone One', 'Lexend', 'Lexend', 'Arial', sans-serif;
+  font-family: 'Paytone One', 'Lexend', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 400;
   text-align: center;
@@ -167,8 +160,8 @@ footer {
     margin: 0;
     margin-bottom: -1%;
     text-align: center;
-    font-family: 'Paytone One', 'Lexend', 'Lexend', 'Arial', sans-serif;
-    font-size: clamp(2.8rem, 7vw, 4rem) !important;
+    font-family: 'Paytone One', 'Lexend', 'Arial', sans-serif;
+    font-size: clamp(2.5rem, 8vw, 4rem) !important;
     letter-spacing: 0.06em;
     line-height: 122%;
     background: linear-gradient(93.69deg, #35ADE1 1.5%, #4FA1D4 21.54%, #C579AC 50.38%, #DE4E9A 95.85%, #FF2F93 99.27%);
@@ -196,14 +189,6 @@ footer {
 
 .user-select-none{
   user-select: none;
-}
-
-/* CONTAINER QUERIES */
-
-@container (wisth <= 900px) { /* Hide header content inside the hamburguer menu */
-  .header-content {
-    color: red;
-  }
 }
 
 /* TODO */

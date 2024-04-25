@@ -3,11 +3,13 @@
 
     .intro-title {
         font-family: 'Paytone One', 'Lexend', 'Arial', sans-serif;
-        font-size: clamp(3.4rem, 8vw, 5.5rem) !important;
+        font-size: clamp(1.8rem, 8vw, 5rem) !important;
         text-align: center;
-        letter-spacing: 0.4rem;
+        letter-spacing: 0.3vw;
         font-weight: 100;
         line-height: 110%;
+        padding-inline: 3rem;
+        text-wrap: balance;
     }
 
     .character-container {
@@ -15,7 +17,7 @@
         width: 100%;
         display: flex;
         justify-content: center;
-        padding-inline: max(2vw, 5rem) max(5vw, 5rem);
+        padding-inline: max(2vw, 5rem) max(12vw, 5rem);
         gap: 6rem;
 
         .character-text {
@@ -58,7 +60,7 @@
                 margin-block: 2rem;
                 display: none;
                 justify-content: center;
-                img {width: max(40%, 13rem);}
+                img {width: max(40%, 10rem);}
             }
         }
 
@@ -78,12 +80,14 @@
         justify-content: center;
         padding-inline: max(15vw, 5rem) max(2vw, 5rem);
         margin-top: 10vh;
-        gap: 6rem;
+        gap: 4rem;
 
         .objective-image {
+            display: flex;
+            align-items: center;
             img {
                 width: max(20rem, 25vw);
-                }
+            }
         }
 
         .objective-text {
@@ -100,13 +104,12 @@
                 margin-block: 2rem;
                 display: none;
                 justify-content: center;
-                img {width: min(60%, 23rem);}
+                img {width: max(40%, 13rem);}
             }
         }
 
     }
 }
-
 
 @media (width < 900px) {
 
