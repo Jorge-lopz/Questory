@@ -1,7 +1,22 @@
+// LOGO 
+
+document.getElementById('logo').addEventListener('click', function () {
+    this.style.animation = 'none';
+    if (!this.children[0].classList.contains('rotating')) {
+        this.children[0].classList.add('rotating');
+    }
+    setTimeout(() => { this.style.animation = 'rotate360 0.8s cubic-bezier(.62,.31,.39,.98) forwards' }, 0);
+    setTimeout(() => { this.children[0].classList.remove('rotating') }, 400);
+
+});
+
+// HERO
+
+
+
 //FOOTER
 
 const mapIcon = document.getElementById('map-icon');
-
 const maxPulseDistance = mapIcon.width * 2.2;
 
 document.addEventListener('mousemove', handleMouseMove);

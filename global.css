@@ -65,7 +65,7 @@ main {
 
 /*LOGO*/
 
-.logo {
+#logo {
   position: fixed;
   top: 1rem;
   left: 1.5rem;
@@ -73,6 +73,15 @@ main {
 
   &:hover {
     transform: scale(1.1);
+  }
+}
+
+@keyframes rotate360 {
+  from {
+    transform: rotate(0deg);
+}
+  to {
+      transform: rotate(-360deg);
   }
 }
 
@@ -202,6 +211,7 @@ footer {
   position: relative;
 
   .hero-title {
+    pointer-events: none;
     position: absolute;
     object-fit: contain;
     width: 85%;
@@ -217,9 +227,27 @@ footer {
 .section-title{
 }
 
-a[title]:hover::after {
-  content: attr(title);
-  position: absolute;
-  top: -100%;
-  left: 0;
+a[tooltip]{
+  position: relative;
+  &::after {
+    content: attr(tooltip);
+    font-family: 'Lexend', 'Arial', sans-serif;
+    font-size: 0.9rem;
+    position: absolute;
+    background: radial-gradient(#ffffff50, #ffffff35);
+    backdrop-filter: blur(5px);
+    border-radius: 5px;
+    padding: 3px;
+    color: #000;
+    opacity: 0;
+    bottom: -100%;
+    left: 50%;
+    transform: translateX(-50%) ;
+    transition: 0.3s 0s ease-in-out;
+  }
+  &:not(.rotating):hover::after {
+    transition-duration: 0.8s;
+    transition-timing-function: cubic-bezier(1,-0.3,1,.92);
+    opacity: 1;
+  }
 }
