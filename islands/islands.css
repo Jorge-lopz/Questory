@@ -1,3 +1,41 @@
 
 /* GENERAL STYLES FOR ALL ISLANDS (USE SEPARATED CSS FILES FOR SPECIFIC STYLES) */
 
+.hero{
+   width: 80vw;
+   margin-inline: auto;
+
+    img{
+        object-fit: cover;
+        margin-top: 2rem;
+        border-radius: 9px;
+        width: 100%;
+        min-height: 288px;
+        max-height: 520px;
+    }
+
+    .stats{
+        display: flex;
+        margin-inline: auto;
+        padding-block: 0.2rem 0.5rem;
+        padding-inline: 1rem;
+
+        .sectrets-discovered{
+            font-family: "Monomaniac One";
+            margin-block: auto;
+            font-size: 1rem;
+        }
+
+        .time-played{
+            font-family: "Monomaniac One";
+            font-size: 0.7rem;
+        
+            margin-left: auto;
+        
+            margin-top: auto;
+        }
+    }
+ 
+    
+
+}

@@ -30,6 +30,7 @@ body {
     src: 
       url("assets/fonts/Monomaniac_One/MonomaniacOne-Regular.ttf") format("truetype");
   }
+  
 @font-face { 
     font-family: "Lexend";
     font-style: normal;
@@ -37,6 +38,7 @@ body {
     src: 
       url("assets/fonts/Lexend/Lexend-VariableFont_wght.ttf") format("truetype");
   }
+  
 @font-face { 
     font-family: "Paytone One";
     font-style: normal;
@@ -44,6 +46,7 @@ body {
     src: 
       url("assets/fonts/Paytone_One/PaytoneOne-Regular.ttf") format("truetype");
   }
+  
 @font-face { 
     font-family: "Nanum Pen";
     font-style: normal;
@@ -64,8 +67,13 @@ main {
 
 .logo {
   position: fixed;
-  top: 0.5rem;
+  top: 1rem;
   left: 1.5rem;
+  transition: 0.3s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 /*HEADER*/
@@ -117,15 +125,18 @@ footer {
     position: absolute;
     font-family: 'Lexend', 'Arial', sans-serif;
     font-size: 1.1rem;
+    opacity: 0;
     top: 60%;
     left: 50%;
     transform: translate(-53%, -80%);
-    transition: 0.5s 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
   &:hover::before {
+    opacity: 1;
     transition-delay: 0s;
-    top: 0%;
+    top: -10%;
   }
+  
 }
 
 /* Class for  map icon animation */
@@ -182,30 +193,33 @@ footer {
     margin: 0;
     font-family: 'Monomaniac One', 'Lexend', 'Arial', sans-serif;
     text-transform: uppercase;
-    font-size: 60px;
+    font-size: clamp(2.5rem, 8vw, 4rem) !important;
     text-align: center;
     color: black;
+}
+
+.hero-image {
+  position: relative;
+
+  .hero-title {
+    position: absolute;
+    object-fit: contain;
+    width: 85%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 .user-select-none{
   user-select: none;
 }
-
-/* TODO */
-/*BORRAR ESTO XD 
 .section-title{
-  background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff); /* Definir el degradado 
-  background-size: 200% 200%; /* Tamaño del degradado 
-  -webkit-background-clip: text; /* Aplicar degradado al texto 
-  -webkit-text-fill-color: transparent; /* Hacer el texto transparente 
-  animation: cambioColor 6s infinite; /* Animación de cambio de color cada 6 segundos 
 }
 
-@keyframes cambioColor {
-  0% {
-      background-position: 0% 50%; /* Posición inicial del degradado 
-  }
-  100% {
-      background-position: 100% 50%; /* Posición final del degradado 
-  
-} */
+a[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  top: -100%;
+  left: 0;
+}
