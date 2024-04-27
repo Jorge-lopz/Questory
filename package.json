@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "izitoast": "^1.4.0"
+    "izitoast": "^1.4.0",
+    "smoothscroll-for-websites": "^1.4.10"
   }
 }

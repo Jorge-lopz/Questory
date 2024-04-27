@@ -39,19 +39,33 @@ function adjustFontSize() {
   }
 }
 
-
-
 // NAME CHANGE INFORMATION POPUP
 
-// TODO -> Add logic to modify the notification position if the device is touch only 
-// (so that the keyboard is on-screen and covering the default bottom notification)
 function showMessage() {
   if (document.getElementById('name-input').value == "") {
-    iziToast.info({
-      message: 'The chosen name will also be used in-game',
-      position: 'bottomLeft',
-      backgroundColor: '#a7e1ff',
-      displayMode: 2
-    });
+    if (isPrimaryInputTouch()) {
+      iziToast.info({
+        message: 'The chosen name will also be used in-game',
+        position: 'topLeft',
+        backgroundColor: '#a7e1ff',
+        displayMode: 2
+      });
+    } else {
+      iziToast.info({
+        message: 'The chosen name will also be used in-game',
+        position: 'bottomLeft',
+        backgroundColor: '#a7e1ff',
+        displayMode: 2
+      });
+    }
   }
+}
+
+function isPrimaryInputTouch() {
+
+  const hasTouchEvents = 'ontouchstart' in window || navigator.maxTouchPoints > 0; // Checks if touch events have occurred
+  const hasCoarsePointer = window.matchMedia('(pointer: coarse)').matches; // Checks if any-pointer is coarse, associated with touch screens
+  const cannotHover = window.matchMedia('(hover: none)').matches; // Checks if the primary input method allows hover, which touch does not
+
+  return hasTouchEvents && hasCoarsePointer && cannotHover;
 }
