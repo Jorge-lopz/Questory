@@ -39,7 +39,8 @@
 }
 
 #golden-lock{
-filter: drop-shadow(#00000070 2px 2px 2px);
+	user-select: none;
+	filter: drop-shadow(#00000070 2px 2px 2px);
 }
 
 @keyframes heartBeat{
@@ -48,17 +49,8 @@ filter: drop-shadow(#00000070 2px 2px 2px);
  25% { transform: translateX(-5px) }
 }
 
-
-/*@keyframes heartBeat {
-	from, to {
-		transform: scale(1);
-	}
-	50% {
-		transform: scale(1.15);
-	}
-}*/
-
 .lock {
+	user-select: none;
 	margin-top: 5px;
 	height: 140px;
 	pointer-events: none;
