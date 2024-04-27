@@ -46,7 +46,7 @@ function showMessage() {
     if (isPrimaryInputTouch()) {
       iziToast.info({
         message: 'The chosen name will also be used in-game',
-        position: 'topLeft',
+        position: 'center',
         backgroundColor: '#a7e1ff',
         displayMode: 2
       });
