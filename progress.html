@@ -4,42 +4,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" href="assets/icons/logo/favicon.svg">
     <link rel="stylesheet" href="global.css">
     <link rel="stylesheet" href="progress.css">
+    <script src="global.js" defer></script>
     <script src="progress.js" defer></script>
+    <title>Progress | Questory</title>
 </head>
 
 <body>
 
+    <!-- Smooth Scrolling -->
+    <script src="SmoothScroll.js"></script>
+
+    <!-- HOME BUTTON (LOGO) -->
+    <div id="logo">
+        <a href="index.html" class="user-select-none" tooltip="Home">
+            <img src="../assets/icons/logo/header_icon.png" draggable="false" width="55px" alt="logo"></a>
+    </div>
+
     <!-- HEADER -->
-
-    <header>
-        <div>
-            <a href="index.html"><img src="assets/icons/logo/Icon.png" width="65px" alt="logo"></a>
-        </div>
-
-        <div class="home-header">
-            <a class="header-items" href="#">Islands</a>
-            <a class="header-items" href="progress.html">Progress</a>
-            <a class="header-items" href="contact.html">Contact</a>
-            <a href="contact.html"><img src="assets/icons/Language.png" width="35px" alt="Language"></a>
-            <a href="contact.html"><img src="assets/icons/Map.png" width="65px" alt="Map"></a>
+    <header id="header" class="">
+        <div class="header-content">
+            <a href="index.html#islands">Islands</a>
+            <a href="javascript:;">Progress</a>
+            <a href="contact.html">Contact</a>
+            <a href="#"> <!-- TODO Should call the language switching function  -->
+                <img src="../assets/icons/Language_en.png" width="35px" alt="Language">
+            </a>
         </div>
     </header>
 
-    <!-- MAIN -->
+    <!-- FOOTER -->
+    <footer>
+        <a href="index.html#"> <!-- TODO Should also open the map fullscreen -->
+            <img class="user-select-none" draggable="false" id="map-icon" src="../assets/icons/Map.png" width="65px"
+                alt="Map">
+        </a>
+    </footer>
 
+    <!-- ACTUAL PAGE CONTENT -->
     <main>
-        <section class="progress">
+        <div class="progress">
 
-            <h1 class="section-title">YOUR PROGRESS</h1>
+            <h1 class="page-title">YOUR PROGRESS</h1>
 
             <div class="progress-bar">
                 <h1>PROGRESS BAR</h1>
             </div>
 
-            <section class="progess-boxes">
+            <section class="progress-boxes">
 
                 <div class="box" id="box-1">
                     <img class="lock" id="lock-1" src="assets/icons/Lock.png" alt="lock">
@@ -82,22 +96,16 @@
 
             <section class="total-progress">
 
-
-
                 <div class="final-trophy">
                     <h1>FINAL TROPHY</h1>
 
-
                     <img class="lock" id="golden-lock" src="assets/icons/Golden_lock.png" alt="golden-lock">
 
-
                 </div>
-
             </section>
 
-
-
     </main>
+
 </body>
 
 </html>

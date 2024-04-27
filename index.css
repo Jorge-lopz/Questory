@@ -1,12 +1,13 @@
 .hero {
     margin-inline: auto;
-    max-width: 1200px;
     width: 80%;
 
-    img {
+    .map {
         object-fit: cover;
+        aspect-ratio: 16 / 7;
         width: 100%;
         border-radius: 9px;
+        object-fit: 50% 50%;
         min-height: 400px;
         max-height: 600px;
     }

@@ -1,17 +1,48 @@
-<!-- ACTUAL PAGE CONTENT -->
+<!DOCTYPE html>
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="assets/icons/logo/favicon.svg">
+    <link rel="icon" href="../assets/icons/logo/favicon.svg">
     <link rel="stylesheet" href="../global.css">
     <link rel="stylesheet" href="islands.css">
-    <link rel="stylesheet" href="/node_modules/izitoast/dist/css/iziToast.min.css">
-    <script src="/node_modules/izitoast/dist/js/iziToast.min.js" defer type="text/javascript"></script>
-    <title>Medieval</title>
+    <script src="../global.js" defer></script>
+    <title>Medieval | Islands</title>
 </head>
 
 <body>
+
+    <!-- Smooth Scrolling -->
+    <script src="../SmoothScroll.js"></script>
+
+    <!-- HOME BUTTON (LOGO) -->
+    <div id="logo">
+        <a href="../index.html" class="user-select-none" tooltip="Home">
+            <img src="../assets/icons/logo/header_icon.png" draggable="false" width="55px" alt="logo"></a>
+    </div>
+
+    <!-- HEADER -->
+    <header id="header" class="">
+        <div class="header-content">
+            <a href="../index.html#islands">Islands</a>
+            <a href="../progress.html">Progress</a>
+            <a href="../contact.html">Contact</a>
+            <a href="#"> <!-- TODO Should call the language switching function  -->
+                <img src="../assets/icons/Language_en.png" width="35px" alt="Language">
+            </a>
+        </div>
+    </header>
+
+    <!-- FOOTER -->
+    <footer>
+        <a href="#"> <!-- TODO Should start the game fullscreen -->
+            <img class="user-select-none" draggable="false" id="play-icon" src="../assets/icons/Controller.png"
+                width="55px" alt="Play">
+        </a>
+    </footer>
+
+    <!-- ACTUAL PAGE CONTENT -->
     <main>
 
         <!-- HERO -->
@@ -27,10 +58,8 @@
 
         </div>
 
-
-
-
     </main>
 
 </body>
-<main>
+
+</html>

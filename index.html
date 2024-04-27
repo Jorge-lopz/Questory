@@ -15,23 +15,27 @@
 </head>
 
 <body>
+
+    <!-- Smooth Scrolling -->
+    <script src="SmoothScroll.js"></script>
+
+    <!-- HOME BUTTON (LOGO) -->
     <div id="logo">
         <a href="#" class="user-select-none" tooltip="Home">
             <img src="assets/icons/logo/header_icon.png" draggable="false" width="55px" alt="logo"></a>
     </div>
-    <header>
 
-
+    <!-- HEADER --> <!-- TODO -> Responsiveness and hamburgeur menu on mobile and desktop -->
+    <header id="header" class="">
         <div class="header-content">
-            <!--<a class="header-item" href="#">Islands</a>
-            <a class="header-item" href="progress.html">Progress</a>
-            <a class="header-item" href="contact.html">Contact</a>
-            <a href="#">  TODO Should call the language switching function 
-            -->
+            <a href="#islands">Islands</a>
+            <a href="progress.html">Progress</a>
+            <a href="contact.html">Contact</a>
+            <a href="#"> <!-- TODO Should call the language switching function  -->
+                <img src="assets/icons/Language_en.png" width="35px" alt="Language">
             </a>
         </div>
     </header>
-
 
     <!-- FOOTER -->
     <footer>
@@ -47,11 +51,14 @@
         <!-- HERO -->
         <div class="hero">
             <div class="hero-image">
+                <div class="loader">
+                    <img id="loader-gif" src="assets/icons/Loading.gif" width="20px" height="20px">
+                    <h4 id="loader-state">Loading</h4>
+                </div>
                 <img class="hero-title user-select-none" src="assets/images/Questory.svg" alt="Questory">
-                <img class="user-select-none" src="assets/images/Hero.png" alt="Hero">
+                <img class="map user-select-none" src="assets/images/Hero.png" alt="Hero">
             </div>
         </div>
-
 
         <!-- INTRODUCTION -->
         <div class="intro-container">
@@ -104,6 +111,11 @@
 
                 </div>
             </div>
+        </div>
+
+        <!-- ISLANDS -->
+        <div class="islands-container" id="islands">
+
         </div>
 
         <br>

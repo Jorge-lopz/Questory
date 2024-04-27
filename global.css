@@ -70,6 +70,7 @@ main {
   top: 1rem;
   left: 1.5rem;
   transition: 0.3s;
+  z-index: 111;
 
   &:hover {
     transform: scale(1.1);
@@ -90,12 +91,14 @@ main {
 header {
   position: fixed;
   width: 100vw;
-  padding-inline: 1rem;
-  padding-block: 0.5rem;
+  padding: 1.5rem 1rem 0;
+  background: #fff;
+  height: min-content;
   display: flex;
   inset: 0;
-  height: min-content;
   z-index: 100;
+  transition: transform 0.3s cubic-bezier(.16,.92,.68,.97);
+  transform: translateY(0);
 
   .header-content {
     font-family: 'Monomaniac One', 'Lexend', 'Arial', sans-serif;
@@ -106,17 +109,27 @@ header {
     width: 100%;
     margin-right: 1rem;
     justify-content: right;
-  }
-  
-  .header-item {
-    text-decoration: none;
-    color: black;
-    font-size: 1.4rem;
-    letter-spacing: 0.05em;
-    img{
-  
+
+    a {
+      text-decoration: none;
+      color: black;
+      font-size: 1.4rem;
+      letter-spacing: 0.05em;
+      transform-origin: center;
+      transition: 0.3s;
+
+      img{
+        padding-top: 7px;
+      }
+
+      &:hover {
+        transform: scale3d(1.08, 1.08, 1.08);
+      }
     }
   }
+  &.hidden {
+    transform: translateY(-101%); 
+}
 }
 
 /* FOOTER */
@@ -207,8 +220,37 @@ footer {
     color: black;
 }
 
-.hero-image {
-  position: relative;
+.hero {
+
+  .hero-image {
+    position: relative;
+  }
+
+  .loader {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    background: #ffffff70;
+    backdrop-filter: blur(10px);
+    padding-inline: 0.7rem 1rem;
+    bottom: 18px;
+    left: 14px;
+    min-height: 37px;
+    max-height: 37px;
+
+    img {
+    }
+    
+    h4 {
+      margin: 0;
+      font-family: 'Lexend', 'Arial', sans-serif;
+      font-weight: 500;
+      font-size: 1.2rem;
+      transition: all 1s 0.5s;
+      padding-left: 0.7rem;
+    }
+  }
 
   .hero-title {
     pointer-events: none;
@@ -217,7 +259,15 @@ footer {
     width: 85%;
     top: 50%;
     left: 50%;
+    min-width: 300px;
     transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes hide {
+  to {
+    opacity: 0;
+    transform: scale(0);
   }
 }
 
