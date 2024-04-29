@@ -78,8 +78,6 @@ function adjustFontSize() {
   }
 }
 
-
-
 // NAME CHANGE INFORMATION POPUP
 
 function showMessage() {
@@ -111,6 +109,55 @@ function isPrimaryInputTouch() {
   return hasTouchEvents && hasCoarsePointer && cannotHover;
 }
 
+// ISLAND NAMES SLIDER OVERLAY
+function updatePseudoElementPosition() {
+  const rect = document.querySelector('.titles').getBoundingClientRect();
+  document.documentElement.style.setProperty('--pseudo-before-width', `${rect.width}px`);
+  document.documentElement.style.setProperty('--pseudo-before-left', `${rect.left}px`);
+  document.documentElement.style.setProperty('--pseudo-before-top', `${rect.top}px`);
+}
+window.addEventListener('DOMContentLoaded', updatePseudoElementPosition);
+window.addEventListener('resize', updatePseudoElementPosition);
+window.addEventListener('scroll', updatePseudoElementPosition);
+
+// ISLAND NAMES SLIDER DRAG CONTROLS
+let isDown = false;
+let startX;
+let scrollLeft;
+const slider = document.querySelector('.titles');
+
+const end = () => {
+  isDown = false;
+  slider.classList.remove('active');
+}
+
+const start = (e) => {
+  isDown = true;
+  slider.classList.add('active');
+  startX = e.pageX || e.touches[0].pageX - slider.offsetLeft;
+  scrollLeft = slider.scrollLeft;
+}
+
+const move = (e) => {
+  if (!isDown) return;
+
+  e.preventDefault();
+  const x = e.pageX || e.touches[0].pageX - slider.offsetLeft;
+  const dist = (x - startX);
+  slider.scrollLeft = scrollLeft - dist;
+}
+
+(() => {
+  slider.addEventListener('mousedown', start);
+  slider.addEventListener('touchstart', start);
+
+  slider.addEventListener('mousemove', move);
+  slider.addEventListener('touchmove', move);
+
+  slider.addEventListener('mouseleave', end);
+  slider.addEventListener('mouseup', end);
+  slider.addEventListener('touchend', end);
+})();
 
 /*<!DOCTYPE html>
 <html lang="en">

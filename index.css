@@ -6,7 +6,7 @@
         object-fit: cover;
         aspect-ratio: 16 / 7;
         width: 100%;
-        border-radius: 9px;
+        border-radius: 16px;
         object-fit: 50% 50%;
         min-height: 400px;
         max-height: 600px;
@@ -129,31 +129,48 @@
 }
 
     .islands-container{
+        overflow-x: hidden;
         margin-top: 6rem;
         margin-inline: 10vw;
+        padding: 1rem 2rem;
         background: linear-gradient(180deg, rgba(53, 173, 225, 0.028) 0%, rgba(0, 0, 0, 0) 100%), linear-gradient(292.61deg, rgba(247, 0, 208, 0.05) 0%, rgba(21, 185, 255, 0.05) 100%);
-        border-radius: 30px;        
+        border-radius: 16px;        
 
-
-        .titles{
-            inset-inline-start: -5rem;
+        .titles {
+            position: relative;
             display: flex;
             gap: 6rem;
-            overflow-x: scroll;
+            overflow-x: hidden;
             scroll-snap-type: x mandatory;
+            transition: 3s;
 
+            &::before {
+                content: "";
+                position: fixed;
+                top: var(--pseudo-before-top, 0);
+                left: var(--pseudo-before-left, 0);
+                pointer-events: none;
+                width: var(--pseudo-before-width);
+                height: 100px;
+                background: linear-gradient(to right, #eef9fd, transparent, transparent, transparent, transparent, #f8f1fc);
+            }
+                        
+            &.active {
+                cursor: grab;
+                scroll-snap-type: none;
+            }
 
-            li{
+            li {
                 scroll-snap-align: center;
                 list-style: none;
+                user-select: none;
             }
         }
 
         .content-container{
             display: flex;
-            
 
-            .information-container{
+            .information-container {
                 margin-block: auto 30%;
                 margin-inline: 5rem;
             }
