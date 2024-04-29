@@ -10,38 +10,52 @@
     display: flex;
 	justify-self: center;
 	flex-wrap: wrap;
-	padding-inline: 6%;
+	padding-inline: max(2rem, 8%);
 	text-align: center;
 	justify-content: center;
 	align-content: center;
+
+	.box {
+		aspect-ratio: 1;
+		width: 13rem;
+		margin: min(1.2rem, 3vw);
+		background-color: #D9D9D9;
+		align-content: center;
+		border-radius: 9px;
+	}
 }
 
-.box {
-	height: 13rem;
-	width: 13rem;
-	margin: 2% 2% 2% 2%;
-	background-color: #D9D9D9;
-	align-content: center;
-	border-radius: 9px;
+.total-progress {
+    display: flex;
+    align-items: center;
+	justify-content: center;
+	margin: 3% 10% 3% 10%;
+	text-align: center;
 }
 
-.total-progress{
+.progress-bar{
+	margin: 0 15% 0 15%;
+}
+
+.progress-8 {
 	
-}
-
-.progress-bar {
-	
-}
+	border-radius: 40%;
+	/* -webkit-mask:linear-gradient(0deg,#000 55%,#0000 0) bottom/100% 18.18%; */
+	background:
+	 linear-gradient(#b5bd44 0 0) bottom/100% 0% no-repeat
+	 #ddd;
+	animation:p8 2s infinite steps(12);
+  }
+  @keyframes p8 {
+	  100% {background-size:100% 115%}
+  }
 
 .final-trophy  {
-	text-align: center;
-	justify-content: center;
-}
+		text-align: center;
+		justify-content: center;
+		margin: 0 15% 0 15%;
+	}
 
-#golden-lock{
-	user-select: none;
-	filter: drop-shadow(#00000070 2px 2px 2px);
-}
 
 @keyframes heartBeat{
  from, 50%, to { transform: translateX(0) }
@@ -52,7 +66,7 @@
 .lock {
 	user-select: none;
 	margin-top: 5px;
-	height: 140px;
+	height: 70%;
 	pointer-events: none;
 	filter: drop-shadow(#00000070 2px 2px 2px);
 }
@@ -61,3 +75,14 @@
 	animation: heartBeat 1.5s infinite forwards;
 }
 
+#golden-lock{
+	height: min(20vw, 9rem);
+	
+}
+
+@media (width < 600px){
+
+	.box {
+		width: 30vw !important;
+	}
+}

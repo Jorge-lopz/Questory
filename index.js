@@ -7,8 +7,47 @@ document.getElementById('logo').addEventListener('click', function () {
   }
   setTimeout(() => { this.style.animation = 'rotate360 0.8s cubic-bezier(.62,.31,.39,.98) forwards' }, 0);
   setTimeout(() => { this.children[0].classList.remove('rotating') }, 400);
-
 });
+
+// HERO LOADER
+
+// document.getElementById('3d').addEventListener('load', loadedSpline)
+setTimeout(() => { // TODO -> Replace this setTimeout with the actual 3D loading detection above
+  loadedSpline()
+}, 3000)
+
+function loadedSpline() {
+
+  const loaderText = document.getElementById('loader-state');
+  const targetText = "Ready!";
+  let currentIndex = loaderText.innerText.length;
+  let removing = true; // Start by removing characters
+
+  function updateText() {
+
+    document.getElementById('loader-gif').style.animation = 'hide 0.8s ease-in forwards';
+    document.querySelector('.loader').style.paddingLeft = '1.1rem';
+    loaderText.style.marginLeft = '-2rem';
+
+    if (removing) {
+      currentIndex--;
+      loaderText.innerText = loaderText.innerText.slice(0, currentIndex);
+      setTimeout(updateText, 100); // Faster character removal speed
+      if (currentIndex <= 0) {
+        removing = false; // Switch to adding characters once all are removed
+      }
+    } else {
+      loaderText.innerText = targetText.slice(0, currentIndex);
+      currentIndex++;
+      setTimeout(updateText, 200); // Slower character addition speed
+      if (currentIndex > targetText.length) { //Extra actions when finished text animation
+        return;
+      }
+    }
+  }
+
+  updateText();
+}
 
 // NAME INPUT FONT SIZE
 
@@ -38,6 +77,8 @@ function adjustFontSize() {
     }
   }
 }
+
+
 
 // NAME CHANGE INFORMATION POPUP
 
@@ -69,3 +110,74 @@ function isPrimaryInputTouch() {
 
   return hasTouchEvents && hasCoarsePointer && cannotHover;
 }
+
+
+/*<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carousel with JavaScript</title>
+<style>
+  .carousel {
+    width: 100%;
+    overflow-x: scroll;
+    white-space: nowrap;
+    scroll-snap-type: x mandatory;
+    display: flex;
+  }
+
+  .item {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    max-width: 30%;
+    padding: 20px;
+    border: 1px solid #ccc;
+  }
+</style>
+</head>
+<body>
+<div class="carousel" id="carousel">
+  <div class="item">Slide 1</div>
+  <div class="item">Slide 2</div>
+  <div class="item">Slide 3</div>
+  <div class="item">Slide 3</div>
+  <div class="item">Slide 3</div>
+
+  <!-- Añade más elementos de deslizamiento según sea necesario -->
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const carousel = document.getElementById('carousel');
+
+  carousel.addEventListener('scroll', function() {
+    const containerWidth = carousel.offsetWidth;
+    const scrollLeft = carousel.scrollLeft;
+
+    var num = 500;
+    var num2 = -500;
+    var itemSelected;
+    document.querySelectorAll('.item').forEach(function(item) {
+      const rect = item.getBoundingClientRect();
+      const windowWidth = window.innerWidth;
+      var distanceToRightEdge = windowWidth - rect.right;
+      var distanceToLeftEdge = rect.left;
+      const distanceToEdge = distanceToRightEdge - distanceToLeftEdge;
+
+      item.style.backgroundColor = 'red';
+
+      if (distanceToLeftEdge > 0.2 * window.innerWidth && distanceToRightEdge > 0.2 * window.innerWidth) {
+      item.style.backgroundColor = 'blue';
+    }
+
+
+      
+    });
+  });
+});
+</script>
+</body>
+</html>
+
+*/

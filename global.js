@@ -2,6 +2,8 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     const header = document.getElementById('header');
+    const hamburgerButton = document.getElementById('hamburguer-button');
+    const hamburgerMenu = document.getElementById('menu');
     let lastScrollTop = 0; // Keep track of the last scroll position
 
     window.addEventListener('scroll', () => {
@@ -10,54 +12,32 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentScroll > lastScrollTop && currentScroll > 35) {
             // Scroll Down
             header.classList.add('hidden');
+            hamburgerButton.classList.add('visible');
         } else if (currentScroll < lastScrollTop && currentScroll < 35) {
             // Scroll Up
             header.classList.remove('hidden');
+            hamburgerButton.classList.remove('visible');
+            hamburgerMenu.style.display = "none"
         }
 
         lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
     });
 });
 
-// HERO LOADER
 
-// document.getElementById('3d').addEventListener('load', loadedSpline)
-setTimeout(() => { // TODO -> Replace this setTimeout with the actual 3D loading detection above
-    loadedSpline()
-}, 3000)
+//Burger Menu
+document.getElementById("hamburguer-button").addEventListener("click", () => {
+    const button = document.getElementById("hamburguer-button");
+    const menu = document.getElementById("menu");
+    if (menu.style.display == "none") {
+        menu.style.display = "block";
 
-function loadedSpline() {
+    } else {
+        menu.style.display = "none";
 
-    const loaderText = document.getElementById('loader-state');
-    const targetText = "Ready!";
-    let currentIndex = loaderText.innerText.length;
-    let removing = true; // Start by removing characters
-
-    function updateText() {
-
-        document.getElementById('loader-gif').style.animation = 'hide 0.8s ease-in forwards';
-        document.querySelector('.loader').style.paddingLeft = '1.1rem';
-        loaderText.style.marginLeft = '-2rem';
-
-        if (removing) {
-            currentIndex--;
-            loaderText.innerText = loaderText.innerText.slice(0, currentIndex);
-            setTimeout(updateText, 100); // Faster character removal speed
-            if (currentIndex <= 0) {
-                removing = false; // Switch to adding characters once all are removed
-            }
-        } else {
-            loaderText.innerText = targetText.slice(0, currentIndex);
-            currentIndex++;
-            setTimeout(updateText, 200); // Slower character addition speed
-            if (currentIndex > targetText.length) { //Extra actions when finished text animation
-                return;
-            }
-        }
     }
+});
 
-    updateText();
-}
 
 // FOOTER
 

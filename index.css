@@ -128,6 +128,39 @@
     }
 }
 
+    .islands-container{
+        margin-top: 6rem;
+        margin-inline: 10vw;
+        background: linear-gradient(180deg, rgba(53, 173, 225, 0.028) 0%, rgba(0, 0, 0, 0) 100%), linear-gradient(292.61deg, rgba(247, 0, 208, 0.05) 0%, rgba(21, 185, 255, 0.05) 100%);
+        border-radius: 30px;        
+
+
+        .titles{
+            inset-inline-start: -5rem;
+            display: flex;
+            gap: 6rem;
+            overflow-x: scroll;
+            scroll-snap-type: x mandatory;
+
+
+            li{
+                scroll-snap-align: center;
+                list-style: none;
+            }
+        }
+
+        .content-container{
+            display: flex;
+            
+
+            .information-container{
+                margin-block: auto 30%;
+                margin-inline: 5rem;
+            }
+        }
+
+    }
+
 @media (width < 900px) {
 
     .character-container, .objective-container {

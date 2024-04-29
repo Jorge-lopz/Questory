@@ -77,6 +77,61 @@ main {
   }
 }
 
+#hamburguer-button {
+  position: fixed;
+  top: 1.9rem;
+  right: -10%;
+  transition: 0.3s;
+  z-index: 111;
+
+  &.visible {
+    right: 1.9rem;
+  }
+}
+
+
+
+#menu {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 4.5%;
+  right: 5%;
+  width: 50%;
+  max-width: 300px;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 10px;
+  padding: 10px;
+  z-index: 110 ;
+  transition: right 0.3s ease;
+
+  
+  a {
+    font-family: "Monomaniac One";
+    text-decoration: none;
+    color: white;
+    font-size: 1.4rem;
+    letter-spacing: 0.05em;
+    transform-origin: center;
+    transition: color 0.3s, transform 0.3s; 
+}
+
+a:hover {
+    color: #ff9900; 
+    transform: scale(1.1); 
+}
+
+    
+  
+  &.visible {
+    right: 100.9rem;
+    background-color: rebeccapurple;
+  }
+
+  
+}
+
+
 @keyframes rotate360 {
   from {
     transform: rotate(0deg);
@@ -92,7 +147,6 @@ header {
   position: fixed;
   width: 100vw;
   padding: 1.5rem 1rem 0;
-  background: #fff;
   height: min-content;
   display: flex;
   inset: 0;
@@ -102,7 +156,7 @@ header {
 
   .header-content {
     font-family: 'Monomaniac One', 'Lexend', 'Arial', sans-serif;
-    overflow-x: hidden;
+    overflow: hidden;
     align-items: center;
     display: flex;
     gap: 2rem;
@@ -213,6 +267,7 @@ footer {
 
 .page-title {
     margin: 0;
+    padding-inline: 2rem;
     font-family: 'Monomaniac One', 'Lexend', 'Arial', sans-serif;
     text-transform: uppercase;
     font-size: clamp(2.5rem, 8vw, 4rem) !important;
@@ -274,6 +329,7 @@ footer {
 .user-select-none{
   user-select: none;
 }
+
 .section-title{
 }
 
@@ -299,5 +355,16 @@ a[tooltip]{
     transition-duration: 0.8s;
     transition-timing-function: cubic-bezier(1,-0.3,1,.92);
     opacity: 1;
+  }
+}
+
+/* Media query to show the header on mobile devices */
+@media (width < 600px) {
+    
+  header{
+      display: none;
+  }
+  #hamburguer-button {
+      right: 1.9rem !important;
   }
 }

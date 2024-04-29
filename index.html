@@ -21,12 +21,27 @@
 
     <!-- HOME BUTTON (LOGO) -->
     <div id="logo">
-        <a href="#" class="user-select-none" tooltip="Home">
+        <a href="javascript:;" class="user-select-none" tooltip="Home">
             <img src="assets/icons/logo/header_icon.png" draggable="false" width="55px" alt="logo"></a>
     </div>
 
+    <!-- HAMBURGUER BUTTON -->
+    <div id="hamburguer-button">
+        <a href="javascript:;" class="user-select-none">
+            <img src="assets/icons/hamburger_menu.png" draggable="false" width="30px" alt="menu"></a>
+    </div>
+    <!--DIV MENU-->
+    <div id="menu" style="display: none;">
+        <p><a href="#islands">Islands</a></p>
+        <p><a href="progress.html">Progress</a></p>
+        <p><a href="contact.html">Contact</a></p>
+        <a href="#"> <!-- TODO Should call the language switching function  -->
+            <img src="assets/icons/Language_en.png" width="35px" alt="Language">
+        </a>
+    </div>
+
     <!-- HEADER --> <!-- TODO -> Responsiveness and hamburguer menu on mobile and desktop -->
-    <header id="header" class="">
+    <header id="header">
         <div class="header-content">
             <a href="#islands">Islands</a>
             <a href="progress.html">Progress</a>
@@ -114,8 +129,30 @@
         </div>
 
         <!-- ISLANDS -->
-        <div class="islands-container" id="islands">
+        <div class="islands-container debug" id="islands">
+            <!-- TITLES -->
+            <ul class="titles">
+                <li class="section-title">CyberPunk</li>
+                <li class="section-title">CyberPunk</li>
+                <li class="section-title">CyberPunk</li>
+                <li class="section-title">CyberPunk</li>
+                <li class="section-title">CyberPunk</li>
+                <li class="section-title">CyberPunk</li>
+                <li class="section-title">CyberPunk</li>
+                <li class="section-title">CyberPunk</li>
+                <li class="section-title">CyberPunk</li>
+            </ul>
 
+            <div class="content-container">
+                <div class="image-container">
+                    <img src="assets/images/castillo.png" alt="">
+                </div>
+                <div class="information-container">
+                    <div class="">Quitar </div>
+                    <div class="content-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore,
+                        vitae?</div>
+                </div>
+            </div>
         </div>
 
         <br>
