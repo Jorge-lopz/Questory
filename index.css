@@ -141,8 +141,7 @@
             display: flex;
             gap: 6rem;
             overflow-x: hidden;
-            scroll-snap-type: x mandatory;
-            transition: 3s;
+            scroll-snap-type: x mandatory; /* TODO -> Smooth the snapping when dragging has stopped (Transitions don't work)*/
 
             &::before {
                 content: "";
@@ -157,7 +156,7 @@
                         
             &.active {
                 cursor: grab;
-                scroll-snap-type: none;
+                scroll-snap-type: none; /* Diable snap when dragging */
             }
 
             li {
