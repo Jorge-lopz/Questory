@@ -69,11 +69,20 @@ main {
   position: fixed;
   top: 1rem;
   left: 1.5rem;
-  transition: 0.3s;
+  transition: transform 0.3s;
   z-index: 111;
 
   &:hover {
     transform: scale(1.1);
+  }
+
+  & > a:focus {
+    outline: none;
+  }
+
+  &:has(a:focus) {
+    border: black 2px solid;
+    border-radius: 3px;
   }
 }
 
@@ -88,7 +97,6 @@ main {
     right: 1.9rem;
   }
 }
-
 
 
 #menu {
@@ -336,6 +344,7 @@ footer {
 a[tooltip]{
   position: relative;
   &::after {
+    z-index: -1;
     content: attr(tooltip);
     font-family: 'Lexend', 'Arial', sans-serif;
     font-size: 0.9rem;

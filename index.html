@@ -133,10 +133,11 @@
         <!-- ISLANDS -->
         <div class="islands-container" id="islands">
             <div class="glide">
-                <!-- <div data-glide-el="controls">
-                    <button data-glide-dir="<<">start</button>
-                    <button data-glide-dir=">>">end</button>
-                </div> -->
+                <div class="glide-controls" data-glide-el="controls">
+                    <button class="previous" data-glide-dir="<">
+                        < </button>
+                            <button class="next" data-glide-dir=">">></button>
+                </div>
                 <div class="glide__track" data-glide-el="track">
                     <ul class="glide__slides">
                         <!-- Should always have an odd number of islands -->
@@ -145,7 +146,19 @@
                         <li class="glide__slide island-name" style="--color: #CE6B4F">MEDIEVAL</li>
                         <li class="glide__slide island-name" style="--color: #00ff72">MYTHOLOGY</li>
                         <li class="glide__slide island-name" style="--color: #ffad00">MEXICO</li>
+                        <!-- Extra repeated slides to make it less possible for user to see the bugged skip between the last and first ones -->
+                        <li class="glide__slide island-name" style="--color: #d000ff">CYBERPUNK</li>
+                        <li class="glide__slide island-name" style="--color: #00bdff">PIRATE</li>
+                        <li class="glide__slide island-name" style="--color: #CE6B4F">MEDIEVAL</li>
+                        <li class="glide__slide island-name" style="--color: #00ff72">MYTHOLOGY</li>
+                        <li class="glide__slide island-name" style="--color: #ffad00">MEXICO</li>
+                        <li class="glide__slide island-name" style="--color: #d000ff">CYBERPUNK</li>
+                        <li class="glide__slide island-name" style="--color: #00bdff">PIRATE</li>
+                        <li class="glide__slide island-name" style="--color: #CE6B4F">MEDIEVAL</li>
+                        <li class="glide__slide island-name" style="--color: #00ff72">MYTHOLOGY</li>
+                        <li class="glide__slide island-name" style="--color: #ffad00">MEXICO</li>
                     </ul>
+
                 </div>
             </div>
 
