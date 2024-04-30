@@ -109,9 +109,36 @@ function isPrimaryInputTouch() {
   return hasTouchEvents && hasCoarsePointer && cannotHover;
 }
 
-// ISLAND NAMES SLIDER OVERLAY
+// ISLAND NAMES SLIDER
+
+const islandNames = document.querySelectorAll('.island-name');
+var slide = new Glide('.glide', {
+  type: 'slider', // I could use 'carousel' to make it loop seamlsessly, but it produces a weird glitch
+  animationDuration: 500,
+  focusAt: 'center',
+  startAt: islandNames.length / 2, // Always at the center
+  perView: window.innerWidth > 1000 ? 3 : 1,
+});
+const updateSelectedIsland = function () {
+  for (let i = 0; i < islandNames.length; i++) {
+    if (islandNames[i].classList.contains('selected'))
+      islandNames[i].classList.remove('selected');
+  };
+  islandNames[Math.abs(slide.index)].classList.add('selected');
+};
+slide.on('run', updateSelectedIsland) // Detect when selected name changes
+slide.mount(); // Builds the slider
+islandNames[Math.abs(slide.index)].classList.add('selected'); //Initial selection styling
+/* Add event listener for window resize */
+window.addEventListener('resize', function () {
+  slide.update({
+    perView: window.innerWidth > 1000 ? 3 : 1
+  });
+});
+
+// ISLAND NAMES SLIDER OVERLAY POSITION
 function updatePseudoElementPosition() {
-  const rect = document.querySelector('.titles').getBoundingClientRect();
+  const rect = document.querySelector('.glide').getBoundingClientRect();
   document.documentElement.style.setProperty('--pseudo-before-width', `${rect.width}px`);
   document.documentElement.style.setProperty('--pseudo-before-left', `${rect.left}px`);
   document.documentElement.style.setProperty('--pseudo-before-top', `${rect.top}px`);
@@ -119,45 +146,6 @@ function updatePseudoElementPosition() {
 window.addEventListener('DOMContentLoaded', updatePseudoElementPosition);
 window.addEventListener('resize', updatePseudoElementPosition);
 window.addEventListener('scroll', updatePseudoElementPosition);
-
-// ISLAND NAMES SLIDER DRAG CONTROLS
-let isDown = false;
-let startX;
-let scrollLeft;
-const slider = document.querySelector('.titles');
-
-const end = () => {
-  isDown = false;
-  slider.classList.remove('active');
-}
-
-const start = (e) => {
-  isDown = true;
-  slider.classList.add('active');
-  startX = e.pageX || e.touches[0].pageX - slider.offsetLeft;
-  scrollLeft = slider.scrollLeft;
-}
-
-const move = (e) => {
-  if (!isDown) return;
-
-  e.preventDefault();
-  const x = e.pageX || e.touches[0].pageX - slider.offsetLeft;
-  const dist = (x - startX);
-  slider.scrollLeft = scrollLeft - dist;
-}
-
-(() => {
-  slider.addEventListener('mousedown', start);
-  slider.addEventListener('touchstart', start);
-
-  slider.addEventListener('mousemove', move);
-  slider.addEventListener('touchmove', move);
-
-  slider.addEventListener('mouseleave', end);
-  slider.addEventListener('mouseup', end);
-  slider.addEventListener('touchend', end);
-})();
 
 /*<!DOCTYPE html>
 <html lang="en">
