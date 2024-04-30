@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "@glidejs/glide": "^3.6.0",
-    "izitoast": "^1.4.0",
-    "smoothscroll-for-websites": "^1.4.10"
-  }
-}
