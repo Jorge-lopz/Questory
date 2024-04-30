@@ -98,7 +98,6 @@ main {
   }
 }
 
-
 #menu {
   display: flex;
   flex-direction: column;
@@ -113,7 +112,6 @@ main {
   z-index: 110 ;
   transition: right 0.3s ease;
 
-  
   a {
     font-family: "Monomaniac One";
     text-decoration: none;
@@ -122,23 +120,19 @@ main {
     letter-spacing: 0.05em;
     transform-origin: center;
     transition: color 0.3s, transform 0.3s; 
-}
+  }
 
-a:hover {
-    color: #ff9900; 
-    transform: scale(1.1); 
-}
+  a:hover {
+      color: #ff9900; 
+      transform: scale(1.1); 
+  }
 
-    
-  
   &.visible {
     right: 100.9rem;
     background-color: rebeccapurple;
   }
 
-  
 }
-
 
 @keyframes rotate360 {
   from {
