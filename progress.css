@@ -50,12 +50,50 @@
 	  100% {background-size:100% 115%}
   }
 
-.final-trophy  {
-		text-align: center;
-		justify-content: center;
-		margin: 0 15% 0 15%;
-	}
+  @keyframes golden-lock-fill {
+	from {mask-position: 0 135px;}
+	to {mask-position: 0 -10px;}
+  }
 
+.final-trophy  {
+	text-align: center;
+	justify-content: center;
+	margin: 0 15% 0 15%;
+
+	.golden-lock-container {
+		position: relative;
+
+		#golden-lock {
+			-webkit-mask-image: url('assets/icons/waves.svg#waveMask');
+			mask-image: url('assets/icons/waves.svg#waveMask');
+			mask-size: cover;
+			mask-repeat: no-repeat;
+			mask-position: 0 138px; /* Limit value for an empty lock */
+			transition: mask-position 2s ease-in-out;
+			user-select: none;
+			margin-top: 5px;
+			height: min(20vw, 9rem);
+
+			&:hover{
+				mask-position: 0 -12px; /* Limit value for a full golden lock */
+			}
+		}
+		&::before {
+			content: "";
+			background: url("assets/icons/Lock (B&W).png");
+			background-size: contain;
+			background-repeat: no-repeat;
+			position: absolute;
+			inset: 0;
+			opacity: 0.7;
+			margin-top: 5px;
+			width: 100%;
+			height: 100%;
+			filter: drop-shadow(#00000050 2px 2px 2px);
+		}
+	}
+	
+}
 
 @keyframes heartBeat{
  from, 50%, to { transform: translateX(0) }
@@ -73,11 +111,6 @@
 
 .lock-icon-animation {
 	animation: heartBeat 1.5s infinite forwards;
-}
-
-#golden-lock{
-	height: min(20vw, 9rem);
-	
 }
 
 @media (width < 600px){

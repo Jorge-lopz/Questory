@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 240">
+    <defs>
+        <mask id="waveMask">
+            <rect x="0" y="0" width="120" height="240" fill="black"/>
+            <path
+                d="M-40 10 Q-30 5 -20 10 T0 10 T20 10 T40 10 T60 10 T80 10 T100 10 T120 10 V240 H-40z"
+                fill="white">
+                <!-- The fourth number represents the wave intensity -->
+                <animateTransform attributeName="transform" begin="0s" dur="2s" type="translate"
+                    from="0,0" to="40,0" repeatCount="indefinite" />
+            </path>
+        </mask>
+    </defs>
+    <!-- This rectangle is an example to apply the mask to -->
+    <rect x="0" y="0" width="100%" height="100%" mask="url(#waveMask)" fill="grey"/>
+</svg>
