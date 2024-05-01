@@ -112,13 +112,17 @@ function isPrimaryInputTouch() {
 // ISLAND NAMES SLIDER
 
 const islandNames = document.querySelectorAll('.island-name');
+const islandsContainer = document.querySelector('.islands-container');
+
 var slide = new Glide('.glide', {
   type: 'carousel', // I could use 'carousel' to make it loop seamlsessly, but it produces a weird glitch
   animationDuration: 300,
   focusAt: 'center',
   startAt: islandNames.length / 2, // To start at the center
+  keyboard: false,
   perView: window.innerWidth > 1000 ? 3 : 1,
 });
+
 const updateSelectedIsland = function () {
   for (let i = 0; i < islandNames.length; i++) {
     if (islandNames[i].classList.contains('selected'))
@@ -126,9 +130,24 @@ const updateSelectedIsland = function () {
   };
   islandNames[Math.abs(slide.index)].classList.add('selected');
 };
+
 slide.on('run', updateSelectedIsland) // Detect when selected name changes
 slide.mount(); // Builds the slider
+
 islandNames[Math.abs(slide.index)].classList.add('selected'); //Initial selection styling
+
+// Function to handle keyboard navigation
+function handleKeyboardNavigation(event) {
+  if (event.keyCode === 37) { // <-
+    slide.go('<');
+  } else if (event.keyCode === 39) { // ->
+    slide.go('>');
+  }
+}
+
+islandsContainer.addEventListener('mouseover', () => { document.addEventListener('keydown', handleKeyboardNavigation); });
+islandsContainer.addEventListener('mouseout', () => { document.removeEventListener('keydown', handleKeyboardNavigation); });
+
 /* Add event listener for window resize */
 window.addEventListener('resize', function () {
   slide.update({
