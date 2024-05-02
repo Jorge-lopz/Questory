@@ -123,11 +123,14 @@ var slide = new Glide('.glide', {
   perView: window.innerWidth > 1000 ? 3 : 1,
 });
 
+/* STILL INCOMPLETE, BUT I KNOW HOW TO DO IT (BOTH HTML AND JS). I'LL DO IT TOMORROW - Jorge */
 const updateSelectedIsland = function () {
+  // Remove selected class to all island names
   for (let i = 0; i < islandNames.length; i++) {
     if (islandNames[i].classList.contains('selected'))
       islandNames[i].classList.remove('selected');
   };
+  // Add selected class to the currrently selected island
   islandNames[Math.abs(slide.index)].classList.add('selected');
 };
 
@@ -165,73 +168,3 @@ function updatePseudoElementPosition() {
 window.addEventListener('DOMContentLoaded', updatePseudoElementPosition);
 window.addEventListener('resize', updatePseudoElementPosition);
 window.addEventListener('scroll', updatePseudoElementPosition);
-
-/*<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Carousel with JavaScript</title>
-<style>
-  .carousel {
-    width: 100%;
-    overflow-x: scroll;
-    white-space: nowrap;
-    scroll-snap-type: x mandatory;
-    display: flex;
-  }
-
-  .item {
-    flex: 0 0 100%;
-    scroll-snap-align: center;
-    max-width: 30%;
-    padding: 20px;
-    border: 1px solid #ccc;
-  }
-</style>
-</head>
-<body>
-<div class="carousel" id="carousel">
-  <div class="item">Slide 1</div>
-  <div class="item">Slide 2</div>
-  <div class="item">Slide 3</div>
-  <div class="item">Slide 3</div>
-  <div class="item">Slide 3</div>
-
-  <!-- Añade más elementos de deslizamiento según sea necesario -->
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const carousel = document.getElementById('carousel');
-
-  carousel.addEventListener('scroll', function() {
-    const containerWidth = carousel.offsetWidth;
-    const scrollLeft = carousel.scrollLeft;
-
-    var num = 500;
-    var num2 = -500;
-    var itemSelected;
-    document.querySelectorAll('.item').forEach(function(item) {
-      const rect = item.getBoundingClientRect();
-      const windowWidth = window.innerWidth;
-      var distanceToRightEdge = windowWidth - rect.right;
-      var distanceToLeftEdge = rect.left;
-      const distanceToEdge = distanceToRightEdge - distanceToLeftEdge;
-
-      item.style.backgroundColor = 'red';
-
-      if (distanceToLeftEdge > 0.2 * window.innerWidth && distanceToRightEdge > 0.2 * window.innerWidth) {
-      item.style.backgroundColor = 'blue';
-    }
-
-
-      
-    });
-  });
-});
-</script>
-</body>
-</html>
-
-*/

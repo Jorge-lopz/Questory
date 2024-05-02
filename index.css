@@ -147,7 +147,7 @@
             left: var(--pseudo-before-left, 0);
             pointer-events: none;
             width: var(--pseudo-before-width);
-            height: 100px;
+            height: 60px;
             background: linear-gradient(to right, #eef9fd, transparent, transparent, transparent, #f8f1fc);
         }
 
@@ -163,7 +163,7 @@
                 font-family: "Lexend", "Arial", sans-serif;
                 cursor: pointer;
                 font-weight: 900;
-                opacity: 0.3;
+                opacity: 0.25;
                 font-size: clamp(1.5rem,8vw,3rem);
                 transition: 0.3s;
                 
@@ -200,12 +200,19 @@
         }
     }
 
-    .content-container{
+    .content-containers {
         display: flex;
+        overflow: hidden;
 
-        .information-container {
-            margin-block: auto 30%;
-            margin-inline: 5rem;
+        .content {
+            min-width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 2.5rem 3rem;
+
+            .information-container {
+                margin-inline: 5rem;
+            }
         }
     }
 
