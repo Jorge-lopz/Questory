@@ -130,9 +130,10 @@
 
 .islands-container{
     overflow-x: hidden;
-    margin-top: 6rem;
+    margin-block: 6rem 6rem;
     margin-inline: 10vw;
     padding: 1rem 2rem;
+    min-height: 525px;
     background: linear-gradient(180deg, rgba(53, 173, 225, 0.028) 0%, rgba(0, 0, 0, 0) 100%), linear-gradient(292.61deg, rgba(247, 0, 208, 0.05) 0%, rgba(21, 185, 255, 0.05) 100%);
     border-radius: 16px;        
 
@@ -147,7 +148,7 @@
             left: var(--pseudo-before-left, 0);
             pointer-events: none;
             width: var(--pseudo-before-width);
-            height: 60px;
+            height: 70px;
             background: linear-gradient(to right, #eef9fd, transparent, transparent, transparent, #f8f1fc);
         }
 
@@ -206,9 +207,14 @@
 
         .content {
             min-width: 100%;
-            display: flex;
+            display: none;
             align-items: center;
             padding: 2.5rem 3rem;
+            
+            &.selected {
+                display: flex;
+                opacity: 1;
+            }
 
             .information-container {
                 margin-inline: 5rem;

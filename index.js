@@ -112,6 +112,7 @@ function isPrimaryInputTouch() {
 // ISLAND NAMES SLIDER
 
 const islandNames = document.querySelectorAll('.island-name');
+const islandsContent = document.querySelectorAll('.content');
 const islandsContainer = document.querySelector('.islands-container');
 
 var slide = new Glide('.glide', {
@@ -125,19 +126,21 @@ var slide = new Glide('.glide', {
 
 /* STILL INCOMPLETE, BUT I KNOW HOW TO DO IT (BOTH HTML AND JS). I'LL DO IT TOMORROW - Jorge */
 const updateSelectedIsland = function () {
+  console.log(Math.abs(slide.index));
   // Remove selected class to all island names
-  for (let i = 0; i < islandNames.length; i++) {
-    if (islandNames[i].classList.contains('selected'))
-      islandNames[i].classList.remove('selected');
-  };
+  islandNames.forEach(islandName => { islandName.classList.remove('selected'); });
   // Add selected class to the currrently selected island
   islandNames[Math.abs(slide.index)].classList.add('selected');
+
+  islandsContent.forEach(islandContent => { islandContent.classList.remove('selected'); });
+  islandsContent[Math.abs(slide.index) < 5 ? Math.abs(slide.index) : (Math.abs(slide.index % 5))].classList.add('selected');
 };
 
 slide.on('run', updateSelectedIsland) // Detect when selected name changes
 slide.mount(); // Builds the slider
 
 islandNames[Math.abs(slide.index)].classList.add('selected'); //Initial selection styling
+islandsContent[Math.abs(slide.index) < 5 ? Math.abs(slide.index) : (Math.abs(slide.index % 5))].classList.add('selected'); //Initial selection styling
 
 // Function to handle keyboard navigation
 function handleKeyboardNavigation(event) {
