@@ -207,13 +207,24 @@
 
         .content {
             min-width: 100%;
-            display: none;
             align-items: center;
+            display: none;
             padding: 2.5rem 3rem;
+            animation: disappear 1s forwards;
             
+            .image-container {
+                opacity: 1;
+                animation: disappear 1s forwards;
+            }
+
             &.selected {
                 display: flex;
-                opacity: 1;
+                animation: appear 1s forwards;
+
+                .image-container {
+                    opacity: 0;
+                    animation: appear 1s 0.15s forwards;
+                }
             }
 
             .information-container {
@@ -222,6 +233,16 @@
         }
     }
 
+}
+
+@keyframes appear {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+@keyframes disappear {
+    from {opacity: 1}
+    75% {opacity: 0}
+    to {opacity: 0; display: none;}
 }
 
 @media (width < 900px) {
