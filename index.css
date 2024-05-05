@@ -72,13 +72,13 @@
                     opacity: 0;
                 }
             }
+        }
 
-            .character-image-small {
-                margin-block: 2.5rem 1rem;
-                display: none;
-                justify-content: center;
-                img {width: max(40%, 10rem);}
-            }
+        .character-image-small {
+            margin-block: 2.5rem 2rem;
+            display: none;
+            justify-content: center;
+            img {width: max(40%, 10rem);}
         }
 
         .character-image {
@@ -107,6 +107,13 @@
             }
         }
 
+        .objective-image-small {
+            margin-block: 3.5rem 2.5rem;
+            display: none;
+            justify-content: center;
+            img {width: max(40%, 13rem);}
+        }
+
         .objective-text {
             margin-block: auto;
             width: 50%;
@@ -116,19 +123,12 @@
                 width: fit-content;
                 text-wrap: balance;
             }
-
-            .objective-image-small {
-                margin-block: 3.5rem 0.5rem;
-                display: none;
-                justify-content: center;
-                img {width: max(40%, 13rem);}
-            }
         }
 
     }
 }
 
-.islands-container{
+.islands-container {
     overflow-x: hidden;
     margin-block: 6rem 6rem;
     margin-inline: 10vw;
@@ -149,15 +149,17 @@
             pointer-events: none;
             width: var(--pseudo-before-width);
             height: 70px;
-            background: linear-gradient(to right, #eef9fd, transparent, transparent, transparent, #f8f1fc);
+            background: linear-gradient(to right, #eef9fd, #eef9fdee, transparent, transparent, transparent, #f8f1fcee, #f8f1fc);
         }
 
         .glide-controls {
             position: relative;
             height: fit-content;
+            user-select: none;
             .previous, .next {
                 z-index: 1;
-                margin-top: 0.65%;
+                margin-top: -0.16rem;
+                height: 80px;
                 position: absolute;
                 background: transparent;
                 border: none;
@@ -193,7 +195,7 @@
         }
         .selected {
             color: var(--color);
-            font-size: clamp(2rem, 8vw, 3.5rem);
+            font-size: clamp(1.25rem, 7vw, 3.5rem);
             transition: color 0.3s, font-size 0.3s;
             & + .island-name, .island-name:has(+ &) {
                 font-size: clamp(1.5rem, 8vw, 2.5rem);
@@ -204,21 +206,21 @@
     .content-containers {
         display: flex;
         overflow: hidden;
+        align-items: center;
 
         .content {
+            position: relative;
             min-width: 100%;
             align-items: center;
             display: none;
-            padding: 2.5rem 3rem;
+            padding-block: 2.5rem;
             animation: disappear 1s forwards;
-            
-            .image-container {
-                opacity: 1;
-                animation: disappear 1s forwards;
-            }
 
             &.selected {
                 display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 2rem;
                 animation: appear 1s forwards;
 
                 .image-container {
@@ -226,9 +228,56 @@
                     animation: appear 1s 0.15s forwards;
                 }
             }
+            
+            .image-container {
+                position: relative;
+                opacity: 1;
+                padding-left: 1rem;
+                animation: disappear 1s forwards;
+                max-width: 350px !important;
+                width: 30%;
+
+                img {
+                    width: 100%;
+                }
+            }
 
             .information-container {
-                margin-inline: 5rem;
+                position: relative;
+                margin-inline: 2rem;
+                max-width: 50%;
+                width: 100%;
+                flex-grow: 1;
+
+                .stats-container {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    margin-block: 0 2rem;
+                    font-family: 'Lexend', 'Arial', sans-serif;
+                    font-size: clamp(1rem, 3vw, 1.6rem);
+                    font-weight: 500;
+                    gap: 2rem;
+
+                    .time, .temperature {
+                        width: fit-content;
+                        width: -moz-fit-content;
+                        display: flex;
+                        align-items: center;
+                        position: relative;
+
+                        img {
+                            width: 95%;
+                            max-width: 45px;
+                            margin-right: 0.3rem;
+                        }
+                    }
+                }
+
+                .story-container {
+                    font-size: clamp(1.2rem, 4vw, 1.25rem);
+                    font-weight: 400;
+                }
             }
         }
     }
@@ -243,6 +292,40 @@
     from {opacity: 1}
     75% {opacity: 0}
     to {opacity: 0; display: none;}
+}
+
+@media (width > 1000px) and (width < 1450px){
+
+    .glide .island-name {
+        min-width: 10ch;
+        padding-right: 20px;
+    }
+}
+
+@media (width < 1000px) {
+
+    .glide::after{
+        content: none !important
+    }
+
+    .glide-controls {
+        .previous, .next {
+            opacity: 0.8 !important;
+        }
+    }
+
+    .content {
+
+        .image-container {
+            padding-left: unset !important;
+            width: 90% !important;
+            margin-block: -2rem;    
+        }
+        .information-container {
+            margin-block: 1rem;
+            max-width: 90% !important;
+        }
+    }
 }
 
 @media (width < 900px) {

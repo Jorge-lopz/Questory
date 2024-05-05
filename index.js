@@ -124,9 +124,7 @@ var slide = new Glide('.glide', {
   perView: window.innerWidth > 1000 ? 3 : 1,
 });
 
-/* STILL INCOMPLETE, BUT I KNOW HOW TO DO IT (BOTH HTML AND JS). I'LL DO IT TOMORROW - Jorge */
 const updateSelectedIsland = function () {
-  console.log(Math.abs(slide.index));
   // Remove selected class to all island names
   islandNames.forEach(islandName => { islandName.classList.remove('selected'); });
   // Add selected class to the currrently selected island
@@ -164,8 +162,8 @@ window.addEventListener('resize', function () {
 // ISLAND NAMES SLIDER OVERLAY POSITION
 function updatePseudoElementPosition() {
   const rect = document.querySelector('.glide').getBoundingClientRect();
-  document.documentElement.style.setProperty('--pseudo-before-width', `${rect.width}px`);
-  document.documentElement.style.setProperty('--pseudo-before-left', `${rect.left}px`);
+  document.documentElement.style.setProperty('--pseudo-before-width', `${rect.width + 4}px`);
+  document.documentElement.style.setProperty('--pseudo-before-left', `${rect.left - 2}px`);
   document.documentElement.style.setProperty('--pseudo-before-top', `${rect.top}px`);
 }
 window.addEventListener('DOMContentLoaded', updatePseudoElementPosition);
