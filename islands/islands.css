@@ -23,19 +23,99 @@
         .sectrets-discovered{
             font-family: "Monomaniac One";
             margin-block: auto;
-            font-size: 1rem;
+            font-size: clamp(1rem, 2vw, 2.5rem);
         }
 
         .time-played{
             font-family: "Monomaniac One";
-            font-size: 0.7rem;
+            font-size: clamp(1rem, 1.5vw, 2rem);
         
             margin-left: auto;
-        
             margin-top: auto;
         }
+        
     }
- 
-    
 
+    .island-description{
+        margin-top: 2vw;
+        margin-inline: max(1rem, 7vw);
+        p{
+            font-size: clamp(1.1rem, 1.6vw, 2.2rem);
+            text-wrap: balance;
+        }
+
+    }
+
+}
+
+.story-container{
+    margin-top: 5vw;
+
+    .gradient-text{
+        margin-inline: auto;
+    }
+
+    .characters{
+        margin-top: 5vw;
+        display: flex;
+        justify-content: space-between;
+        margin-inline: max(2rem, 10vw);
+        position: relative;
+
+        img{
+            height: 25vw;
+            position: sticky;
+            top: 200px;
+        }
+
+            
+    }
+
+    .speech-bubbles{
+
+
+
+        max-width: 550px;
+        margin: 0 auto;
+        .bubble {
+        background-color: #e0e5ec;
+        color: black;
+        font-weight: bold;
+        box-shadow: -8px -8px 20px 0px #fff9, -6px -6px 6px 0px #fff9,
+        8px 8px 20px 0px #0001, 5px 5px 10px 10px #0001, inset 0px 0px 0px 0px #fff9,
+        inset 0px 0px 0px 0px #0001, inset 0px 0px 0px 0px #fff9,
+        inset 0px 0px 0px 0px #0001;
+         font-size: 1.2em;
+         line-height: 2;
+      border-radius: 10px;
+            padding: 2px 20px;
+      margin-top: 60px;
+    
+            &:nth-child(1) {
+                border-left: 10px solid orange;
+            }
+    
+            &:nth-child(1):after {
+                content: "";
+                position: absolute;
+                width: 50px;
+                height: 30px;
+                clip-path: polygon(100% 0, 0% 100%, 0 0);
+                background-color: #e0e5ec;
+            }
+    }
+
+}
+
+@media (width < 600px){
+
+	.time-played {
+		margin-top: none !important; 
+        margin-block: auto;
+
+	}
+}
+
+@keyframes speak{
+    opacity: 1;
 }

@@ -52,6 +52,7 @@ function loadedSpline() {
 // NAME INPUT FONT SIZE
 
 document.getElementById('name-input').addEventListener('input', adjustFontSize);
+document.getElementById('name-input').addEventListener('blur', showMessage);
 
 function adjustFontSize() {
   let fontSize = parseFloat(window.getComputedStyle(this, null).getPropertyValue('font-size'));
@@ -82,13 +83,9 @@ function adjustFontSize() {
 
 function showMessage() {
   if (document.getElementById('name-input').value == "") {
+
     if (isPrimaryInputTouch()) {
-      iziToast.info({
-        message: 'The chosen name will also be used in-game',
-        position: 'center',
-        backgroundColor: '#a7e1ff',
-        displayMode: 2
-      });
+      showMessageInputTouch();
     } else {
       iziToast.info({
         message: 'The chosen name will also be used in-game',
@@ -98,6 +95,15 @@ function showMessage() {
       });
     }
   }
+}
+
+function showMessageInputTouch() {
+  iziToast.info({
+    message: 'The chosen name will also be used in-game',
+    position: 'center',
+    backgroundColor: '#a7e1ff',
+    displayMode: 2
+  });
 }
 
 function isPrimaryInputTouch() {
@@ -119,7 +125,7 @@ var slide = new Glide('.glide', {
   type: 'carousel', // I could use 'carousel' to make it loop seamlsessly, but it produces a weird glitch
   animationDuration: 300,
   focusAt: 'center',
-  startAt: islandNames.length / 2, // To start at the center
+  startAt: islandNames.length / 2 - 2, // To start at the center
   keyboard: false,
   perView: window.innerWidth > 1000 ? 3 : 1,
 });
