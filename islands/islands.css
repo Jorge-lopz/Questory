@@ -48,6 +48,56 @@
 
 }
 
+/*LOADER*/
+
+.loader {
+    position: fixed;
+    z-index: 999999999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: rgba(255, 255, 255); 
+    justify-content: center;
+    align-items: center;
+    
+    animation: fadeOut 2s 4s forwards;
+    p {
+        font-size: 8rem;
+        font-family: "Monomaniac One";
+         color: black;
+        text-align: center; 
+        justify-content: center;
+        align-items: center;
+        span{
+            font-size: 15rem;
+            background-image: linear-gradient(to right, red, orange, yellow); 
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        }
+      }
+  }
+  
+   
+  
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      display: none;
+    }
+  }
+  
+  
+  
+  
+  
+  
+
 .story-container {
     margin-top: 5vw;
 
@@ -61,6 +111,8 @@
         justify-content: space-between;
         margin-inline: max(2rem, 10vw);
         position: relative;
+
+        height: 500vw;
 
         img {
             height: 25vw;

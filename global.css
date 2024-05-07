@@ -102,11 +102,12 @@ main {
   display: flex;
   flex-direction: column;
   position: fixed;
-  top: 4.5%;
-  right: 5%;
+  top: 5rem;
+  right: -100rem;
   width: 50%;
   max-width: 300px;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: #141414bb;
+  backdrop-filter: blur(10px);
   border-radius: 10px;
   padding: 10px;
   z-index: 110 ;
@@ -128,10 +129,9 @@ main {
   }
 
   &.visible {
-    right: 100.9rem;
+    right: 1rem;
     background-color: rebeccapurple;
   }
-
 }
 
 @keyframes rotate360 {

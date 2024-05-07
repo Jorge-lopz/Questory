@@ -32,8 +32,6 @@ function mouseoutbox(event) {
   });
 };
 
-
-
 const progress = document.querySelector(".progress");
 
 progress.addEventListener("load", () => {
