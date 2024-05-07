@@ -125,7 +125,7 @@ var slide = new Glide('.glide', {
   type: 'carousel', // I could use 'carousel' to make it loop seamlsessly, but it produces a weird glitch
   animationDuration: 300,
   focusAt: 'center',
-  startAt: islandNames.length / 2 - 2, // To start at the center
+  startAt: islandNames.length / 2, // To start at the center
   keyboard: false,
   perView: window.innerWidth > 1000 ? 3 : 1,
 });

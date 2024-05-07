@@ -12,7 +12,7 @@
 			--progress: 50%;
 			max-width: 520px;
 			width: 70%;
-			height: 50px;
+			height: 57px;
 			margin-left: 35%;
 			border: solid 3px rgba(0, 0, 0, 0.638);
 			background: #dedede;
@@ -49,6 +49,14 @@
 		padding-inline: 20%;
 		justify-content: right;
 		align-items: center;
+
+		#final-trophy-text{
+			text-align: center;
+			text-wrap: balance;
+			min-width: 200px;
+			margin-right: 2rem;
+			font-size: clamp(0.8rem, 1.5vw, 1.5rem);
+		}
 
 		.final-trophy  {
 			margin-left: 0;
