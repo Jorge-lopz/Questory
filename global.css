@@ -72,6 +72,10 @@ main {
   transition: transform 0.3s;
   z-index: 111;
 
+  a {
+    user-select: none;
+  }
+
   &:hover {
     transform: scale(1.1);
   }
@@ -92,6 +96,10 @@ main {
   right: -10%;
   transition: 0.3s;
   z-index: 111;
+
+  a {
+    user-select: none;
+  }
 
   &.visible {
     right: 1.9rem;
@@ -194,7 +202,9 @@ footer {
   position: fixed;
   bottom: 1.2rem;
   right: 2rem;
+
   img {
+    user-select: none;
     filter: drop-shadow(0.15rem 0.15rem 0.1rem #00000020);
     position: relative;
   }
@@ -326,10 +336,6 @@ footer {
     opacity: 0;
     transform: scale(0);
   }
-}
-
-.user-select-none{
-  user-select: none;
 }
 
 .section-title{

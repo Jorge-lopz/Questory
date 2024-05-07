@@ -23,15 +23,6 @@
 			position: relative;
 			overflow-x: hidden;
 		
-			&::after{
-				content: 'PROGRESS BAR';
-				font-family: 'Lexend', 'Arial', sans-serif;
-				position: absolute;
-				bottom: 120%;
-				left: 50%;
-				transform: translateX(-50%)
-			}
-	
 			.bar {
 				--progress: 50%;
 				width: 0;
@@ -61,15 +52,16 @@
 			text-align: center;
 			text-wrap: balance;
 			margin-right: 3rem;
-			font-size: clamp(1.3rem, 1.5vw, 1.5rem);
+			font-size: clamp(1.1rem, 2.4vw, 1.4rem);
 			display: flex;
 		}
 
 		.final-trophy  {
 			margin-left: 0;
-		
+			
 			.golden-lock-container {
 				position: relative;
+				min-height: 101px;
 		
 				#golden-lock {
 					-webkit-mask-image: url('assets/icons/waves.svg#waveMask');
@@ -81,6 +73,7 @@
 					user-select: none;
 					margin-top: 5px;
 					height: min(20vw, 9rem);
+					min-height: 101px;
 		
 					&:hover{
 						mask-position: 0 -12px; /* Limit value for a full golden lock */
@@ -174,19 +167,31 @@
 
 @media (width < 1174px) {
 
+	.total-progress {
+		margin-inline: 2rem !important;
+		margin-bottom: 1rem !important;
+	}
+
 	.progress-bar-container {
 		width: 100% !important;
+
+		.progress-bar {
+			margin-left: 0 !important;
+			min-width: 270px !important;
+			max-width: 500px !important;
+			max-height: 45px !important;
+		}
 	}
 
-	.progress-bar {
-		margin-left: 0 !important;
-		min-width: 270px !important;
-		max-width: 500px !important;
-		max-height: 45px !important;
-	}
+   .final-trophy-container {
+		width: 100%;
+		min-width: 0 !important;
+		padding-inline: 0 !important;
+		justify-content: center !important;
+		margin:auto !important;
 
-    .final-trophy-container {
-		width: 100% !important;
-		padding-inline: 20% 20% !important;
-    }
+		#final-trophy-text{
+			margin-inline: -1.5rem 1rem !important;
+		}
+	}
 }

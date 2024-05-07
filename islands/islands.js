@@ -37,3 +37,16 @@ function loadedSpline() {
 
     updateText();
 }
+
+const hiddenMessages = document.querySelectorAll('.bubble');
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting && !entry.target.classList.contains('show')) {
+            entry.target.classList.add('show');
+        }
+    });
+}, { rootMargin: '-45%' });
+
+hiddenMessages.forEach((el) => observer.observe(el));
+

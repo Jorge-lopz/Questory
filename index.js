@@ -52,6 +52,7 @@ function loadedSpline() {
 // NAME INPUT FONT SIZE
 
 document.getElementById('name-input').addEventListener('input', adjustFontSize);
+document.getElementById('name-input').addEventListener('input', restrictInput);
 document.getElementById('name-input').addEventListener('blur', showMessage);
 
 function adjustFontSize() {
@@ -81,8 +82,17 @@ function adjustFontSize() {
 
 // NAME CHANGE INFORMATION POPUP
 
+function restrictInput() {
+  const invalidChars = /[ \t><*(){}]/g; // Blocks spaces and tabs
+  name_input = document.getElementById('name-input')
+
+  if (invalidChars.test(name_input.value)) {
+    name_input.value = name_input.value.replace(invalidChars, '');
+  }
+}
+
 function showMessage() {
-  if (document.getElementById('name-input').value == "") {
+  if (document.getElementById('name-input').value.trim() == "") {
 
     if (isPrimaryInputTouch()) {
       showMessageInputTouch();
