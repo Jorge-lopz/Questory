@@ -47,7 +47,7 @@
             .input-container {
 
                 position: relative;
-                
+
                 input {
                     margin-top: 15px;
                     font-size: clamp(1.2rem, 6vw, 3rem);
@@ -62,22 +62,22 @@
                     background-clip: none;
                     -webkit-background-clip: none;
                     -webkit-text-fill-color: black;
-    
+
                     &::placeholder {
                         transition: opacity ease-out .15s;
                     }
-    
+
                     &:focus {
                         outline: none;
                     }
-    
+
                     &:focus::placeholder {
                         opacity: 0;
                     }
                 }
 
                 &::before {
-                    content:'';
+                    content: '';
                     position: absolute;
                     width: min(20vw, 20rem);
                     aspect-ratio: 2/1;
@@ -101,12 +101,16 @@
             margin-block: 2.5rem 2rem;
             display: none;
             justify-content: center;
-            img {width: max(40%, 10rem);}
+
+            img {
+                width: max(40%, 10rem);
+            }
         }
 
         .character-image {
             display: flex;
             align-items: center;
+
             img {
                 width: max(15rem, 16vw);
             }
@@ -125,6 +129,7 @@
         .objective-image {
             display: flex;
             align-items: center;
+
             img {
                 width: max(20rem, 25vw);
             }
@@ -134,7 +139,10 @@
             margin-block: 3.5rem 2.5rem;
             display: none;
             justify-content: center;
-            img {width: max(40%, 13rem);}
+
+            img {
+                width: max(40%, 13rem);
+            }
         }
 
         .objective-text {
@@ -158,7 +166,7 @@
     padding: 1rem 2rem;
     min-height: 550px;
     background: linear-gradient(180deg, rgba(53, 173, 225, 0.028) 0%, rgba(0, 0, 0, 0) 100%), linear-gradient(292.61deg, rgba(247, 0, 208, 0.05) 0%, rgba(21, 185, 255, 0.05) 100%);
-    border-radius: 16px;        
+    border-radius: 16px;
 
     .glide {
         position: relative;
@@ -179,7 +187,9 @@
             position: relative;
             height: fit-content;
             user-select: none;
-            .previous, .next {
+
+            .previous,
+            .next {
                 z-index: 1;
                 margin-top: -0.2rem;
                 height: 80px;
@@ -190,18 +200,20 @@
                 cursor: pointer;
                 font-weight: 900;
                 opacity: 0.25;
-                font-size: clamp(1.5rem,8vw,3rem);
+                font-size: clamp(1.5rem, 8vw, 3rem);
                 transition: 0.3s;
-                
+
                 &:hover {
                     opacity: 0.9;
                     transform: scale(1.1);
                 }
             }
+
             .previous {
                 left: 0%;
                 transform-origin: left;
             }
+
             .next {
                 right: 0%;
                 transform-origin: right;
@@ -216,11 +228,14 @@
             letter-spacing: 0.05em;
             transition: color 0.3s, font-size 0.3s;
         }
+
         .selected {
             color: var(--color);
             font-size: clamp(1.25rem, 7vw, 3.5rem);
             transition: color 0.3s, font-size 0.3s;
-            & + .island-name, .island-name:has(+ &) {
+
+            &+.island-name,
+            .island-name:has(+ &) {
                 font-size: clamp(1.5rem, 8vw, 2.5rem);
             }
         }
@@ -250,7 +265,7 @@
                     animation: appearImage 0.7s ease-in-out forwards;
                 }
             }
-            
+
             .image-container {
                 position: relative;
                 opacity: 1;
@@ -281,8 +296,9 @@
                     font-family: 'Lexend', 'Arial', sans-serif;
                     font-weight: 600;
                     gap: 2rem;
-                    
-                    .time, .temperature {
+
+                    .time,
+                    .temperature {
                         width: fit-content;
                         width: -moz-fit-content;
                         display: flex;
@@ -293,7 +309,7 @@
                         span.variable {
                             font-size: clamp(1.2rem, 3vw, 1.6rem);
                         }
-                        
+
                         img {
                             user-select: none;
                             width: 95%;
@@ -305,6 +321,7 @@
 
                 .story-container {
                     padding-left: 10%;
+
                     p {
                         font-size: clamp(1.1rem, 1.3vw, 2.2rem) !important;
                         text-wrap: balance;
@@ -313,7 +330,7 @@
                     }
                 }
 
-                .cta-container {   
+                .cta-container {
                     display: flex;
                     justify-content: end;
                     padding-right: 22%;
@@ -330,9 +347,9 @@
                             font-size: clamp(1.4rem, 1.3vw, 2.4rem) !important;
                             position: relative;
                             transition: padding 0.3s cubic-bezier(0.19, 1, 0.22, 1);
-    
+
                             &::before {
-                                content:'';
+                                content: '';
                                 position: absolute;
                                 width: 100%;
                                 height: 2px;
@@ -342,8 +359,9 @@
                                 background: #000;
                                 transition: margin 0.3s cubic-bezier(0.19, 1, 0.22, 1);
                             }
+
                             &::after {
-                                content:'';
+                                content: '';
                                 position: absolute;
                                 aspect-ratio: 1;
                                 width: 0.5rem;
@@ -354,22 +372,24 @@
                                 top: 100%;
                                 transform: translate(-50%, -40%) rotate(45deg);
                             }
-    
-                            &:hover, &:focus {
-    
+
+                            &:hover,
+                            &:focus {
+
                                 padding-right: 0.2rem;
-    
-                                &::before, &::after {
+
+                                &::before,
+                                &::after {
                                     margin-left: 0.7rem;
                                 }
                             }
-    
+
                             &:focus {
                                 outline: none;
                             }
                         }
                     }
-                    
+
                     .cta-button-container:has(a:focus) {
                         border: black 2px solid;
                         border-radius: 3px;
@@ -381,22 +401,29 @@
 }
 
 @keyframes appear {
-    from {opacity: 0;}
-    to {opacity: 1;}
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
+
 @keyframes appearImage {
     from {
         opacity: 0;
         padding-right: 50px;
         padding-block: 12px;
     }
+
     to {
         opacity: 1;
         padding: 0;
     }
 }
 
-@media (width > 1000px) and (width < 1450px){
+@media (width > 1000px) and (width < 1450px) {
 
     .glide .island-name {
         min-width: 10ch;
@@ -406,12 +433,14 @@
 
 @media (width < 1000px) {
 
-    .glide::after{
+    .glide::after {
         background: linear-gradient(to right, #eef9fd, transparent 15% 95%, #f8f1fc) !important;
     }
 
     .glide-controls {
-        .previous, .next {
+
+        .previous,
+        .next {
             opacity: 0.8 !important;
         }
     }
@@ -421,8 +450,9 @@
         .image-container {
             padding-left: unset !important;
             width: 80% !important;
-            margin-block: -2rem;    
+            margin-block: -2rem;
         }
+
         .information-container {
             margin-block: 1rem;
             max-width: 90% !important;
@@ -434,6 +464,7 @@
             opacity: 0;
             padding-block: 15px;
         }
+
         to {
             opacity: 1;
             padding: 0;
@@ -447,25 +478,34 @@
         content: none !important;
     }
 
-    .character-container, .objective-container {
+    .character-container,
+    .objective-container {
         padding-inline: 2rem !important;
 
-        .character-image, .objective-image {
+        .character-image,
+        .objective-image {
             display: none !important;
         }
-        .character-image-small, .objective-image-small {
+
+        .character-image-small,
+        .objective-image-small {
             display: flex !important;
         }
-        .character-text, .objective-text {
-            width: 100% !important;     
+
+        .character-text,
+        .objective-text {
+            width: 100% !important;
         }
-        .character-description, .objective-description {
+
+        .character-description,
+        .objective-description {
             padding-inline: 1.5rem;
             text-wrap: balance;
             text-align: left;
         }
     }
-    .cta-container {   
+
+    .cta-container {
         margin-block: 1rem -2rem !important;
         justify-content: center !important;
         padding-right: 0 !important;
@@ -477,19 +517,25 @@
     .information-container {
         margin-inline: 0.8rem 1rem !important;
     }
+
     .stats-container {
         margin-block: 0 1.5rem !important;
         row-gap: 1rem !important;
     }
+
     .story-container {
         padding-left: 0 !important;
-    }    
+    }
 }
 
 @media (width > 400px) and (width < 900px) {
-    .character-container, .objective-container {
-        .character-description, .objective-description{
+
+    .character-container,
+    .objective-container {
+
+        .character-description,
+        .objective-description {
             text-align: center;
         }
-    } 
+    }
 }

@@ -105,6 +105,7 @@
         margin-top: 7vw;
         height: 500vh;
 
+
         .characters {
             width: 80vw;
             height: 100%;
@@ -121,9 +122,10 @@
             }
         }
 
+
         .speech-bubbles {
             max-width: 40vw;
-            height: 100%;
+            height: max-content;
             margin-inline: auto;
             --bg-color: #f4f5f5;
 
@@ -208,6 +210,8 @@
                     }
                 }
             }
+
+
         }
     }
 }
