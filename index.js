@@ -37,11 +37,10 @@ function loadedSpline() {
         removing = false; // Switch to adding characters once all are removed
       }
     } else {
-      loaderText.innerText = targetText.slice(0, currentIndex);
-      currentIndex++;
-      setTimeout(updateText, 200); // Slower character addition speed
-      if (currentIndex > targetText.length) { //Extra actions when finished text animation
-        return;
+      if (currentIndex <= targetText.length) {
+        loaderText.innerText = targetText.slice(0, currentIndex);
+        currentIndex++;
+        setTimeout(updateText, 200); // Continue adding characters
       }
     }
   }
