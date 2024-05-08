@@ -52,7 +52,9 @@ hiddenMessages.forEach((el) => observer.observe(el));
 
 // STICKY BEHAVIOUR
 const contenedorCambiado = document.getElementById('characters');
+const contenedorCambiado2 = document.getElementById('conversation-background');
 const contenedorModelo = document.getElementById('speech-bubbles');
 
 var altura = contenedorModelo.clientHeight + contenedorCambiado.clientHeight/1.25;
 contenedorCambiado.style.height = altura + "px";
+contenedorCambiado2.style.height = altura + "px";

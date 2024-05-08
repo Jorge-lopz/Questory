@@ -109,6 +109,19 @@
         margin-top: 7vw;
         height: 500vh;
 
+        .conversation-background{
+            position: absolute;
+
+            .background{
+                position: sticky;
+                z-index: -1;
+                height: 100vh;
+                width: 100vw;
+                top: 0;
+            }
+
+        }
+        
 
         .characters {
             width: 80vw;
@@ -117,10 +130,12 @@
             margin-inline: max(2rem, 10vw);
             position: absolute;
 
+            
+
             img {
                 height: 25vw;
                 position: sticky;
-                top: 35vh;
+                top: 50vh;
                 user-select: none;
             }
         }
