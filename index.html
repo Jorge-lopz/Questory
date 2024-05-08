@@ -23,17 +23,17 @@
 
     <!-- HOME BUTTON (LOGO) -->
     <div id="logo">
-        <a href="javascript:;" class="user-select-none" tooltip="Home">
+        <a href="javascript:;" tooltip="Home">
             <img src="assets/icons/logo/header_icon.png" draggable="false" width="55px" alt="logo"></a>
     </div>
 
     <!-- HAMBURGUER BUTTON -->
     <div id="hamburguer-button">
-        <a href="javascript:;" class="user-select-none">
+        <a href="javascript:;">
             <img src="assets/icons/hamburger_menu.png" draggable="false" width="30px" alt="menu"></a>
     </div>
     <!--DIV MENU-->
-    <div id="menu" style="display: none;">
+    <div id="menu">
         <p><a href="#islands">Islands</a></p>
         <p><a href="progress.html">Progress</a></p>
         <p><a href="contact.html">Contact</a></p>
@@ -57,8 +57,7 @@
     <!-- FOOTER -->
     <footer>
         <a href="#">
-            <img class="user-select-none" draggable="false" id="map-icon" src="assets/icons/Map.png" width="65px"
-                alt="Map">
+            <img draggable="false" id="map-icon" src="assets/icons/Map.png" width="65px" alt="Map">
         </a>
     </footer>
 
@@ -88,8 +87,10 @@
                 <!-- CHAR TEXT -->
                 <div class="character-text">
                     <p class="gradient-text">This is</p>
-                    <input type="text" size="7" aria-autocomplete="none" autocomplete="off" placeholder="<YOU>"
-                        id="name-input" maxlength="12">
+                    <div class="input-container">
+                        <input type="text" size="7" aria-autocomplete="none" autocomplete="off" placeholder="<YOU>"
+                            id="name-input" maxlength="12" required>
+                    </div>
                     <div class="character-image-small user-select-none">
                         <img src="assets/images/Character.png" alt="Main character">
                     </div>
@@ -135,9 +136,8 @@
 
             <div class="glide">
                 <div class="glide-controls" data-glide-el="controls">
-                    <button class="previous" data-glide-dir="<">
-                        < </button>
-                            <button class="next" data-glide-dir=">">></button>
+                    <button class="previous" data-glide-dir="<">‹</button>
+                    <button class="next" data-glide-dir=">">›</button>
                 </div>
                 <div class="glide__track" data-glide-el="track">
                     <ul class="glide__slides">
@@ -173,6 +173,7 @@
                 </div>
             </div>
 
+            <!-- CYBERPUNK -->
             <div class="content-containers">
                 <div class="content" id="cyberpunk">
                     <div class="image-container">
@@ -183,7 +184,7 @@
                             <div class="time">
                                 <img src="assets/icons/Time_img.png" draggable="false">
                                 <p>
-                                    <span class="variable">XXII</span>&nbsp;CENTURY
+                                    <span class="variable">XXV</span>&nbsp;CENTURY
                                 </p>
                             </div>
                             <div class="temperature">
@@ -200,10 +201,14 @@
                             </p>
                         </div>
                         <div class="cta-container">
-                            <a href="islands/cyberpunk.html" class="cta-button page-title">Learn more</a>
+                            <div class="cta-button-container">
+                                <a href="islands/cyberpunk.html" class="cta-button page-title">Learn more</a>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- PIRATE -->
                 <div class="content" id="pirate">
                     <div class="image-container">
                         <img src="assets/images/pirate.png" width="300" alt="">
@@ -213,27 +218,32 @@
                             <div class="time">
                                 <img src="assets/icons/Time_img.png" draggable="false">
                                 <p>
-                                    <span class="variable">X</span>&nbsp;CENTURY
+                                    <span class="variable">XVII </span>&nbsp;CENTURY
                                 </p>
                             </div>
                             <div class="temperature">
                                 <img src="assets/icons/Temperature_img.png" draggable="false">
                                 <p>
-                                    <span class="variable">23</span>&nbsp;ºC
+                                    <span class="variable">18</span>&nbsp;ºC
                                 </p>
                             </div>
                         </div>
                         <div class="story-container content-text">
                             <p>
-                                Immersed in a medieval island, you need to earn the locals trust before they decide to
-                                help you. <br><br>Good luck, peasant!
+                                Beware! Pirates are coming!, fight or hide in order to survive, they wont have mercy.
+                                <br><br>May yer voyages lead to golden shores, matey!
+                                <!-- With Blackbeard's whiskers as yer guide. Good luck, mate! -->
                             </p>
                         </div>
                         <div class="cta-container">
-                            <a href="islands/pirate.html" class="cta-button page-title">Learn more</a>
+                            <div class="cta-button-container">
+                                <a href="islands/pirate.html" class="cta-button page-title">Learn more</a>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- MEDIEVAL -->
                 <div class="content" id="medieval">
                     <div class="image-container">
                         <img src="assets/images/medieval.png" width="300" alt="">
@@ -243,7 +253,7 @@
                             <div class="time">
                                 <img src="assets/icons/Time_img.png" draggable="false">
                                 <p>
-                                    <span class="variable">X</span>&nbsp;CENTURY
+                                    <span class="variable">VII</span>&nbsp;CENTURY
                                 </p>
                             </div>
                             <div class="temperature">
@@ -260,10 +270,14 @@
                             </p>
                         </div>
                         <div class="cta-container">
-                            <a href="islands/medieval.html" class="cta-button page-title">Learn more</a>
+                            <div class="cta-button-container">
+                                <a href="islands/medieval.html" class="cta-button page-title">Learn more</a>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- MYTHOLOGY -->
                 <div class="content" id="mythology">
                     <div class="image-container">
                         <img src="assets/images/mythology.png" width="300" alt="">
@@ -273,27 +287,31 @@
                             <div class="time">
                                 <img src="assets/icons/Time_img.png" draggable="false">
                                 <p>
-                                    <span class="variable">X</span>&nbsp;CENTURY
+                                    <span class="variable">XI</span>&nbsp;BC. CENTURY
                                 </p>
                             </div>
                             <div class="temperature">
                                 <img src="assets/icons/Temperature_img.png" draggable="false">
                                 <p>
-                                    <span class="variable">23</span>&nbsp;ºC
+                                    <span class="variable">27</span>&nbsp;ºC
                                 </p>
                             </div>
                         </div>
                         <div class="story-container content-text">
                             <p>
-                                Immersed in a medieval island, you need to earn the locals trust before they decide to
-                                help you. <br><br>Good luck, peasant!
+                                Magical creatures are common in this place, some are friendly, others are not...
+                                <br><br>May the gods favor you, adventurer!
                             </p>
                         </div>
                         <div class="cta-container">
-                            <a href="islands/mythology.html" class="cta-button page-title">Learn more</a>
+                            <div class="cta-button-container">
+                                <a href="islands/mythology.html" class="cta-button page-title">Learn more</a>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- MEXICO -->
                 <div class="content" id="mexico">
                     <div class="image-container">
                         <img src="assets/images/mexico.png" width="300" alt="">
@@ -303,24 +321,26 @@
                             <div class="time">
                                 <img src="assets/icons/Time_img.png" draggable="false">
                                 <p>
-                                    <span class="variable">X</span>&nbsp;CENTURY
+                                    <span class="variable">XXI</span>&nbsp;CENTURY
                                 </p>
                             </div>
                             <div class="temperature">
                                 <img src="assets/icons/Temperature_img.png" draggable="false">
                                 <p>
-                                    <span class="variable">23</span>&nbsp;ºC
+                                    <span class="variable">35</span>&nbsp;ºC
                                 </p>
                             </div>
                         </div>
                         <div class="story-container content-text">
                             <p>
-                                Immersed in a medieval island, you need to earn the locals trust before they decide to
-                                help you. <br><br>Good luck, peasant!
+                                The "DAY OF THE DEAD" is taking place here. Join the celebration and learn about its
+                                traditions. <br><br>¡Vamos, compadre!
                             </p>
                         </div>
                         <div class="cta-container">
-                            <a href="islands/mexico.html" class="cta-button page-title">Learn more</a>
+                            <div class="cta-button-container">
+                                <a href="islands/mexico.html" class="cta-button page-title">Learn more</a>
+                            </div>
                         </div>
                     </div>
                 </div>

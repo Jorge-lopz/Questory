@@ -24,20 +24,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// BURGUER MENU
 
-//Burger Menu
 document.getElementById("hamburguer-button").addEventListener("click", () => {
     const button = document.getElementById("hamburguer-button");
     const menu = document.getElementById("menu");
-    if (menu.style.display == "none") {
-        menu.style.display = "block";
-
-    } else {
-        menu.style.display = "none";
-
-    }
+    if (!menu.classList.contains("visible")) menu.classList.add("visible");
+    else menu.classList.remove("visible");
 });
-
 
 // FOOTER
 

@@ -1,7 +1,9 @@
 .total-progress {
     display: flex;
+	flex-wrap: wrap;
     align-items: center;
 	margin-block: 2rem;
+	row-gap: 1.5rem;
 
 	.progress-bar-container {
 		width: 50%;
@@ -9,33 +11,26 @@
 		justify-content: center;
 
 		.progress-bar {
-			--progress: 50%;
+			min-width: 240px;
 			max-width: 520px;
 			width: 70%;
-			height: 50px;
+			aspect-ratio: 8/1.4;
+			max-height: 50px;
 			margin-left: 35%;
 			border: solid 3px rgba(0, 0, 0, 0.638);
 			background: #dedede;
-			border-radius: 25px;
+			border-radius: 50px;
 			position: relative;
 			overflow-x: hidden;
 		
-			&::after{
-				content: 'PROGRESS BAR';
-				font-family: 'Lexend', 'Arial', sans-serif;
-				position: absolute;
-				bottom: 120%;
-				left: 50%;
-				transform: translateX(-50%)
-			}
-		
-			&.bar {
+			.bar {
+				--progress: 50%;
 				width: 0;
 				height: 100%;
-				/* background: linear-gradient(to right, gold, gold, gold, #c85, #c85, gold, gold, gold); */
+				/*background: linear-gradient(to right, gold, gold, gold, #c85, #c85, gold, gold, gold); */
 				background: #ffc111;
 				background-repeat: repeat;
-				border-radius: 0 20px 20px 0;
+				border-radius: 0 50px 50px 0;
 				animation: 
 				shine 6s linear infinite,
 				progress 1s ease-in-out forwards;
@@ -45,16 +40,28 @@
 
 	.final-trophy-container {
 		width: 50%;
+		min-width: 587px;
 		display: flex;
-		padding-inline: 20%;
+		padding-inline: 5% 20%;
 		justify-content: right;
 		align-items: center;
 
+		#final-trophy-text{
+			min-width: 150px;
+			max-width: 200px;
+			text-align: center;
+			text-wrap: balance;
+			margin-right: 3rem;
+			font-size: clamp(1.1rem, 2.4vw, 1.4rem);
+			display: flex;
+		}
+
 		.final-trophy  {
 			margin-left: 0;
-		
+			
 			.golden-lock-container {
 				position: relative;
+				min-height: 101px;
 		
 				#golden-lock {
 					-webkit-mask-image: url('assets/icons/waves.svg#waveMask');
@@ -66,6 +73,7 @@
 					user-select: none;
 					margin-top: 5px;
 					height: min(20vw, 9rem);
+					min-height: 101px;
 		
 					&:hover{
 						mask-position: 0 -12px; /* Limit value for a full golden lock */
@@ -129,30 +137,61 @@
 }
 
 @keyframes heartBeat{
- from, 50%, to { transform: translateX(0) }
- 12%, 33% { transform: translateX(5px) }
- 25% { transform: translateX(-5px) }
+	from, 50%, to { transform: translateX(0) }
+	12%, 33% { transform: translateX(5px) }
+	25% { transform: translateX(-5px) }
 }
   
 @property --progress {
-syntax: "<length>";
-initial-value: 0%;
-inherits: true;
+	syntax: "<length>";
+	initial-value: 0%;
+	inherits: true;
 }
 
 @keyframes shine {
-0% { background-position: 0 0;}
-100% { background-position: 1400px 0;}
+	0% { background-position: 0 0;}
+	100% { background-position: 1400px 0;}
 }
 
 @keyframes progress {
-0% { width: 0;}
-100% { width: var(--progress);}
+	0% { width: 0;}
+	100% { width: var(--progress);}
 }
 
 @media (width < 600px){
 
 	.box {
 		width: 30vw !important;
+	}
+}
+
+@media (width < 1174px) {
+
+	.total-progress {
+		margin-inline: 2rem !important;
+		margin-bottom: 1rem !important;
+	}
+
+	.progress-bar-container {
+		width: 100% !important;
+
+		.progress-bar {
+			margin-left: 0 !important;
+			min-width: 270px !important;
+			max-width: 500px !important;
+			max-height: 45px !important;
+		}
+	}
+
+   .final-trophy-container {
+		width: 100%;
+		min-width: 0 !important;
+		padding-inline: 0 !important;
+		justify-content: center !important;
+		margin:auto !important;
+
+		#final-trophy-text{
+			margin-inline: -1.5rem 1rem !important;
+		}
 	}
 }
