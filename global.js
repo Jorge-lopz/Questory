@@ -26,12 +26,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // BURGUER MENU
 
-document.getElementById("hamburguer-button").addEventListener("click", () => {
-    const button = document.getElementById("hamburguer-button");
+var elemento = document.getElementById('hamburguer-button');
+
+// Agregar un event listener al elemento para el evento focus
+elemento.addEventListener('click', function (event) {
     const menu = document.getElementById("menu");
-    if (!menu.classList.contains("visible")) menu.classList.add("visible");
-    else menu.classList.remove("visible");
+    if (!menu.classList.contains("visible")) {
+        menu.classList.add("visible");
+    }
+    else { menu.classList.remove("visible") };
 });
+
+//Agregar un event listener al elemento para el evento blur
+elemento.addEventListener('blur', function (event) {
+    menu.classList.remove("visible");
+});
+
+
 
 // FOOTER
 

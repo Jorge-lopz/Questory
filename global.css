@@ -1,4 +1,3 @@
-
 /* USED FOR GENERAL VARIABLES (Colors, fonts, sizes, timings...) AND CUSTOM STYLE CLASSES (Tailwind-like) */
 
 * {
@@ -13,7 +12,7 @@ html {
 }
 
 body {
-    margin: 0 !important;
+  margin: 0 !important;
 }
 
 /* DEBUGGING */
@@ -23,44 +22,44 @@ body {
 
 /* FONTS */
 
-@font-face { 
-    font-family: "Monomaniac One";
-    font-style: normal;
-    font-display: fallback;
-    src: 
-      url("assets/fonts/Monomaniac_One/MonomaniacOne-Regular.ttf") format("truetype");
-  }
-  
-@font-face { 
-    font-family: "Lexend";
-    font-style: normal;
-    font-display: fallback;
-    src: 
-      url("assets/fonts/Lexend/Lexend-VariableFont_wght.ttf") format("truetype");
-  }
-  
-@font-face { 
-    font-family: "Paytone One";
-    font-style: normal;
-    font-display: fallback;
-    src: 
-      url("assets/fonts/Paytone_One/PaytoneOne-Regular.ttf") format("truetype");
-  }
-  
-@font-face { 
-    font-family: "Nanum Pen";
-    font-style: normal;
-    font-display: fallback;
-    src: 
-      url("assets/fonts/Nanum_Pen_Script/NanumPenScript-Regular.ttf") format("truetype");
-  }
+@font-face {
+  font-family: "Monomaniac One";
+  font-style: normal;
+  font-display: fallback;
+  src:
+    url("assets/fonts/Monomaniac_One/MonomaniacOne-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Lexend";
+  font-style: normal;
+  font-display: fallback;
+  src:
+    url("assets/fonts/Lexend/Lexend-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Paytone One";
+  font-style: normal;
+  font-display: fallback;
+  src:
+    url("assets/fonts/Paytone_One/PaytoneOne-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Nanum Pen";
+  font-style: normal;
+  font-display: fallback;
+  src:
+    url("assets/fonts/Nanum_Pen_Script/NanumPenScript-Regular.ttf") format("truetype");
+}
 
 /* GENERAL STYLES */
 
 main {
-    overflow-x: hidden;
-    margin: 0;
-    margin-top: 7rem;
+  overflow-x: hidden;
+  margin: 0;
+  margin-top: 7rem;
 }
 
 /*LOGO*/
@@ -80,7 +79,7 @@ main {
     transform: scale(1.1);
   }
 
-  & > a:focus {
+  &>a:focus {
     outline: none;
   }
 
@@ -93,16 +92,13 @@ main {
 #hamburguer-button {
   position: fixed;
   top: 1.9rem;
-  right: -10%;
+  right: -100rem;
   transition: 0.3s;
   z-index: 111;
 
-  a {
-    user-select: none;
-  }
-
   &.visible {
     right: 1.9rem;
+
   }
 }
 
@@ -111,15 +107,20 @@ main {
   flex-direction: column;
   position: fixed;
   top: 5rem;
-  right: -100rem;
+  right: 1rem;
+
   width: 50%;
-  max-width: 300px;
   background-color: #141414bb;
   backdrop-filter: blur(10px);
   border-radius: 10px;
   padding: 10px;
-  z-index: 110 ;
-  transition: right 0.3s ease;
+  z-index: 110;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+
+  transform: translateX(100%);
+
+  opacity: 0;
+
 
   a {
     font-family: "Monomaniac One";
@@ -128,28 +129,35 @@ main {
     font-size: 1.4rem;
     letter-spacing: 0.05em;
     transform-origin: center;
-    transition: color 0.3s, transform 0.3s; 
+    transition: color 0.3s, transform 0.3s;
   }
 
   a:hover {
-      color: #00ddff; 
-      transform: scale(1.1); 
+    color: #00ddff;
+    transform: scale(1.1);
   }
 
   &.visible {
-    right: 1rem;
-    background-color: rebeccapurple;
+    background-color: #6A6172;
+    opacity: 1;
+    transform: translateX(0%);
+
   }
 }
 
-@keyframes rotate360 {
-  from {
-    transform: rotate(0deg);
-}
-  to {
-      transform: rotate(-360deg);
+@media (max-width: 600px) {
+  #menu {
+    width: 90% !important;
   }
 }
+
+@media (min-width: 1250px) {
+  #menu {
+    width: 35% !important;
+  }
+}
+
+
 
 /*HEADER*/
 
@@ -161,7 +169,7 @@ header {
   display: flex;
   inset: 0;
   z-index: 100;
-  transition: transform 0.2s cubic-bezier(.16,.92,.68,.97);
+  transition: transform 0.2s cubic-bezier(.16, .92, .68, .97);
   transform: translateY(0);
 
   .header-content {
@@ -182,7 +190,7 @@ header {
       transform-origin: center;
       transition: 0.3s;
 
-      img{
+      img {
         padding-top: 7px;
       }
 
@@ -191,9 +199,10 @@ header {
       }
     }
   }
+
   &.hidden {
-    transform: translateY(-110%); 
-}
+    transform: translateY(-110%);
+  }
 }
 
 /* FOOTER */
@@ -208,6 +217,7 @@ footer {
     filter: drop-shadow(0.15rem 0.15rem 0.1rem #00000020);
     position: relative;
   }
+
   &::before {
     content: "MAP";
     position: absolute;
@@ -219,12 +229,13 @@ footer {
     transform: translate(-53%, -80%);
     transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
+
   &:hover::before {
     opacity: 1;
     transition-delay: 0s;
     top: -10%;
   }
-  
+
 }
 
 /* Class for  map icon animation */
@@ -233,9 +244,12 @@ footer {
 }
 
 @keyframes pulse {
-  to, from {
+
+  to,
+  from {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.1);
   }
@@ -256,17 +270,17 @@ footer {
 }
 
 .gradient-text {
-    margin: 0;
-    margin-bottom: -1%;
-    text-align: center;
-    font-family: 'Paytone One', 'Lexend', 'Arial', sans-serif;
-    font-size: clamp(2.5rem, 4vw, 4.5rem) !important;
-    letter-spacing: 0.06em;
-    line-height: 122%;
-    background: linear-gradient(93.69deg, #35ADE1 1.5%, #4FA1D4 21.54%, #C579AC 50.38%, #DE4E9A 95.85%, #FF2F93 99.27%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  margin: 0;
+  margin-bottom: -1%;
+  text-align: center;
+  font-family: 'Paytone One', 'Lexend', 'Arial', sans-serif;
+  font-size: clamp(2.5rem, 4vw, 4.5rem) !important;
+  letter-spacing: 0.06em;
+  line-height: 122%;
+  background: linear-gradient(93.69deg, #35ADE1 1.5%, #4FA1D4 21.54%, #C579AC 50.38%, #DE4E9A 95.85%, #FF2F93 99.27%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .content-text {
@@ -278,13 +292,13 @@ footer {
 }
 
 .page-title {
-    margin: 0;
-    padding-inline: 2rem;
-    font-family: 'Monomaniac One', 'Lexend', 'Arial', sans-serif;
-    text-transform: uppercase;
-    font-size: clamp(2.5rem, 8vw, 4rem) !important;
-    text-align: center;
-    color: black;
+  margin: 0;
+  padding-inline: 2rem;
+  font-family: 'Monomaniac One', 'Lexend', 'Arial', sans-serif;
+  text-transform: uppercase;
+  font-size: clamp(2.5rem, 8vw, 4rem) !important;
+  text-align: center;
+  color: black;
 }
 
 .hero {
@@ -306,9 +320,8 @@ footer {
     min-height: 37px;
     max-height: 37px;
 
-    img {
-    }
-    
+    img {}
+
     h4 {
       margin: 0;
       font-family: 'Lexend', 'Arial', sans-serif;
@@ -338,11 +351,11 @@ footer {
   }
 }
 
-.section-title{
-}
+.section-title {}
 
-a[tooltip]{
+a[tooltip] {
   position: relative;
+
   &::after {
     z-index: -1;
     content: attr(tooltip);
@@ -357,23 +370,25 @@ a[tooltip]{
     opacity: 0;
     bottom: -100%;
     left: 50%;
-    transform: translateX(-50%) ;
+    transform: translateX(-50%);
     transition: 0.3s 0s ease-in-out;
   }
+
   &:not(.rotating):hover::after {
     transition-duration: 0.8s;
-    transition-timing-function: cubic-bezier(1,-0.3,1,.92);
+    transition-timing-function: cubic-bezier(1, -0.3, 1, .92);
     opacity: 1;
   }
 }
 
 /* Media query to show the header on mobile devices */
 @media (width < 600px) {
-    
-  header{
-      display: none;
+
+  header {
+    display: none;
   }
+
   #hamburguer-button {
-      right: 1.9rem !important;
+    right: 1.9rem !important;
   }
 }

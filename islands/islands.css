@@ -18,7 +18,7 @@
         padding-block: 0.2rem 0.5rem;
         padding-inline: 1rem;
 
-        .sectrets-discovered {
+        .secrets-discovered {
             font-family: "Monomaniac One";
             margin-block: auto;
             font-size: clamp(1rem, 2vw, 2.5rem);
@@ -57,37 +57,42 @@
     width: 100%;
     height: 100%;
     display: flex;
-    background-color: rgba(255, 255, 255); 
+    background-color: rgba(255, 255, 255);
     justify-content: center;
     align-items: center;
-    animation: fadeOut 0s 0s forwards; /* TODO -> Set time back to 1.7s and delay to 1s*/
+    animation: fadeOut 0s 0s forwards;
+    /* TODO -> Set time back to 1.7s and delay to 1s*/
 
     p {
         font-size: 8rem;
         font-family: "Monomaniac One";
-         color: black;
-        text-align: center; 
+        color: black;
+        text-align: center;
         justify-content: center;
         align-items: center;
-        span{
+
+        span {
             font-size: 15rem;
-            background-image: linear-gradient(to right, red, orange, yellow); 
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to right, red, orange, yellow);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-      }
-  }
-  
-  @keyframes fadeOut {
-    0%, 46% {
-      opacity: 1;
     }
+}
+
+@keyframes fadeOut {
+
+    0%,
+    46% {
+        opacity: 1;
+    }
+
     100% {
-      opacity: 0;
-      display: none;
+        opacity: 0;
+        display: none;
     }
-  }
+}
 
 .story-container {
     margin-top: 5vw;
@@ -96,9 +101,10 @@
         margin-inline: auto;
     }
 
-    .conversation-container{
+    .conversation-container {
         margin-top: 7vw;
         height: 500vh;
+
 
         .characters {
             width: 80vw;
@@ -107,18 +113,19 @@
             justify-content: space-between;
             margin-inline: max(2rem, 10vw);
             position: absolute;
-        
+
             img {
                 height: 25vw;
                 position: sticky;
-                top: 35vh; 
+                top: 35vh;
                 user-select: none;
             }
         }
 
+
         .speech-bubbles {
             max-width: 40vw;
-            height: 100%;
+            height: max-content;
             margin-inline: auto;
             --bg-color: #f4f5f5;
 
@@ -139,12 +146,12 @@
                 &.show {
                     animation: bubbleAppear 1s cubic-bezier(0.215, 0.610, 0.355, 1) forwards !important;
                 }
-    
+
                 &.left {
-    
+
                     transform-origin: bottom left;
                     padding-left: 35px;
-    
+
                     &::before {
                         content: "";
                         position: absolute;
@@ -157,7 +164,7 @@
                         top: -3px;
                         left: -3px;
                     }
-    
+
                     &::after {
                         content: "";
                         position: absolute;
@@ -170,13 +177,13 @@
                         left: 5%;
                     }
                 }
-    
+
                 &.right {
-    
+
                     transform-origin: bottom right;
                     margin-left: auto;
                     padding-right: 35px;
-    
+
                     &::before {
                         content: "";
                         position: absolute;
@@ -189,7 +196,7 @@
                         top: -3px;
                         right: -3px;
                     }
-    
+
                     &::after {
                         content: "";
                         position: absolute;
@@ -203,6 +210,8 @@
                     }
                 }
             }
+
+
         }
     }
 }
@@ -212,6 +221,7 @@
         opacity: 0;
         transform: scale(0);
     }
+
     to {
         opacity: 1;
         transform: scale(1);
@@ -225,4 +235,8 @@
         margin-block: auto;
 
     }
+}
+
+@keyframes speak {
+    opacity: 1;
 }
