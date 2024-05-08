@@ -4,7 +4,11 @@
     width: 80vw;
     margin-inline: auto;
 
-    img {
+    .hero-image {
+        position: relative;
+    }
+
+    & > img {
         object-fit: cover;
         border-radius: 9px;
         width: 100%;
@@ -49,7 +53,7 @@
 
 /*LOADER*/
 
-.loader {
+.island-loader {
     position: fixed;
     z-index: 999999999;
     top: 0;

@@ -92,6 +92,7 @@ main {
 }
 
 #hamburguer-button {
+  cursor: pointer;
   position: fixed;
   top: 1.9rem;
   right: -100rem;
@@ -100,7 +101,6 @@ main {
 
   &.visible {
     right: 1.9rem;
-
   }
 }
 
@@ -121,7 +121,7 @@ main {
 #menu {
   position: fixed;
   top: 5rem;
-  right: -50vw;
+  right: -100rem;
   width: fit-content;
   padding: 2rem 3rem;
   text-align: center;
@@ -130,8 +130,13 @@ main {
   border-radius: 10px;
   z-index: 110;
   transition: right 0.3s ease, opacity 0.3s ease;
-  transform: translateX(100%);
   opacity: 0.2;
+  
+  &.visible {
+    right: 0;
+    /* transform: translateX(100%); */
+    opacity: 1;
+  }
 
   a {
     display: block;
@@ -147,11 +152,6 @@ main {
 
   a:hover {
     transform: scale(1.15);
-  }
-
-  &.visible {
-    right: 50vw;
-    opacity: 1;
   }
 }
 

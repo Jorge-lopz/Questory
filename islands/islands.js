@@ -26,11 +26,10 @@ function loadedSpline() {
                 removing = false; // Switch to adding characters once all are removed
             }
         } else {
-            loaderText.innerText = targetText.slice(0, currentIndex);
-            currentIndex++;
-            setTimeout(updateText, 200); // Slower character addition speed
-            if (currentIndex > targetText.length) { //Extra actions when finished text animation
-                return;
+            if (currentIndex <= targetText.length) {
+                loaderText.innerText = targetText.slice(0, currentIndex);
+                currentIndex++;
+                setTimeout(updateText, 200); // Continue adding characters
             }
         }
     }
@@ -50,9 +49,6 @@ const observer = new IntersectionObserver((entries) => {
 
 hiddenMessages.forEach((el) => observer.observe(el));
 
-
-
-// Obtener el contenedor de origen y destino
 // Obtener el contenedor de origen y destino
 const contenedorOrigen = document.getElementById('characters');
 const contenedorDestino = document.getElementById('speech-bubbles');

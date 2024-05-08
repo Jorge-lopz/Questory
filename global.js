@@ -54,7 +54,7 @@ divTransparente.addEventListener('click', function (event) {
 
 // FOOTER
 
-const mapIcon = document.getElementById('map-icon');
+const mapIcon = document.getElementById('map-icon') || document.getElementById('play-icon');
 const maxPulseDistance = mapIcon.width * 2.2;
 
 document.addEventListener('mousemove', handleMouseMove);
