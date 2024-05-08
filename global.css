@@ -119,55 +119,41 @@ main {
 }
 
 #menu {
-  display: flex;
-  flex-direction: column;
   position: fixed;
   top: 5rem;
-  left: 100%;
-  width: 50%;
-  background-color: #6A6172;
+  right: -50vw;
+  width: fit-content;
+  padding: 2rem 3rem;
+  text-align: center;
+  background-color: rgba(69, 78, 80, 0.733);
   backdrop-filter: blur(10px);
   border-radius: 10px;
-  padding: 10px;
   z-index: 110;
-  transition: left 0.3s ease, opacity 0.3s ease;
+  transition: right 0.3s ease, opacity 0.3s ease;
   transform: translateX(100%);
-  opacity: 0;
+  opacity: 0.2;
 
   a {
+    display: block;
     font-family: "Monomaniac One";
     text-decoration: none;
     color: white;
-    font-size: 1.4rem;
+    font-size: clamp(1.1rem, 3vw, 1.6rem);
     letter-spacing: 0.05em;
     transform-origin: center;
-    transition: color 0.3s, transform 0.3s;
+    transform: scale(1);
+    transition: transform 0.3s;
   }
 
   a:hover {
-    color: #00ddff;
-    transform: scale(1.1);
+    transform: scale(1.15);
   }
 
   &.visible {
-    left: 28%;
+    right: 50vw;
     opacity: 1;
   }
 }
-
-@media (max-width: 600px) {
-  #menu {
-    width: 90% !important;
-  }
-}
-
-@media (min-width: 1250px) {
-  #menu {
-    width: 35% !important;
-  }
-}
-
-
 
 /*HEADER*/
 
