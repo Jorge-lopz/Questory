@@ -316,8 +316,6 @@ footer {
     min-height: 37px;
     max-height: 37px;
 
-    img {}
-
     h4 {
       margin: 0;
       font-family: 'Lexend', 'Arial', sans-serif;
@@ -346,8 +344,6 @@ footer {
     transform: scale(0);
   }
 }
-
-.section-title {}
 
 a[tooltip] {
   position: relative;
