@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Scroll Up
             header.classList.remove('hidden');
             hamburgerButton.classList.remove('visible');
-            hamburgerMenu.style.display = "none"
+            hamburgerMenu.classList.remove('visible');
         }
 
         lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
@@ -26,31 +26,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // BURGUER MENU
 
-var elemento = document.getElementById('hamburguer-button');
-const divTransparente = document.getElementById("divtransparente");
+const hamburgerButton = document.getElementById('hamburguer-button');
+const transparentDiv = document.getElementById('transparent-div');
+const menu = document.getElementById('menu');
 
-// Agregar un event listener al elemento para el evento focus
-elemento.addEventListener('click', function (event) {
-    const menu = document.getElementById("menu");
+hamburgerButton.addEventListener('click', () => {
 
     if (!menu.classList.contains("visible")) {
         menu.classList.add("visible");
-        divTransparente.classList.add("visible");
+        transparentDiv.classList.add("visible");
     }
     else {
         menu.classList.remove("visible")
-        divTransparente.classList.remove("visible");
+        transparentDiv.classList.remove("visible");
     };
 
 });
+transparentDiv.addEventListener('click', () => {
 
-//Agregar un event listener al elemento para el evento blur
-divTransparente.addEventListener('click', function (event) {
-    menu.classList.remove("visible");
-    divTransparente.classList.remove("visible");
+    menu.classList.remove('visible');
+    transparentDiv.classList.remove('visible');
 });
-
-
 
 // FOOTER
 

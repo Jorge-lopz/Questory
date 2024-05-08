@@ -104,45 +104,30 @@ main {
   }
 }
 
-#divtransparente {
-  z-index: 1;
-  display: none;
-  position: fixed;
-  top: 0;
-  height: 100vh;
-  width: 100vw;
-
-  &.visible {
-    display: block;
-  }
-
-}
-
 #menu {
   position: fixed;
-  top: 5rem;
-  right: -100rem;
+  top: 5.2rem;
+  right: -50rem;
   width: fit-content;
   padding: 2rem 3rem;
   text-align: center;
-  background-color: rgba(69, 78, 80, 0.733);
+  background-color: #93bbc450;
   backdrop-filter: blur(10px);
   border-radius: 10px;
   z-index: 110;
-  transition: right 0.3s ease, opacity 0.3s ease;
+  transition: 0.3s ease;
   opacity: 0.2;
   
   &.visible {
-    right: 0;
-    /* transform: translateX(100%); */
-    opacity: 1;
+    right: 1.9rem !important;
+    opacity: 1 !important;
   }
 
   a {
     display: block;
     font-family: "Monomaniac One";
     text-decoration: none;
-    color: white;
+    color: black;
     font-size: clamp(1.1rem, 3vw, 1.6rem);
     letter-spacing: 0.05em;
     transform-origin: center;
@@ -152,6 +137,19 @@ main {
 
   a:hover {
     transform: scale(1.15);
+  }
+}
+
+#transparent-div {
+  z-index: 1;
+  display: none;
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+
+  &.visible {
+    display: block !important;
   }
 }
 
