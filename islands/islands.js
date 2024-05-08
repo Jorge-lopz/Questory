@@ -38,6 +38,7 @@ function loadedSpline() {
     updateText();
 }
 
+// SPEECH BUBBLES BEHAVIOUR
 const hiddenMessages = document.querySelectorAll('.bubble');
 
 const observer = new IntersectionObserver((entries) => {
@@ -46,15 +47,15 @@ const observer = new IntersectionObserver((entries) => {
             entry.target.classList.add('show');
         }
     });
-}, { rootMargin: '-45%' });
+}, { rootMargin: '-50%' });
 
 hiddenMessages.forEach((el) => observer.observe(el));
 
 
 
-// Obtener el contenedor de origen y destino
-// Obtener el contenedor de origen y destino
-const contenedorOrigen = document.getElementById('characters');
-const contenedorDestino = document.getElementById('speech-bubbles');
+// STICKY BEHAVIOUR
+const contenedorCambiado = document.getElementById('characters');
+const contenedorModelo = document.getElementById('speech-bubbles');
 
-contenedorOrigen.style.height = contenedorDestino.clientHeight + "px";
+var altura = contenedorModelo.clientHeight + contenedorCambiado.clientHeight/1.25;
+contenedorCambiado.style.height = altura + "px";

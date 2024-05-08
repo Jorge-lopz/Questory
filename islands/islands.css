@@ -108,7 +108,6 @@
 
         .characters {
             width: 80vw;
-            height: 100%;
             display: flex;
             justify-content: space-between;
             margin-inline: max(2rem, 10vw);
@@ -137,7 +136,7 @@
                 border-radius: 10px;
                 border: solid 3px #00000010;
                 padding: 10px 20px;
-                margin-top: 60px;
+                margin-top: 7vw;
                 font-size: clamp(0.5rem, 1.5vw, 1.3rem);
                 line-height: 140%;
                 max-width: 75%;
