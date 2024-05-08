@@ -50,3 +50,12 @@ const observer = new IntersectionObserver((entries) => {
 
 hiddenMessages.forEach((el) => observer.observe(el));
 
+
+
+// Obtener el contenedor de origen y destino
+const contenedorOrigen = document.getElementById('characters');
+const contenedorDestino = document.getElementById('speech-bubbles');
+
+contenedorDestino.style.backgroundColor = '#FFFFFF';
+
+

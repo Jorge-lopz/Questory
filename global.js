@@ -27,19 +27,27 @@ document.addEventListener('DOMContentLoaded', () => {
 // BURGUER MENU
 
 var elemento = document.getElementById('hamburguer-button');
+const divTransparente = document.getElementById("divtransparente");
 
 // Agregar un event listener al elemento para el evento focus
-elemento.addEventListener('focusin', function (event) {
+elemento.addEventListener('click', function (event) {
     const menu = document.getElementById("menu");
+
     if (!menu.classList.contains("visible")) {
         menu.classList.add("visible");
+        divTransparente.classList.add("visible");
     }
-    else { menu.classList.remove("visible") };
+    else {
+        menu.classList.remove("visible")
+        divTransparente.classList.remove("visible");
+    };
+
 });
 
 //Agregar un event listener al elemento para el evento blur
-elemento.addEventListener('blur', function (event) {
+divTransparente.addEventListener('click', function (event) {
     menu.classList.remove("visible");
+    divTransparente.classList.remove("visible");
 });
 
 
