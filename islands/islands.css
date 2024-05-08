@@ -1,11 +1,10 @@
-
 /* GENERAL STYLES FOR ALL ISLANDS (USE SEPARATED CSS FILES FOR SPECIFIC STYLES) */
 
-.hero{
-   width: 80vw;
-   margin-inline: auto;
+.hero {
+    width: 80vw;
+    margin-inline: auto;
 
-    img{
+    img {
         object-fit: cover;
         margin-top: 2rem;
         border-radius: 9px;
@@ -14,32 +13,33 @@
         max-height: 520px;
     }
 
-    .stats{
+    .stats {
         display: flex;
         margin-inline: auto;
         padding-block: 0.2rem 0.5rem;
         padding-inline: 1rem;
 
-        .sectrets-discovered{
+        .sectrets-discovered {
             font-family: "Monomaniac One";
             margin-block: auto;
             font-size: clamp(1rem, 2vw, 2.5rem);
         }
 
-        .time-played{
+        .time-played {
             font-family: "Monomaniac One";
             font-size: clamp(1rem, 1.5vw, 2rem);
-        
+
             margin-left: auto;
             margin-top: auto;
         }
-        
+
     }
 
-    .island-description{
+    .island-description {
         margin-top: 2vw;
         margin-inline: max(1rem, 7vw);
-        p{
+
+        p {
             font-size: clamp(1.1rem, 1.6vw, 2.2rem);
             text-wrap: balance;
         }
@@ -48,74 +48,80 @@
 
 }
 
-.story-container{
+.story-container {
     margin-top: 5vw;
 
-    .gradient-text{
+    .gradient-text {
         margin-inline: auto;
     }
 
-    .characters{
+    .characters {
         margin-top: 5vw;
         display: flex;
         justify-content: space-between;
         margin-inline: max(2rem, 10vw);
         position: relative;
 
-        img{
+        img {
             height: 25vw;
             position: sticky;
             top: 200px;
         }
 
-            
+
     }
 
-    .speech-bubbles{
-
-
-
-        max-width: 550px;
+    .speech-bubbles {
+        max-width: 40vw;
         margin: 0 auto;
+        --bg-color--: #f4f5f5;
+        position: absolute;
+
+        position: relative;
+
         .bubble {
-        background-color: #e0e5ec;
-        color: black;
-        font-weight: bold;
-        box-shadow: -8px -8px 20px 0px #fff9, -6px -6px 6px 0px #fff9,
-        8px 8px 20px 0px #0001, 5px 5px 10px 10px #0001, inset 0px 0px 0px 0px #fff9,
-        inset 0px 0px 0px 0px #0001, inset 0px 0px 0px 0px #fff9,
-        inset 0px 0px 0px 0px #0001;
-         font-size: 1.2em;
-         line-height: 2;
-      border-radius: 10px;
-            padding: 2px 20px;
-      margin-top: 60px;
-    
+            background-color: var(--bg-color--);
+            color: black;
+            text-align: left;
+            box-shadow: 5px 5px 13px 5px #0001, inset 0px 0px 0px 0px #0001, inset 0px 0px 0px 0px #0001;
+            border-radius: 10px;
+            padding: 10px 20px;
+            margin-top: 60px;
+            font-size: clamp(0.5rem, 1.5vw, 1.3rem);
+            position: relative;
+            line-height: 140%;
+
             &:nth-child(1) {
                 border-left: 10px solid orange;
             }
-    
+
             &:nth-child(1):after {
                 content: "";
                 position: absolute;
-                width: 50px;
-                height: 30px;
+                width: 40px;
+                height: 20px;
                 clip-path: polygon(100% 0, 0% 100%, 0 0);
-                background-color: #e0e5ec;
+                background-color: var(--bg-color--);
+                top: 100%;
+                left: 5%;
+
+                filter: drop-shadow(30px 10px 0px #4444dd);
+
             }
+        }
+
+        height: 300vw;
     }
 
-}
+    @media (width < 600px) {
 
-@media (width < 600px){
+        .time-played {
+            margin-top: none !important;
+            margin-block: auto;
 
-	.time-played {
-		margin-top: none !important; 
-        margin-block: auto;
+        }
+    }
 
-	}
-}
-
-@keyframes speak{
-    opacity: 1;
-}
+    @keyframes speak {
+        opacity: 1;
+    }
