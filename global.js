@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 var elemento = document.getElementById('hamburguer-button');
 
 // Agregar un event listener al elemento para el evento focus
-elemento.addEventListener('click', function (event) {
+elemento.addEventListener('focusin', function (event) {
     const menu = document.getElementById("menu");
     if (!menu.classList.contains("visible")) {
         menu.classList.add("visible");
