@@ -92,27 +92,20 @@ function restrictInput() {
 
 function showMessage() {
   if (document.getElementById('name-input').value.trim() == "") {
-
-    if (isPrimaryInputTouch()) {
-      showMessageInputTouch();
-    } else {
-      iziToast.info({
-        message: 'The chosen name will also be used in-game',
-        position: 'bottomLeft',
-        backgroundColor: '#a7e1ff',
-        displayMode: 2
-      });
-    }
+    iziToast.warning({
+      message: 'The name cannot be empty',
+      position: 'bottomLeft',
+      backgroundColor: '#f7af8e',
+      displayMode: 2
+    });
+  } else {
+    iziToast.info({
+      message: 'The chosen name will also be used in-game',
+      position: 'bottomLeft',
+      backgroundColor: '#a7e1ff',
+      displayMode: 2
+    });
   }
-}
-
-function showMessageInputTouch() {
-  iziToast.info({
-    message: 'The chosen name will also be used in-game',
-    position: 'center',
-    backgroundColor: '#a7e1ff',
-    displayMode: 2
-  });
 }
 
 function isPrimaryInputTouch() {
