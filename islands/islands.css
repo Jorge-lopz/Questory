@@ -6,16 +6,16 @@
 
     .hero-image {
         position: relative;
-    }
 
-    & > img {
-        object-fit: cover;
-        border-radius: 9px;
-        width: 100%;
-        min-height: 288px;
-        max-height: 520px;
+        & > img {
+            object-fit: cover;
+            border-radius: 9px;
+            width: 100%;
+            min-height: 288px;
+            max-height: 520px;
+        }
     }
-
+    
     .stats {
         display: flex;
         margin-inline: auto;
@@ -40,15 +40,13 @@
 
     .island-description {
         margin-top: 2vw;
-        margin-inline: max(1rem, 7vw);
+        margin-inline: max(1rem, 3vw);
 
         p {
             font-size: clamp(1.1rem, 1.6vw, 2.2rem);
             text-wrap: balance;
         }
-
     }
-
 }
 
 /*LOADER*/
@@ -103,14 +101,16 @@
 
     .gradient-text {
         margin-inline: auto;
+        padding-inline: 1rem;
     }
 
     .conversation-container {
         margin-top: 7vw;
-        height: 500vh;
-
+        height: max-content;
+        
         .conversation-background{
             position: absolute;
+            margin-top: -5vw;
 
             .background{
                 position: sticky;
@@ -118,11 +118,10 @@
                 height: 100vh;
                 width: 100vw;
                 top: 0;
+                mask-image: linear-gradient(to top, black 70%, transparent);
             }
-
         }
         
-
         .characters {
             width: 80vw;
             display: flex;
@@ -130,22 +129,21 @@
             margin-inline: max(2rem, 10vw);
             position: absolute;
 
-            
-
             img {
                 height: 25vw;
                 position: sticky;
-                top: 50vh;
                 user-select: none;
+                top: 35vh;
             }
         }
-
 
         .speech-bubbles {
             max-width: 40vw;
             height: max-content;
             margin-inline: auto;
+            padding-bottom: 25px;
             --bg-color: #f4f5f5;
+            overflow: hidden;
 
             .bubble {
                 background-color: var(--bg-color);
@@ -189,9 +187,9 @@
                         width: 40px;
                         height: 20px;
                         clip-path: polygon(100% 0, 0% 100%, 0 0);
-                        background: linear-gradient(335deg, #e5e6e6 60%, var(--bg-color) 60%);
+                        background: linear-gradient(335deg, #e5e6e6 57%, var(--bg-color) 60%);
                         border-left: solid 3px #e5e6e6;
-                        top: 99.99%;
+                        top: 99.6%;
                         left: 5%;
                     }
                 }
@@ -221,15 +219,13 @@
                         width: 40px;
                         height: 20px;
                         clip-path: polygon(0 0, 100% 100%, 100% 0);
-                        background: linear-gradient(25deg, #e5e6e6 60%, var(--bg-color) 60%);
+                        background: linear-gradient(25deg, #e5e6e6 57%, var(--bg-color) 60%);
                         border-right: solid 3px #e5e6e6;
-                        top: 99.99%;
+                        top: 99.95%;
                         right: 5%;
                     }
                 }
             }
-
-
         }
     }
 }

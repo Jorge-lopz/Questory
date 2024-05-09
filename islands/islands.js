@@ -38,6 +38,7 @@ function loadedSpline() {
 }
 
 // SPEECH BUBBLES BEHAVIOUR
+
 const hiddenMessages = document.querySelectorAll('.bubble');
 
 const observer = new IntersectionObserver((entries) => {
@@ -51,10 +52,11 @@ const observer = new IntersectionObserver((entries) => {
 hiddenMessages.forEach((el) => observer.observe(el));
 
 // STICKY BEHAVIOUR
-const contenedorCambiado = document.getElementById('characters');
-const contenedorCambiado2 = document.getElementById('conversation-background');
-const contenedorModelo = document.getElementById('speech-bubbles');
 
-var altura = contenedorModelo.clientHeight + contenedorCambiado.clientHeight/1.25;
-contenedorCambiado.style.height = altura + "px";
-contenedorCambiado2.style.height = altura + "px";
+const charactersContainer = document.getElementById('characters');
+const conversationBackground = document.getElementById('conversation-background');
+const speechBubblesContainer = document.getElementById('speech-bubbles');
+
+var altura = speechBubblesContainer.clientHeight + charactersContainer.clientHeight;
+charactersContainer.style.height = altura + "px";
+conversationBackground.style.height = altura + "px";

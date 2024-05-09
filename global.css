@@ -68,8 +68,8 @@ main {
 
 #logo {
   position: fixed;
-  top: 1rem;
-  left: 1.5rem;
+  top: 1.5rem;
+  left: 1.8rem;
   transition: transform 0.3s;
   z-index: 111;
 
@@ -119,8 +119,8 @@ main {
   opacity: 0.2;
   
   &.visible {
-    right: 1.9rem !important;
-    opacity: 1 !important;
+    right: 1.9rem;
+    opacity: 1;
   }
 
   a {
@@ -137,6 +137,64 @@ main {
 
   a:hover {
     transform: scale(1.15);
+  }
+}
+
+#small-header {
+  display: flex;
+  position: fixed;
+  z-index: 111;
+  width: 96%;
+  top: 1.9rem;
+  right: -100rem;
+  border-radius: 15px 0 0 15px;
+  padding: 0.4rem 0.8rem 0.5rem 0.6rem;
+  transition: .4s transform cubic-bezier(0.165, 0.84, 0.44, 1);
+  background: #000000bb;
+  backdrop-filter: blur(10px);
+  align-items: center;
+  
+  &.visible {
+    padding-left: 1rem;
+    transform: translateX(-100%) !important;
+
+    #small-header-button {
+      transform: rotate(180deg);
+    }
+  }
+  
+  #small-header-button {
+    display: block;
+    color: white;
+    cursor: pointer;
+    font-family: "Lexend", "Arial", sans-serif;
+    font-size: clamp(2.5rem, 5vw, 3rem);
+    margin-top: -0.3rem;
+    transition: .35s transform ease;
+    transform-origin: 50% 58%;
+    transform: rotate(0deg);
+  }
+  
+  .small-header-content {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: auto;
+    width: 94%;
+    
+    a {
+      font-family: "Monomaniac One", "Lexend", "Arial", sans-serif;
+      font-size: clamp(1.1rem, 4vw, 1.4rem);
+      display: block;
+      text-decoration: none;
+      color: white;
+      letter-spacing: 0.08em;
+
+      img {
+        padding-top: 6.5px;
+      }
+    }
   }
 }
 
@@ -158,13 +216,17 @@ main {
 header {
   position: fixed;
   width: 100vw;
-  padding: 1.5rem 1rem 0;
+  padding: 1.5rem 1rem 0 1.5rem;
   height: min-content;
   display: flex;
   inset: 0;
   z-index: 100;
   transition: transform 0.2s cubic-bezier(.16, .92, .68, .97);
   transform: translateY(0);
+
+  & > a {
+    opacity: 0;
+  }
 
   .header-content {
     font-family: 'Monomaniac One', 'Lexend', 'Arial', sans-serif;
@@ -205,6 +267,7 @@ footer {
   position: fixed;
   bottom: 1.2rem;
   right: 2rem;
+  z-index: 100;
 
   img {
     user-select: none;
@@ -371,14 +434,39 @@ a[tooltip] {
   }
 }
 
-/* Media query to show the header on mobile devices */
+@media (width < 1180px) {
+
+  #logo{
+    display: none;
+  }
+
+  header > a {
+    opacity: 1 !important;
+  }
+}
+
+@media (width < 850px) {
+  
+  #hamburguer-button {
+    right: -100rem !important;
+  }
+  #menu {
+    right: -50rem !important;
+  }
+}
+
 @media (width < 600px) {
+  
+  main {
+    margin-top: calc(8.9vw) !important;
+  }
 
   header {
     display: none;
   }
 
-  #hamburguer-button {
-    right: 1.9rem !important;
+  #small-header {
+    left: 100vw !important;
+    transform: translateX(-1.7rem) !important;
   }
 }

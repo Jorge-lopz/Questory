@@ -48,6 +48,17 @@ transparentDiv.addEventListener('click', () => {
     transparentDiv.classList.remove('visible');
 });
 
+// SMALL HEADER
+
+const smallHeader = document.getElementById('small-header');
+const smallHeaderButton = document.getElementById('small-header-button');
+
+smallHeaderButton.addEventListener('click', () => {
+
+    if (!smallHeader.classList.contains("visible")) smallHeader.classList.add("visible");
+    else smallHeader.classList.remove("visible");
+})
+
 // FOOTER
 
 const mapIcon = document.getElementById('map-icon') || document.getElementById('play-icon');

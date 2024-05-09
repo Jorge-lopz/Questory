@@ -19,12 +19,15 @@
 
     <!-- HOME BUTTON (LOGO) -->
     <div id="logo">
-        <a href="../index.html" class="user-select-none" tooltip="Home">
+        <a href="../index.html" tooltip="Home">
             <img src="../assets/icons/logo/header_icon.png" draggable="false" width="55px" alt="logo"></a>
     </div>
 
     <!-- HEADER -->
-    <header id="header" class="">
+    <header id="header">
+        <a href="javascript:;">
+            <img src="../assets/icons/logo/header_icon.png" draggable="false" width="55px" alt="logo">
+        </a>
         <div class="header-content">
             <a href="../index.html#islands">Islands</a>
             <a href="../progress.html">Progress</a>
@@ -37,21 +40,30 @@
 
     <!-- HAMBURGUER BUTTON -->
     <div id="hamburguer-button" tabindex="0">
-        <img draggable="false" src="/assets/icons/hamburger_menu.png" width="30px" alt="menu">
+        <img draggable="false" src="../assets/icons/hamburger_menu.png" width="30px" alt="menu">
     </div>
-
-    <!-- MENU-->
+    <!-- MENU -->
     <div id="menu">
-        <p><a href="#islands">Islands</a></p>
-        <p><a href="progress.html">Progress</a></p>
-        <p><a href="contact.html">Contact</a></p>
+        <p><a href="../index.html#islands">Islands</a></p>
+        <p><a href="../progress.html">Progress</a></p>
+        <p><a href="../contact.html">Contact</a></p>
         <a href="#"> <!-- TODO Should call the language switching function  -->
             <img src="../assets/icons/Language_en.png" width="35px" alt="Language">
         </a>
     </div>
+    <div id="transparent-div" width=100% height="100%"></div>
 
-    <!-- TRANSPARENT HAMBURGER MENU PAGE BACKGROUND -->
-    <div id="transparent-div" width=100% height="100%">
+    <!-- SMALL HEADER -->
+    <div id="small-header">
+        <div id="small-header-button">‹</div>
+        <div class="small-header-content">
+            <a href="../index.html#islands">Islands</a>
+            <a href="../progress.html">Progress</a>
+            <a href="../contact.html">Contact</a>
+            <a href="#"> <!-- TODO Should call the language switching function  -->
+                <img src="../assets/icons/Language_en_white.png" width="32px" alt="Language">
+            </a>
+        </div>
     </div>
 
     <!-- PAGE LOADER -->
@@ -79,8 +91,8 @@
                     <img id="loader-gif" src="../assets/icons/Loading.gif" width="20px" height="20px">
                     <h4 id="loader-state">Loading</h4>
                 </div>
+                <img src="../assets/images/mexico_hero.png" alt="Mexico hero">
             </div>
-            <img src="../assets/images/maxico_hero.jpg" alt="Hero">
 
             <div class="stats">
                 <p class="secrets-discovered">0/2 secrets discovered</p>
@@ -103,15 +115,15 @@
                 NPC needs your help!
             </h1>
 
-            
+
 
             <div class="conversation-container">
-                
+
 
                 <div id="characters" class="characters">
                     <img src="../assets/images/Character.png" alt="Hero">
 
-                    
+
 
                     <img src="../assets/images/Character.png" alt="Npc">
                 </div>
