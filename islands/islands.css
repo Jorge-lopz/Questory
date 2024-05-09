@@ -108,7 +108,7 @@
         margin-top: 7vw;
         height: max-content;
         
-        .conversation-background{
+        /* .conversation-background{
             position: absolute;
             margin-top: -5vw;
 
@@ -120,7 +120,7 @@
                 top: 0;
                 mask-image: linear-gradient(to top, black 70%, transparent);
             }
-        }
+        } */
         
         .characters {
             width: 80vw;
