@@ -1,6 +1,22 @@
-#canvas3d {
+#button {
     display: block;
-    width: 95% !important;
-    aspect-ratio: 16 / 9 !important;
-    margin-inline: auto !important;
+    padding: 7px 10px;
+    margin-inline: auto;
+    margin-bottom: 10px;
+    background: #00000020;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Lexend', sans-serif;
+    font-size: large;
+}
+
+#canvas3d {
+    position: relative;
+    display: block;
+    aspect-ratio: 16 / 7;
+    width: 80% !important;
+    margin-inline: auto;
+    border-radius: 16px;
+    min-height: 400px;
+    max-height: 600px;
 }
