@@ -118,7 +118,6 @@ function isPrimaryInputTouch() {
 }
 
 // ISLAND NAMES SLIDER
-
 const islandNames = document.querySelectorAll('.island-name');
 const islandsContent = document.querySelectorAll('.content');
 const islandsContainer = document.querySelector('.islands-container');

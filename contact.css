@@ -1,0 +1,6 @@
+#canvas3d {
+    display: block;
+    width: 95% !important;
+    aspect-ratio: 16 / 9 !important;
+    margin-inline: auto !important;
+}
