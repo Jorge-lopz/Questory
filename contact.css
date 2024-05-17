@@ -1,22 +1,69 @@
-#button {
+button {
     display: block;
-    padding: 7px 10px;
-    margin-inline: auto;
-    margin-bottom: 10px;
-    background: #00000020;
+    position: absolute;
+    cursor: pointer;
+    padding: 2px 10px 5px;
+    background: #ffffff90;
+    backdrop-filter: blur(20px);
     border: none;
-    border-radius: 5px;
+    border-radius: 7px;
     font-family: 'Lexend', sans-serif;
-    font-size: large;
+    font-size: xx-large;
+    font-weight: 600;
 }
 
-#canvas3d {
-    position: relative;
-    display: block;
-    aspect-ratio: 16 / 7;
-    width: 80% !important;
+.container-3d {
+
+    width: fit-content;
     margin-inline: auto;
-    border-radius: 16px;
-    min-height: 400px;
-    max-height: 600px;
+    position: relative;
+
+    &::after {
+        position: absolute;
+        inset: 0;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    &.minigame::after {
+        content: '';
+    }
+
+    &.fullscreen {
+        width: 100vw !important;
+        height: 100vh !important;
+        position: absolute;
+        z-index: 111;
+        top: 0;
+    }
+
+    #canvas3d {
+        position: relative;
+        display: block;
+        aspect-ratio: 16 / 7;
+        border-radius: 16px;
+        min-height: 400px;
+        max-height: 550px;
+    }
+
+    &.fullscreen {
+        #canvas3d {
+            max-height: unset;
+            border-radius: 0;
+        }
+    }
+
+    #fullscreenButton {
+        top: 10px;
+        right: 10px;
+        margin-inline: auto;
+        margin-bottom: 10px;
+    }
+}
+
+#music {
+    z-index: 1000;
+    bottom: 10px;
+    left: 10px;
+    text-shadow: 0.15rem 0.15rem 0.1rem #00000020;
 }

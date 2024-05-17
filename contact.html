@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="contact.css">
     <!--TODO -> Uncomment <script src="global.js" defer></script> -->
     <script src="contact.js" type="module" defer></script>
+    <!-- <link rel="preload" href="https://prod.spline.design/tFmSBFP2EcK41iR4/scene.splinecode" as="fetch"> -->
     <title>Contact | Questory</title>
 </head>
 
@@ -46,9 +47,11 @@
     <!-- ACTUAL PAGE CONTENT -->
     <main>
 
-        <button id="button">FULLSCREEN</button>
-
-        <canvas id="canvas3d"></canvas>
+        <div id="container-3d" class="container-3d minigame">
+            <canvas id="canvas3d"></canvas>
+            <button id="fullscreenButton">⛶</button>
+        </div>
+        <button id="music">🔊</button>
 
     </main>
 </body>
