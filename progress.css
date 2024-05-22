@@ -1,83 +1,77 @@
+:root {
+	--currentPercentage: 0;
+	--currentPercentagePixels: 150px;
+}
+
 .total-progress {
     display: flex;
 	flex-wrap: wrap;
     align-items: center;
-	margin-block: 2rem;
+	margin-block: 2rem 3rem;
 	row-gap: 1.5rem;
+	margin-left: 3rem  ;
 
-	.progress-bar-container {
+	.progress-text-container {
 		width: 50%;
 		display: flex;
 		justify-content: center;
-
-		.progress-bar {
-			min-width: 240px;
-			max-width: 520px;
-			width: 70%;
-			aspect-ratio: 8/1.4;
-			max-height: 50px;
-			margin-left: 35%;
-			border: solid 3px rgba(0, 0, 0, 0.638);
-			background: #dedede;
-			border-radius: 50px;
-			position: relative;
-			overflow-x: hidden;
 		
-			.bar {
-				--progress: 50%;
-				width: 0;
-				height: 100%;
-				/*background: linear-gradient(to right, gold, gold, gold, #c85, #c85, gold, gold, gold); */
-				background: #ffc111;
-				background-repeat: repeat;
-				border-radius: 0 50px 50px 0;
-				animation: 
-				shine 6s linear infinite,
-				progress 1s ease-in-out forwards;
-			}
+		#final-trophy-text{
+			min-width: 450px;
+			max-width: 480px;
+			text-align: center;
+			text-wrap: balance;
+			padding-left: 5rem;
+		
+			font-size: clamp(1.4rem, 2.4vw, 1.7rem);
 		}
 	}
 
 	.final-trophy-container {
 		width: 50%;
-		min-width: 587px;
+		min-width: 564px;
 		display: flex;
+		flex-wrap: wrap;
 		padding-inline: 5% 20%;
-		justify-content: right;
+		justify-content: flex-start;
 		align-items: center;
-
-		#final-trophy-text{
-			min-width: 150px;
-			max-width: 200px;
-			text-align: center;
-			text-wrap: balance;
-			margin-right: 3rem;
-			font-size: clamp(1.1rem, 2.4vw, 1.4rem);
-			display: flex;
-		}
 
 		.final-trophy  {
 			margin-left: 0;
+
+			#porcentage-text{
+				font-family: 'Lexend', sans-serif;
+				font-weight: 600;
+				padding-left: 1rem;
+				font-size: clamp(2.5rem, 6vw, 3.8rem);
+				
+				&::before {
+					position: relative;
+					font-size: clamp(2.5rem, 6vw, 3.8rem);
+					content: counter(percentage);
+                    counter-reset: percentage var(--percentage);  
+					animation: incrementPercentage 2s ease-in-out forwards;
+				}
+			}
 			
 			.golden-lock-container {
 				position: relative;
 				min-height: 101px;
-		
+				display: flex;
+				align-items: center;
+				gap: 2.5rem;
+
 				#golden-lock {
 					-webkit-mask-image: url('assets/icons/waves.svg#waveMask');
 					mask-image: url('assets/icons/waves.svg#waveMask');
 					mask-size: cover;
 					mask-repeat: no-repeat;
-					mask-position: 0 138px; /* Limit value for an empty lock */
-					transition: mask-position 2s ease-in-out;
+					mask-position: 0 150px;
+					animation: golden-lock-fill 2s ease-out forwards;
 					user-select: none;
 					margin-top: 5px;
 					height: min(20vw, 9rem);
 					min-height: 101px;
-		
-					&:hover{
-						mask-position: 0 -12px; /* Limit value for a full golden lock */
-					}
 				}
 				&::before {
 					content: "";
@@ -88,23 +82,36 @@
 					inset: 0;
 					opacity: 0.7;
 					margin-top: 5px;
-					width: 100%;
-					height: 100%;
+					width: 97%;
+					height: 97%;
 					filter: drop-shadow(#00000050 2px 2px 2px);
 				}
+
 			}
 		}
 	}
 }
 
-.lock-icon-animation {
-	animation: heartBeat 1.5s infinite forwards;
+@property --percentage {
+	syntax: "<integer>";
+    initial-value: 0;
+    inherits: false;
+}
+
+@keyframes incrementPercentage {
+	from {
+		--percentage: 0;
+	}
+	to {
+		--percentage: var(--currentPercentage); 
+	}
 }
 
 @keyframes golden-lock-fill {
-	from {mask-position: 0 135px;}
-	to {mask-position: 0 -10px;}
+	to {
+		mask-position: 0 var(--currentPercentagePixels);
 	}
+}
 
 .progress-boxes {
     margin-inline: auto;
@@ -116,23 +123,78 @@
 	justify-content: center;
 	align-content: center;
 	margin-bottom: 3%;
+	max-width: 1800px;
 
 	.box {
 		aspect-ratio: 1;
-		width: 13rem;
+		width: 12rem;
 		margin: min(1.2rem, 3vw);
-		background-color: #D9D9D9;
+		background: radial-gradient(#FFFFFF, #ececec);
 		align-content: center;
+		text-align: center;
 		border-radius: 9px;
 		user-select: none;
 
 		.lock {
 			user-select: none;
 			margin-top: 5px;
+			margin-inline: auto;
 			height: 70%;
+			display: block;
 			pointer-events: none;
 			filter: drop-shadow(#00000070 2px 2px 2px);
+
+			&.enabled {
+				animation: hide 0ms forwards;
+			}
 		}
+
+		.lock-icon-animation {
+			animation: heartBeat 1.5s infinite forwards;
+		}
+
+		.achievements {
+			user-select: none;
+			margin-top: 5px;
+			margin-inline: auto;
+			height: 70%;
+			opacity: 0;
+			display: none;
+			filter: drop-shadow(#00000070 2px 2px 2px);
+			transform: scale(1);
+			transition: transform 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+			&:hover {
+				transform: scale(1.05);
+			}
+
+			&.enabled {
+				display: block !important;
+				animation: shows 0.5s 0.4s forwards;
+			}
+		}
+		#achievement-1{
+			height: 60%;
+		}
+		#achievement-3	{
+			height: 65%;
+		}
+		#achievement-4{
+			height: 50%;
+		}
+		
+	}
+}
+
+@keyframes hide{
+	to {
+		display: none;
+	}
+}
+
+@keyframes shows{
+	to {
+		opacity: 1;
 	}
 }
 
@@ -140,12 +202,6 @@
 	from, 50%, to { transform: translateX(0) }
 	12%, 33% { transform: translateX(5px) }
 	25% { transform: translateX(-5px) }
-}
-  
-@property --progress {
-	syntax: "<length>";
-	initial-value: 0%;
-	inherits: true;
 }
 
 @keyframes shine {
@@ -165,21 +221,27 @@
 	}
 }
 
-@media (width < 1174px) {
+@media (width < 1176px) {
 
 	.total-progress {
-		margin-inline: 2rem !important;
-		margin-bottom: 1rem !important;
+		margin-inline: 2rem 1rem !important;
+		margin-block: 2rem 3rem!important;
+
+		justify-content: center !important;
 	}
 
-	.progress-bar-container {
+	.progress-text-container {
 		width: 100% !important;
 
-		.progress-bar {
-			margin-left: 0 !important;
-			min-width: 270px !important;
-			max-width: 500px !important;
-			max-height: 45px !important;
+		
+		#final-trophy-text{
+			padding-left: 0 !important;
+			margin-inline: auto !important;
+		}
+		
+		.content-text		{
+			padding-left: 0 !important;
+
 		}
 	}
 
@@ -190,8 +252,5 @@
 		justify-content: center !important;
 		margin:auto !important;
 
-		#final-trophy-text{
-			margin-inline: -1.5rem 1rem !important;
-		}
 	}
 }

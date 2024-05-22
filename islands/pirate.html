@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="../global.css">
     <link rel="stylesheet" href="islands.css">
     <script src="../global.js" defer></script>
-    <script src="islands.js" defer></script>
+    <script src="islands.js" type="module" defer></script>
+    <script src="pirate.js" type="module" defer></script>
     <title>Pirate | Islands</title>
 </head>
 
@@ -66,13 +67,6 @@
         </div>
     </div>
 
-    <!-- PAGE LOADER -->
-    <div id="island-loader" class="island-loader">
-        <p>WELCOME TO <br>
-            <span>MEDIEVAL</span>
-        </p>
-    </div>
-
     <!-- FOOTER -->
     <footer>
         <a href="#"> <!-- TODO Should start the game fullscreen -->
@@ -82,72 +76,72 @@
     </footer>
 
     <!-- ACTUAL PAGE CONTENT -->
-    <main>
+    <main id="main">
+
+        <button id="music">🔊</button>
 
         <!-- HERO -->
         <div class="hero">
-            <div class="hero-image">
-                <div class="loader">
-                    <img id="loader-gif" src="../assets/icons/Loading.gif" width="20px" height="20px">
-                    <h4 id="loader-state">Loading</h4>
+            <div id="container-3d" class="container-3d minigame" style="--bg: url('../assets/images/pirate_hero.png')">
+                <div id="3d">
+                    <div id="loader">
+                        <img id="loader-gif" src="../assets/icons/Loading.gif" width="20px" height="20px">
+                        <h4 id="loader-state">Loading</h4>
+                    </div>
+                    <canvas id="canvas3d"></canvas>
+                    <button id="playButton">▶</button>
+                    <button id="fullscreenButton">⛶</button>
                 </div>
-                <img src="../assets/images/pirate_hero.png" alt="Pirate hero">
             </div>
 
             <div class="stats">
-                <p class="secrets-discovered">0/2 secrets discovered</p>
-                <p class="time-played">0m played</p>
+                <p class="secrets-discovered"><span id="secrets">0</span>/2 secrets discovered</p>
+                <p class="time-played"><span id="time">0</span>m played</p>
             </div>
 
             <div class="island-description">
-                <p class="content-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.Obcaecati,
-                    itaque in
-                    ipsa ab laudantium vero. Aliquid voluptas provident nisi eveniet id consequuntur tempora
-                    esse!
-                    Sit
-                    ea ex consectetur laudantium error.</p>
+                <!--You're caught in a violent storm and are heading straight towards some treacherous rocks. Can you navigate through and save yourself and your ship, landlubber? -->
+                <p class="content-text"> Our intrepid adventurer was calmly navigating the waters when he encountered a
+                    series of rocks that he had to dodge. Despite his best efforts, he ended up stranded in a lonely
+                    island.</p>
             </div>
         </div>
 
         <!-- STORY -->
         <div class="story-container">
             <h1 class="gradient-text">
-                NPC needs your help!
+                The Captain needs your help!
             </h1>
-
 
 
             <div class="conversation-container">
 
-
                 <div id="characters" class="characters">
                     <img src="../assets/images/Character.png" alt="Hero">
 
-
-
-                    <img src="../assets/images/Character.png" alt="Npc">
+                    <img src="../assets/images/pirate_npc.png" alt="Npc">
                 </div>
 
-                <div id="speech-bubbles" class="speech-bubbles">
+                <div id="speech-bubbles" class="speech-bubbles"
+                    style="--bg-npc: url('../assets/images/pirate_npc_pfp.png')">
 
-                    <p id="text-1" class="bubble content-text left">Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit.
-                        Molestiae,iste? Camioneta sin ruedas</p>
-                    <p id="text-2" class="bubble content-text right">Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit.
-                        Molestiae,iste</p>
-                    <p id="text-3" class="bubble content-text left">Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit.
-                        Molestiae,iste? Camioneta sin ruedas</p>
-                    <p id="text-4" class="bubble content-text right">Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit.
-                        Molestiae,iste</p>
-                    <p id="text-5" class="bubble content-text left">Lorem, ipsum dolor sit amet consecteturadipisicing
-                        elit.
-                        Molestiae,iste? Camioneta sin ruedas</p>
-                    <p id="text-6" class="bubble content-text right">Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit.
-                        Molestiae,istesssssssssss sssssssssasdfasd fads adf ads asd sssssssss</p>
+                    <p id="text-1" class="bubble content-text left">What a shame, my ship has broken apart. I won't be
+                        able to go back home.</p>
+                    <p id="text-2" class="bubble content-text right">Arr, that be bad news indeed. A broken ship leaves
+                        ye stranded.</p>
+                    <p id="text-3" class="bubble content-text left">I really need to find a way off this island. Can you
+                        help me?</p>
+                    <p id="text-4" class="bubble content-text right">Five gold coins. Bring me
+                        <span class="gradient-text">
+                            5 gold coins</span>, and ye can use my ship.
+                    </p>
+                    <p id="text-5" class="bubble content-text left">Where can I find these coins?</p>
+                    <p id="text-6" class="bubble content-text right">There be many places on this islands where <span
+                            class="gradient-text">treasures
+                            be hidden</span>. Search well, and ye'll find 'em.</p>
+                    <p id="text-7" class="bubble content-text left">I'll be back with those coins. Wait for me.</p>
+                    <p id="text-8" class="bubble content-text right">Aye, I'll be waitin'. Don't take too long, or I
+                        might just set sail without ye.</p>
                 </div>
             </div>
         </div>

@@ -62,6 +62,10 @@ main {
   overflow-x: hidden;
   margin: 0;
   margin-top: 7rem;
+  
+  &:focus {
+    outline: none;
+  }
 }
 
 /*LOGO*/
@@ -70,8 +74,8 @@ main {
   position: fixed;
   top: 1.5rem;
   left: 1.8rem;
-  transition: transform 0.3s;
   z-index: 111;
+  transition: transform 0.3s;
 
   a {
     user-select: none;
@@ -141,7 +145,7 @@ main {
 }
 
 #small-header {
-  display: flex;
+  display: none;
   position: fixed;
   z-index: 111;
   width: 96%;
@@ -364,7 +368,7 @@ footer {
     position: relative;
   }
 
-  .loader {
+  #loader {
     position: absolute;
     display: flex;
     align-items: center;
@@ -372,8 +376,8 @@ footer {
     background: #ffffff70;
     backdrop-filter: blur(10px);
     padding-inline: 0.7rem 1rem;
-    bottom: 18px;
-    left: 14px;
+    bottom: 16px;
+    left: 16px;
     min-height: 37px;
     max-height: 37px;
 
@@ -466,6 +470,7 @@ a[tooltip] {
   }
 
   #small-header {
+    display: flex;
     left: 100vw !important;
     transform: translateX(-1.7rem) !important;
   }

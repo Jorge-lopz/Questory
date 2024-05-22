@@ -1,55 +1,6 @@
 /* GENERAL STYLES FOR ALL ISLANDS (USE SEPARATED CSS FILES FOR SPECIFIC STYLES) */
 
-.hero {
-    width: 80vw;
-    margin-inline: auto;
-
-    .hero-image {
-        position: relative;
-
-        & > img {
-            object-fit: cover;
-            border-radius: 9px;
-            width: 100%;
-            min-height: 288px;
-            max-height: 520px;
-        }
-    }
-    
-    .stats {
-        display: flex;
-        margin-inline: auto;
-        padding-block: 0.2rem 0.5rem;
-        padding-inline: 1rem;
-
-        .secrets-discovered {
-            font-family: "Monomaniac One";
-            margin-block: auto;
-            font-size: clamp(1rem, 2vw, 2.5rem);
-        }
-
-        .time-played {
-            font-family: "Monomaniac One";
-            font-size: clamp(1rem, 1.5vw, 2rem);
-
-            margin-left: auto;
-            margin-top: auto;
-        }
-
-    }
-
-    .island-description {
-        margin-top: 2vw;
-        margin-inline: max(1rem, 3vw);
-
-        p {
-            font-size: clamp(1.1rem, 1.6vw, 2.2rem);
-            text-wrap: balance;
-        }
-    }
-}
-
-/*LOADER*/
+/* LOADER */
 
 .island-loader {
     position: fixed;
@@ -96,6 +47,187 @@
     }
 }
 
+/*  HERO  */
+.hero {
+    width: 80vw;
+    margin-inline: auto;
+
+    .container-3d {
+
+        width: 100.3%;
+        margin-inline: auto;
+        position: relative;
+        outline: none;
+        aspect-ratio: 16 / 7;
+        /* min-height: 535px; */
+        max-height: 535px;
+        border-radius: 16px;
+        background-image: var(--bg);
+
+        background-size: cover;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        
+        /* Disables mouse interaction */
+        &::after {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            outline: none;
+        }
+        
+        &.minigame::after {
+            content: '';
+        }
+        
+        &.fullscreen {
+            width: 100vw !important;
+            position: fixed;
+            z-index: 111;
+            top: 2.5vh;
+            left: 50%;
+            transform: translateX(-50%);
+
+            &::after {
+                width: 100vw;
+                height: 100vh;
+            }
+
+            #playButton{
+                inset: 0 !important;
+                transform: unset;
+                width: 100vw !important;
+                height: 100vh !important;
+            }
+
+            #canvas3d {
+                max-height: unset;
+                aspect-ratio: unset;
+                height: 95vh !important;
+                box-shadow: #202020 0 2rem 0, #202020 0 -2rem 0;
+            }
+        }
+        
+        &.animate {
+            animation: scaling 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        &.loaded {
+
+            #canvas3d {
+                opacity: 1;
+            }
+
+            #fullscreenButton {
+                opacity: 1;
+            }
+
+            #playButton {
+                opacity: 1;
+            }
+        }
+
+        #loader {
+            z-index: 113;
+
+            &.hidden {
+                transition: opacity .35s ease-in-out;
+                opacity: 0;
+            }
+        }
+    
+        #canvas3d {
+            opacity: 0;
+            position: relative;
+            display: block;
+            aspect-ratio: 16 / 7;
+            border-radius: 16px;
+            min-height: 400px;
+            max-height: 550px;
+            outline: none;
+            transition: opacity 1s ease-in-out;
+        }
+    
+        #fullscreenButton {
+            top: 10px;
+            right: 10px;
+            margin-inline: auto;
+            margin-bottom: 10px;
+            background: #ffffff90;
+            backdrop-filter: blur(20px);
+            outline: none;
+            opacity: 0;
+            z-index: 113;
+            transition: 0.25s 0.75s ease-in;
+        }
+
+        #playButton {
+            width: 100%;
+            height: 100%;
+            top: 50.2%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #00000020;
+            border-radius: 13px;
+            backdrop-filter: blur(3px);
+            font-size: clamp(5rem, 8vw, 8rem);
+            outline: none;
+            opacity: 0;
+            z-index: 112;
+
+            &.hidden {
+                animation: hidePlayButton 0.5s ease-in-out forwards;
+            }
+        }
+    }
+    
+    .stats {
+        display: flex;
+        margin-inline: auto;
+        padding-block: 0.2rem 0.5rem;
+        padding-inline: 1rem;
+
+        .secrets-discovered {
+            font-family: "Monomaniac One";
+            margin-block: auto;
+            font-size: clamp(1rem, 2vw, 2.5rem);
+        }
+
+        .time-played {
+            font-family: "Monomaniac One";
+            font-size: clamp(1rem, 1.5vw, 2rem);
+
+            margin-left: auto;
+            margin-top: auto;
+        }
+
+    }
+
+    .island-description {
+        margin-top: 2vw;
+        margin-inline: max(1rem, 3vw);
+
+        p {
+            font-size: clamp(1.1rem, 1.6vw, 2.2rem);
+            text-wrap: balance;
+        }
+    }
+}
+
+@keyframes scaling {
+    from, to {scale: 1}
+    50% {scale: 1.1}
+}
+
+@keyframes hidePlayButton {
+    from {opacity: 1}
+    99% {opacity: 0}
+    to {display: none}
+}
+
+/* STORY */
+
 .story-container {
     margin-top: 5vw;
 
@@ -105,7 +237,7 @@
     }
 
     .conversation-container {
-        margin-top: 7vw;
+        margin-top: 8vw;
         height: max-content;
         
         /* .conversation-background{
@@ -143,6 +275,7 @@
             margin-inline: auto;
             padding-bottom: 25px;
             --bg-color: #f4f5f5;
+            --bg-npc:
             overflow: hidden;
 
             .bubble {
@@ -154,10 +287,17 @@
                 border: solid 3px #00000010;
                 padding: 10px 20px;
                 margin-top: 7vw;
-                font-size: clamp(0.5rem, 1.5vw, 1.3rem);
+                font-size: clamp(0.8rem, 1.3vw, 1.5rem) !important;
                 line-height: 140%;
                 max-width: 75%;
-                opacity: 0;
+                opacity: 0; 
+
+                .gradient-text{
+                font-size: clamp(0.8rem, 1.5vw, 1.3rem) !important;
+                padding-inline: 0;
+                font-weight: 300 !important;
+                letter-spacing: 0 !important;
+                }
 
                 &.show {
                     animation: bubbleAppear 1s cubic-bezier(0.215, 0.610, 0.355, 1) forwards !important;
@@ -173,7 +313,7 @@
                         position: absolute;
                         width: 10px;
                         height: 100%;
-                        background-color: orange;
+                        background-color: lightseagreen;
                         border: solid 3px #00000010;
                         border-right: none;
                         border-radius: 10px 0 0 10px;
@@ -198,6 +338,7 @@
 
                     transform-origin: bottom right;
                     margin-left: auto;
+                    margin-right: 3rem;
                     padding-right: 35px;
 
                     &::before {
@@ -205,7 +346,7 @@
                         position: absolute;
                         width: 10px;
                         height: 100%;
-                        background-color: lightseagreen;
+                        background-color: orange;
                         border: solid 3px #00000010;
                         border-left: none;
                         border-radius: 0 10px 10px 0;
@@ -242,11 +383,113 @@
     }
 }
 
+button {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    padding: 2px 10px 5px;
+    user-select: none;
+    border: none;
+    background: none;
+    border-radius: 7px;
+    font-family: 'Lexend', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+#music {
+    position: fixed;
+    z-index: 1000;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    text-shadow: 0.3rem 0.3rem 0.5rem #ffffff80;
+    
+    &.fullscreen {
+        text-shadow: 0.1rem 0.1rem 0.2rem #00000050;
+        bottom: 2rem;
+    }
+}
+
 @media (width < 600px) {
 
     .time-played {
         margin-top: none !important;
         margin-block: auto;
-
     }
-}
+
+    .island-description {
+        margin-top: 10vw !important;
+    }
+
+    .story-container{
+        margin-top: 10vw !important;
+    }
+
+    .conversation-container{
+            margin-top: 15vw !important;
+
+        .characters{
+            display: none;
+            opacity: 0;
+
+        }
+    
+        .speech-bubbles {
+            max-width: 100% !important;
+            padding-inline: 8vw;
+            
+            .bubble {
+                max-width:  80% !important;
+                padding: 10px !important;
+                opacity: 1 !important;
+                transform: scale(1) !important;
+
+                .gradient-text {
+                    font-size: clamp(0.8rem, 1.5vw, 1.3rem) !important;
+                }
+    
+                &.left {
+                    padding-left: 15px !important;
+                    margin-left: auto;
+    
+                    &::after {
+                        clip-path: unset !important;
+                        border-left: unset !important;
+
+                        content: "" !important;
+                        width: 50px !important;
+                        height: 50px !important;
+                        position: absolute !important;
+                        top: 0 !important;
+                        left: -25% !important;
+                        background-image: url('../assets/images/character_pfp.png') !important;
+                        background-repeat: no-repeat !important;
+                        background-size: contain !important;
+                    }
+                }
+    
+                &.right {
+                    margin-right: auto;
+                    margin-left: 0px !important;
+                    padding-right: 15px !important;
+    
+                    &::after {
+                        clip-path: unset !important;
+                        border-left: unset !important;
+                        border-right: unset !important;
+
+                        content: "" !important;
+                        width: 50px !important;
+                        height: 50px !important;
+                        position: absolute !important;
+                        top: 0 !important;
+                        left: 105% !important;
+                        background-image: var(--bg-npc) !important;
+                        background-repeat: no-repeat !important;
+                        background-size: contain !important;
+                    }
+                }
+            }
+        }   
+    }
+}   

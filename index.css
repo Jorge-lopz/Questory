@@ -79,10 +79,11 @@
                 &::before {
                     content: '';
                     position: absolute;
-                    width: min(20vw, 20rem);
+                    width: min(18vw, 19rem);
                     aspect-ratio: 2/1;
-                    bottom: 30%;
-                    left: 25vw;
+                    bottom: 70%;
+                    left: 29vw;
+                    rotate: -10deg;
                     background-image: url(assets/icons/your_name_here.png);
                     background-size: contain;
                     background-repeat: no-repeat;
@@ -164,9 +165,10 @@
     margin-block: 6rem 6rem;
     margin-inline: 10vw;
     padding: 1rem 2rem;
-    min-height: 550px;
+    min-height: 520px;
     background: linear-gradient(180deg, rgba(53, 173, 225, 0.028) 0%, rgba(0, 0, 0, 0) 100%), linear-gradient(292.61deg, rgba(247, 0, 208, 0.05) 0%, rgba(21, 185, 255, 0.05) 100%);
     border-radius: 16px;
+
 
     .glide {
         position: relative;

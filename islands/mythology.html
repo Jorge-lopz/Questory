@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/icons/logo/favicon.svg">
+    <link rel="stylesheet" href="../global.css">
+    <link rel="stylesheet" href="islands.css">
+    <script src="../global.js" defer></script>
+    <title>Mythology | Islands</title>
+</head>
+
+<body>
+
+    <!-- Smooth Scrolling -->
+    <script src="../dependencies/smoothscroll-for-websites/SmoothScroll.js"></script>
+
+    <!-- HOME BUTTON (LOGO) -->
+    <div id="logo">
+        <a href="../index.html" tooltip="Home">
+            <img src="../assets/icons/logo/header_icon.png" draggable="false" width="55px" alt="logo"></a>
+    </div>
+
+    <!-- HEADER -->
+    <header id="header">
+        <a href="javascript:;">
+            <img src="../assets/icons/logo/header_icon.png" draggable="false" width="55px" alt="logo">
+        </a>
+        <div class="header-content">
+            <a href="../index.html#islands">Islands</a>
+            <a href="../progress.html">Progress</a>
+            <a href="../contact.html">Contact</a>
+            <a href="#"> <!-- TODO Should call the language switching function  -->
+                <img src="../assets/icons/Language_en.png" width="35px" alt="Language">
+            </a>
+        </div>
+    </header>
+
+    <!-- HAMBURGUER BUTTON -->
+    <div id="hamburguer-button" tabindex="0">
+        <img draggable="false" src="../assets/icons/hamburger_menu.png" width="30px" alt="menu">
+    </div>
+    <!-- MENU -->
+    <div id="menu">
+        <p><a href="../index.html#islands">Islands</a></p>
+        <p><a href="../progress.html">Progress</a></p>
+        <p><a href="../contact.html">Contact</a></p>
+        <a href="#"> <!-- TODO Should call the language switching function  -->
+            <img src="../assets/icons/Language_en.png" width="35px" alt="Language">
+        </a>
+    </div>
+    <div id="transparent-div" width=100% height="100%"></div>
+
+    <!-- SMALL HEADER -->
+    <div id="small-header">
+        <div id="small-header-button">‹</div>
+        <div class="small-header-content">
+            <a href="../index.html#islands">Islands</a>
+            <a href="../progress.html">Progress</a>
+            <a href="../contact.html">Contact</a>
+            <a href="#"> <!-- TODO Should call the language switching function  -->
+                <img src="../assets/icons/Language_en_white.png" width="32px" alt="Language">
+            </a>
+        </div>
+    </div>
+
+
+
+    <!-- FOOTER -->
+    <footer>
+        <a href="#"> <!-- TODO Should start the game fullscreen -->
+            <img class="user-select-none" draggable="false" id="play-icon" src="../assets/icons/Controller.png"
+                width="55px" alt="Play">
+        </a>
+    </footer>
+
+    <!-- ACTUAL PAGE CONTENT -->
+    <main>
+
+        <!-- HERO -->
+        <div class="hero">
+            <div id="container-3d" class="container-3d minigame"
+                style="--bg: url('../assets/images/mythology_hero.png')">
+                <div id="3d">
+                    <div id="loader">
+                        <img id="loader-gif" src="../assets/icons/Loading.gif" width="20px" height="20px">
+                        <h4 id="loader-state">Loading</h4>
+                    </div>
+                    <canvas id="canvas3d"></canvas>
+                    <button id="playButton">▶</button>
+                    <button id="fullscreenButton">⛶</button>
+                </div>
+            </div>
+
+            <div class="stats">
+                <p class="secrets-discovered">0/2 secrets discovered</p>
+                <p class="time-played">0m played</p>
+            </div>
+
+            <div class="island-description">
+                <p class="content-text">
+                    Brave warrior, heed my words! venture into Medusa’s lair and defeat the dreaded gorgon avoiding her
+                    petrifying gaze. Triumph, and glory shall be yours. Go forth hero, ZEUS is watching⚡.
+                </p>
+            </div>
+        </div>
+
+        <br><br><br><br><br>
+
+    </main>
+
+</body>
+
+</html>

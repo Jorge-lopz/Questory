@@ -15,31 +15,62 @@
 <body>
 
     <!-- Smooth Scrolling -->
-    <script src="dependencies/smoothscroll-for-websites/SmoothScroll.js"></script>
+    <script src="../dependencies/smoothscroll-for-websites/SmoothScroll.js"></script>
 
     <!-- HOME BUTTON (LOGO) -->
     <div id="logo">
-        <a href="index.html" class="user-select-none" tooltip="Home">
-            <img src="../assets/icons/logo/header_icon.png" draggable="false" width="55px" alt="logo"></a>
+        <a href="../index.html" tooltip="Home">
+            <img src="assets/icons/logo/header_icon.png" draggable="false" width="55px" alt="logo"></a>
     </div>
 
     <!-- HEADER -->
-    <header id="header" class="">
+    <header id="header">
+        <a href="javascript:;">
+            <img src="assets/icons/logo/header_icon.png" draggable="false" width="55px" alt="logo">
+        </a>
         <div class="header-content">
             <a href="index.html#islands">Islands</a>
-            <a href="javascript:;">Progress</a>
+            <a href="progress.html">Progress</a>
             <a href="contact.html">Contact</a>
             <a href="#"> <!-- TODO Should call the language switching function  -->
-                <img src="../assets/icons/Language_en.png" width="35px" alt="Language">
+                <img src="assets/icons/Language_en.png" width="35px" alt="Language">
             </a>
         </div>
     </header>
 
+    <!-- HAMBURGUER BUTTON -->
+    <div id="hamburguer-button" tabindex="0">
+        <img draggable="false" src="assets/icons/hamburger_menu.png" width="30px" alt="menu">
+    </div>
+    <!-- MENU -->
+    <div id="menu">
+        <p><a href="index.html#islands">Islands</a></p>
+        <p><a href="progress.html">Progress</a></p>
+        <p><a href="contact.html">Contact</a></p>
+        <a href="#"> <!-- TODO Should call the language switching function  -->
+            <img src="assets/icons/Language_en.png" width="35px" alt="Language">
+        </a>
+    </div>
+    <div id="transparent-div" width=100% height="100%"></div>
+
+    <!-- SMALL HEADER -->
+    <div id="small-header">
+        <div id="small-header-button">‹</div>
+        <div class="small-header-content">
+            <a href="index.html#islands">Islands</a>
+            <a href="progress.html">Progress</a>
+            <a href="contact.html">Contact</a>
+            <a href="#"> <!-- TODO Should call the language switching function  -->
+                <img src="assets/icons/Language_en_white.png" width="32px" alt="Language">
+            </a>
+        </div>
+    </div>
+
     <!-- FOOTER -->
     <footer>
-        <a href="index.html#"> <!-- TODO Should also open the map fullscreen -->
-            <img class="user-select-none" draggable="false" id="map-icon" src="../assets/icons/Map.png" width="65px"
-                alt="Map">
+        <a href="#"> <!-- TODO Should start the game fullscreen -->
+            <img class="user-select-none" draggable="false" id="play-icon" src="assets/icons/Map.png" width="55px"
+                alt="Play">
         </a>
     </footer>
 
@@ -51,19 +82,17 @@
 
             <section class="total-progress">
 
-                <div class="progress-bar-container">
-                    <div class="progress-bar">
-                        <div class="bar"></div>
-                    </div>
+                <div class="progress-text-container">
+                    <h1 class="content-text" id="final-trophy-text">
+                        Discover all mysteries to unlock a special trophy.</h1>
                 </div>
 
                 <div class="final-trophy-container">
-                    <h1 class="content-text" id="final-trophy-text">
-                        Discover all mysteries to unlock a special trophy.</h1>
                     <div class="final-trophy">
                         <div class="golden-lock-container">
                             <img id="golden-lock" draggable="false" src="assets/icons/Golden_lock.png"
                                 alt="golden-lock">
+                            <p class="content-text" id="porcentage-text">%</p>
                         </div>
                     </div>
                 </div>
@@ -73,24 +102,45 @@
 
                 <div class="box" id="box-1">
                     <img class="lock" id="lock-1" src="assets/icons/Lock.png" draggable="false" alt="lock">
+
+                    <img class="achievements" id="achievement-1" src="assets/images/pirate_flag.png" draggable="false"
+                        alt="PA1">
                 </div>
                 <div class="box" id="box-2">
                     <img class="lock" id="lock-2" src="assets/icons/Lock.png" draggable="false" alt="lock">
+
+                    <img class="achievements" id="achievement-2" src="assets/images/pirate_hat.png" draggable="false"
+                        alt="PA2">
                 </div>
                 <div class="box" id="box-3">
                     <img class="lock" id="lock-3" src="assets/icons/Lock.png" draggable="false" alt="lock">
+
+                    <img class="achievements" id="achievement-3" src="assets/images/wilson_achievement.png"
+                        draggable="false" alt="PA3">
                 </div>
                 <div class="box" id="box-4">
                     <img class="lock" id="lock-4" src="assets/icons/Lock.png" draggable="false" alt="lock">
+
+                    <img class="achievements" id="achievement-4" src="assets/images/dinamite.png" draggable="false"
+                        alt="WA1">
                 </div>
                 <div class="box" id="box-5">
                     <img class="lock" id="lock-5" src="assets/icons/Lock.png" draggable="false" alt="lock">
+
+                    <img class="achievements" id="achievement-5" src="assets/images/sheriff_star.png" draggable="false"
+                        alt="WA2">
                 </div>
                 <div class="box" id="box-6">
                     <img class="lock" id="lock-6" src="assets/icons/Lock.png" draggable="false" alt="lock">
+
+                    <img class="achievements" id="achievement-6" src="assets/images/money_bag.png" draggable="false"
+                        alt="WA3">
                 </div>
                 <div class="box" id="box-7">
                     <img class="lock" id="lock-7" src="assets/icons/Lock.png" draggable="false" alt="lock">
+
+                    <img class="achievements" id="achievement-7" src="assets/images/cow.png" draggable="false"
+                        alt="PA1">
                 </div>
                 <div class="box" id="box-8">
                     <img class="lock" id="lock-8" src="assets/icons/Lock.png" draggable="false" alt="lock">
