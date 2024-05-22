@@ -9,7 +9,8 @@ const secrets = document.getElementById('secrets');
 
 var donecheckingMinigame = false;
 
-localStorage.setItem('TimePirate', '0');
+if (localStorage.getItem('TimePirate') === null) localStorage.setItem('TimePirate', '0');
+const initialTimePirate = localStorage.getItem('TimePirate')
 if (localStorage.getItem('TimePirate') !== null) document.getElementById('time').innerHTML = localStorage.getItem('TimePirate').replace(/^0+(?=\d)/, '') || 0;
 updateSecrets();
 
@@ -19,7 +20,6 @@ const spline = new Application(canvas);
 spline.load('https://prod.spline.design/m1eKnfuIs96S75cw/scene.splinecode')
     .then(() => {
 
-        // SPLINE - Wilson touch sound
         // SPLINE - Coins disabling with variebal to true
 
         updateSplineVariables();
@@ -28,7 +28,7 @@ spline.load('https://prod.spline.design/m1eKnfuIs96S75cw/scene.splinecode')
 
         setInterval(() => { //CHECK VARIABLES HERE;
             if (spline.getVariable('Time') != "00:00:00")
-                localStorage.setItem('TimePirate', (parseInt(spline.getVariable('Time').split(':')[1]) + parseInt(localStorage.getItem('TimePirate'))).toString());
+                localStorage.setItem('TimePirate', (parseInt(spline.getVariable('Time').split(':')[1]) + parseInt(initialTimePirate)).toString());
             if (localStorage.getItem('TimePirate') !== null) document.getElementById('time').innerHTML = localStorage.getItem('TimePirate').replace(/^0+(?=\d)/, '') || '0';
             if (spline.getVariable('wilson') === true) { localStorage.setItem('wilson', true); updateSecrets(); };
             if (spline.getVariable('collectableHat') === true) { localStorage.setItem('collectableHat', true); updateSecrets(); };

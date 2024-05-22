@@ -9,7 +9,8 @@ const secrets = document.getElementById('secrets');
 
 container3d.classList.remove('minigame');
 
-localStorage.setItem('TimeWildWest', '0');
+if (localStorage.getItem('TimeWildWest') === null) localStorage.setItem('TimeWildWest', '0');
+const initialTimeWildWest = localStorage.getItem('TimeWildWest')
 if (localStorage.getItem('TimeWildWest') !== null) document.getElementById('time').innerHTML = localStorage.getItem('TimeWildWest').replace(/^0+(?=\d)/, '') || 0;
 updateSecrets();
 
@@ -27,10 +28,11 @@ spline.load('https://prod.spline.design/H1FQzVfnVQwkBZhk/scene.splinecode')
 
         setInterval(() => { //CHECK VARIABLES HERE;
             if (spline.getVariable('Time') != "00:00:00")
-                localStorage.setItem('TimeWildWest', (parseInt(spline.getVariable('Time').split(':')[1]) + parseInt(localStorage.getItem('TimeWildWest'))).toString());
+                localStorage.setItem('TimeWildWest', (parseInt(spline.getVariable('Time').split(':')[1]) + parseInt(initialTimeWildWest)).toString());
             if (localStorage.getItem('TimeWildWest') !== null) document.getElementById('time').innerHTML = localStorage.getItem('TimeWildWest').replace(/^0+(?=\d)/, '') || '0';
             if (spline.getVariable('sheriffStar') === true) { localStorage.setItem('sheriffStar', true); updateSecrets(); };
             if (spline.getVariable('cow') === true) { localStorage.setItem('cow', true); updateSecrets(); };
+            if (spline.getVariable('exploded') === true) localStorage.setItem('exploded', true);
             if (spline.getVariable('criminalFound') === true) { localStorage.setItem('criminalFound', true); showObjectList(); }
             if (spline.getVariable('Find 1') === 2) localStorage.setItem('Find 1', 2);
             if (spline.getVariable('Find 2') === 2) localStorage.setItem('Find 2', 2);

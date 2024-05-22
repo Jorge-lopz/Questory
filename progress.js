@@ -1,8 +1,7 @@
-
 var count = 0;
 
-document.documentElement.style.setProperty('--currentPercentage', (count * 100) / 7);
-document.documentElement.style.setProperty('--currentPercentagePixels', (150 - (1.48 * ((count * 100) / 7))) + "px");
+// document.documentElement.style.setProperty('--currentPercentage', (count * 100) / 7);
+// document.documentElement.style.setProperty('--currentPercentagePixels', (150 - (1.48 * ((count * 100) / 7))) + "px");
 
 const lockboxes = document.getElementsByClassName('box');
 
@@ -35,7 +34,7 @@ function achievement(id) {
   if (!document.getElementById("lock-" + id).classList.contains("enabled")) {
     count = count + 1;
     document.documentElement.style.setProperty('--currentPercentage', parseInt((count * 100) / 7));
-    document.documentElement.style.setProperty('--currentPercentagePixels', parseInt((150 - (1.48 * 50))) + "px");
+    document.documentElement.style.setProperty('--currentPercentagePixels', (137 - (1.48 * ((count * 100) / 7))) + "px");
   }
   document.getElementById("lock-" + id).classList.add("enabled");
   document.getElementById("achievement-" + id).classList.add("enabled");
@@ -45,7 +44,7 @@ setInterval(() => {
   if (localStorage.getItem('goldenCoinsCollected') == 5) achievement(1);
   if (localStorage.getItem('collectableHat')) achievement(2);
   if (localStorage.getItem('wilson')) achievement(3);
-  if (localStorage.getItem('criminalFound')) achievement(4);
+  if (localStorage.getItem('exploded')) achievement(4);
   if (localStorage.getItem('sheriffStar')) achievement(5);
   if (localStorage.getItem('objectsCollected') == 3) achievement(6);
   if (localStorage.getItem('cow')) achievement(7);
