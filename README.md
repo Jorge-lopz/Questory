@@ -4,10 +4,12 @@
 
 Solve puzzles, uncover secrets, and make critical decisions that shape your journey. Dive into a rich narrative that spans across time and space, where every choice you make brings you closer to finding your way back home.
 
+<br>
 <div align="center">
-  <br>
+  
   ## · Media ·
-  <br>
+  
+<br>
   
   ![Home](https://github.com/Jorge-lopz/Questory/assets/66728542/c2e708ca-61f3-49c6-b7bb-5a6471bc2354)Home Screen<br><br>
   
