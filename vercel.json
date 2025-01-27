@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/cdn/:path*", 
+      "destination": "https://cl-gl5c4a4007.gcdn.co/:path*"
+    }
+  ]
+}
