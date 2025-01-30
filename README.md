@@ -1,4 +1,4 @@
-# Questory 🚀 
+# Questory 🚀 &nbsp;<img src="https://visitor-badge.laobi.icu/badge?page_id=jorge-lopz.questory">
 
 **Welcome to Questory, an interactive website where you control a stranded traveler navigating through various 3D games set in different historical periods and cultures. From medieval lands to cyberpunk futures, each environment offers unique challenges and stories.**
 
